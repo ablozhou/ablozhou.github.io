@@ -44,50 +44,50 @@ gem install jekyll-import
 以下这两种, 我没有使用, 而是用了第三方的exitwp
 ```
 ruby -rubygems -e 'require "jekyll-import";
-    JekyllImport::Importers::Blogger.run({
-              "source"                => "/Users/zhouhh/blog/abloz.com.17.2.2.xml",
-                    "no-blogger-info"       => true, # not to leave blogger-URL info (id and old URL) in the front matter
-                          "replace-internal-link" => false, # replace internal links using the post_url liquid tag.
-                              })'
+JekyllImport::Importers::Blogger.run({
+        "source"                => "/Users/zhouhh/blog/abloz.com.17.2.2.xml",
+        "no-blogger-info"       => true, # not to leave blogger-URL info (id and old URL) in the front matter
+        "replace-internal-link" => false, # replace internal links using the post_url liquid tag.
+        })'
 
 
-                              ruby -rubygems -e 'require "jekyll-import";
-                                  JekyllImport::Importers::WordPress.run({
-                                            "dbname"   => "abloz_wp",
-                                                  "user"     => "root",
-                                                        "password" => "",
-                                                              "host"     => "localhost",
-                                                                    "socket"   => "",
-                                                                          "table_prefix"   => "wp_",
-                                                                                "site_prefix"    => "",
-                                                                                      "clean_entities" => true,
-                                                                                            "comments"       => true,
-                                                                                                  "categories"     => true,
-                                                                                                        "tags"           => true,
-                                                                                                              "more_excerpt"   => true,
-                                                                                                                    "more_anchor"    => true,
-                                                                                                                          "extension"      => "html",
-                                                                                                                                "status"         => ["publish"]
-                                                                                                                                    })'
+ruby -rubygems -e 'require "jekyll-import";
+JekyllImport::Importers::WordPress.run({
+        "dbname"   => "abloz_wp",
+        "user"     => "root",
+        "password" => "",
+        "host"     => "localhost",
+        "socket"   => "",
+        "table_prefix"   => "wp_",
+        "site_prefix"    => "",
+        "clean_entities" => true,
+        "comments"       => true,
+        "categories"     => true,
+        "tags"           => true,
+        "more_excerpt"   => true,
+        "more_anchor"    => true,
+        "extension"      => "html",
+        "status"         => ["publish"]
+        })'
 
-                                                                                                                                    Whoops! Looks like you need to install 'sequel' before you can use this importer.
+Whoops! Looks like you need to install 'sequel' before you can use this importer.
 
-                                                                                                                                    If you're using bundler:
-                                                                                                                                      1. Add 'gem "sequel"' to your Gemfile
-                                                                                                                                        2. Run 'bundle install'
+If you're using bundler:
+1. Add 'gem "sequel"' to your Gemfile
+2. Run 'bundle install'
 
-                                                                                                                                        If you're not using bundler:
-                                                                                                                                          1. Run 'gem install sequel'.
+If you're not using bundler:
+1. Run 'gem install sequel'.
 
-                                                                                                                                          Whoops! Looks like you need to install 'unidecode' before you can use this importer.
+Whoops! Looks like you need to install 'unidecode' before you can use this importer.
 
-                                                                                                                                          If you're using bundler:
-                                                                                                                                            1. Add 'gem "unidecode"' to your Gemfile
-                                                                                                                                              2. Run 'bundle install'
+If you're using bundler:
+1. Add 'gem "unidecode"' to your Gemfile
+2. Run 'bundle install'
 
-                                                                                                                                              If you're not using bundler:
-                                                                                                                                                1. Run 'gem install unidecode'.
-                                                                                                                                                ```
+If you're not using bundler:
+1. Run 'gem install unidecode'.
+```
 
                                                                                                                                                 ➜  blog vi Gemfile
                                                                                                                                                 gem "sequel"
