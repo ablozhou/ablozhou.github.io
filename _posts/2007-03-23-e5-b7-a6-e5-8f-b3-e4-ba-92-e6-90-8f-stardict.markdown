@@ -1,0 +1,23 @@
+---
+author: abloz
+comments: true
+date: 2007-03-23 07:29:43+00:00
+layout: post
+link: http://abloz.com/index.php/2007/03/23/e5-b7-a6-e5-8f-b3-e4-ba-92-e6-90-8f-stardict/
+slug: e5-b7-a6-e5-8f-b3-e4-ba-92-e6-90-8f-stardict
+title: '[左右互搏] stardict'
+wordpress_id: 743
+categories:
+- 社会评论
+---
+
+[www.StarDict.cn](http://www.StarDict.cn)  
+  
+stardict是朋友胡正做的开源软件，现已卖掉。可以查单词，还可以实时翻译网页。  
+天下有能力的人不少，但做成事的人却不多。像胡正这样年轻有为的人，着实让人佩服。  
+  
+  
+   
+  
+--  
+ 由  梦想家  于  3/23/2007 03:29:00 下午  在  [ 左右互搏 ](http://ablo.blogspot.com/2007/03/stardict.html)  上发表 

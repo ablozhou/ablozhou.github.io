@@ -1,0 +1,85 @@
+---
+author: abloz
+comments: true
+date: 2005-07-20 07:45:16+00:00
+layout: post
+link: http://abloz.com/index.php/2005/07/20/e5-a6-82-e4-bd-95-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-net-beta2-e7-89-88-e6-9c-ac/
+slug: e5-a6-82-e4-bd-95-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-net-beta2-e7-89-88-e6-9c-ac
+title: 如何直接下载.net beta2版本
+wordpress_id: 489
+categories:
+- 技术
+---
+
+由于微软的下载策略是先下一个小程序，然后再用这个程序来下载和安装必须的.net程序，以便于控制和防止下载者在硬盘保存程序。
+
+
+
+
+ 
+
+
+
+
+我通过抓包的方式，找到了直接下载相应程序的地址。列举如下：
+
+
+
+
+ 
+
+
+
+
+//.net framework 2.0 beta2  : dotnetfx.exe 23M  
+[http://go.microsoft.com/fwlink/?linkid=42423&clcid=0x409](http://go.microsoft.com/fwlink/?linkid=42423&clcid=0x409)
+
+
+
+
+//.net Visual Web Developer 2005 Express Edition Beta 2 : Ixpvwd.exe 38.6M  
+[http://go.microsoft.com/fwlink/?linkid=42422&clcid=0x409](http://go.microsoft.com/fwlink/?linkid=42422&clcid=0x409)
+
+
+
+
+//.net Visual J# 2005 Express Edition Beta2:  Ixpvjs.exe 34.7M  
+[http://go.microsoft.com/fwlink/?linkid=42421&clcid=0x409](http://go.microsoft.com/fwlink/?linkid=42421&clcid=0x409)
+
+
+
+
+//.net Visual C# 2005 Express Edition Beta2 Ixpvcs.exe 29.2M  
+[http://go.microsoft.com/fwlink/?linkid=42420&clcid=0x409](http://go.microsoft.com/fwlink/?linkid=42420&clcid=0x409)
+
+
+
+
+//.net Visual C++ 2005 Express Edition Beta 2: Ixpvc.exe 64.8M  
+[http://go.microsoft.com/fwlink/?linkid=42419&clcid=0x409](http://go.microsoft.com/fwlink/?linkid=42419&clcid=0x409)
+
+
+
+
+//.net Visual Basic 2005 Express Edition Beta2 :Ixpvb.exe 34.9M  
+[http://go.microsoft.com/fwlink/?linkid=42418&clcid=0x409](http://go.microsoft.com/fwlink/?linkid=42418&clcid=0x409)
+
+
+
+
+ 
+
+
+
+
+如果此前安装了.net framework 2.0 beta 2的前面的版本，需要彻底删除，才能安装beta2。
+
+
+
+
+可以用工具来卸载：vs2005_beta_cleanup_tool.exe 
+
+
+
+
+可以找我要。

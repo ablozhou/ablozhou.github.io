@@ -1,0 +1,286 @@
+---
+author: abloz
+comments: true
+date: 2005-07-18 06:26:04+00:00
+layout: post
+link: http://abloz.com/index.php/2005/07/18/e5-ae-9a-e4-b9-89-e7-8a-b6-e6-80-81-e6-9c-ba/
+slug: e5-ae-9a-e4-b9-89-e7-8a-b6-e6-80-81-e6-9c-ba
+title: 定义状态机
+wordpress_id: 486
+categories:
+- 技术
+---
+
+ 
+
+
+
+
+
+**** 
+
+
+
+
+****
+
+
+
+
+enum {
+
+
+
+
+state1 
+
+＝ 0, 
+
+
+
+
+         state2,
+
+
+
+
+state_num 
+
+
+
+
+}; 
+
+
+
+
+enum {
+
+
+
+
+event1 
+
+＝ 0,
+
+
+         event2, 
+
+
+
+
+event_num 
+
+
+
+
+}; 
+
+
+
+
+ 
+
+
+
+
+typedef void (* pFunction)(void* param);
+
+
+
+
+struct FSM
+
+
+
+
+{
+
+
+
+
+     pFunction function1;
+
+
+
+
+     pFunction function2;
+
+
+
+
+};
+
+
+
+
+ 
+
+
+
+
+void MyFunction1(void* p1)
+
+
+
+
+{
+
+
+
+
+  //xxx
+
+
+
+
+};
+
+
+
+
+ 
+
+
+
+
+void MyFunction2(void* p2)
+
+
+
+
+{
+
+
+
+
+ //xxx
+
+
+
+
+}
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+FSM state_machine[state_num][event_num] =
+
+
+
+
+{
+
+
+
+
+           {//上一个状态0
+
+
+
+
+               {event1,MyFunction1,NULL} ,
+
+
+
+
+               {event2,NULL,NULL}
+
+
+
+
+            } ,
+
+
+
+
+                        
+
+
+
+
+            {//上一个状态1
+
+
+               {event1,MyFunction1,NULL} ,
+
+
+
+
+               {event2,NULL,MyFunction2}
+
+
+
+
+            } 
+
+
+
+
+                      
+
+
+
+
+};
+
+
+
+
+ 
+
+
+
+
+void state_function(int iOldStateNum,int iEventNum)
+
+
+
+
+{
+
+
+
+
+      FSM fsm = state_machine[iOldStateNum][iEventNum];
+
+
+
+
+      if(NULL != fsm->function1)
+
+
+
+
+     {
+
+
+
+
+           fsm->function1();
+
+
+
+
+     }
+
+
+
+
+}
+
+
+

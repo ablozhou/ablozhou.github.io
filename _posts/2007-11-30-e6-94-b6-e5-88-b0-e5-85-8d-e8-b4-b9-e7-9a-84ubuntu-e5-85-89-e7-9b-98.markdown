@@ -1,0 +1,16 @@
+---
+author: abloz
+comments: true
+date: 2007-11-30 08:44:12+00:00
+layout: post
+link: http://abloz.com/index.php/2007/11/30/e6-94-b6-e5-88-b0-e5-85-8d-e8-b4-b9-e7-9a-84ubuntu-e5-85-89-e7-9b-98/
+slug: e6-94-b6-e5-88-b0-e5-85-8d-e8-b4-b9-e7-9a-84ubuntu-e5-85-89-e7-9b-98
+title: 收到免费的ubuntu光盘
+wordpress_id: 89
+categories:
+- 文艺
+---
+
+半个月前在ubuntu的网站上申请了ubuntu免费光盘，今天收到了一个小小的邮包。打开后是一张原版的ubuntu的安装光盘。以前曾用过ubuntu 6.10, 感觉非常好用。除了一些软件和windows不通用，和windows使用体验没有太大差别。
+
+这次收到的光盘是ubuntu 7.10，包装不豪华但很精美。上面还用英语写着“Pass it on！”。感谢Canonical公司。其创始人Mark Shuttleworth是一个完美的理想主义者。所以才会承诺ubuntu永远免费，包括企业应用。而ubuntu也的确是一个非常优秀的发行版。

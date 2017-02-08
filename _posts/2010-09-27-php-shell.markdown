@@ -1,0 +1,88 @@
+---
+author: abloz
+comments: true
+date: 2010-09-27 09:24:16+00:00
+layout: post
+link: http://abloz.com/index.php/2010/09/27/php-shell/
+slug: php-shell
+title: php的shell
+wordpress_id: 436
+categories:
+- 技术
+tags:
+- php
+- shell
+---
+
+周海汉 2010.9.27
+其实php也有和python差不多的shell，可以直接测试代码。
+
+**进入shell**
+
+
+
+```
+
+zhouhh@zhh64:~$ php -a
+Interactive shell
+
+php >
+
+```
+
+
+php语法与c语言很像。但其变量前面都用$标注，习惯写C语言的很容易在此出错。另外字符串连接用的是“.”
+
+
+**计算1+1**
+
+
+
+
+```
+php > 1+1
+php >
+```
+
+直接写1+1没有任何反应。
+
+
+
+```
+php > echo 1+1
+php >
+```
+
+
+echo还是没有任何反应。
+
+
+
+
+```
+php > echo 1+1;
+2
+```
+
+
+但加上分号则会得出结果或提示错误。
+
+**循环打印：**
+
+
+
+```
+
+php > $a = array("a","b","c");
+php > foreach ( $a as $value )
+php > {
+php { print "value is " . $value . "n";
+php { }
+value is a
+value is b
+value is c
+
+```
+
+显得有些乱。有些是输入的，有些是shell自动打印的。
+

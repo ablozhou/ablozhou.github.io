@@ -1,0 +1,376 @@
+---
+author: abloz
+comments: true
+date: 2009-02-08 15:35:32+00:00
+layout: post
+link: http://abloz.com/index.php/2009/02/08/e9-ab-98-e6-b8-85-e6-92-ad-e6-94-be-e6-9c-ba-e5-8f-af-e8-83-bd-e7-9a-84-e9-85-8d-e7-bd-ae/
+slug: e9-ab-98-e6-b8-85-e6-92-ad-e6-94-be-e6-9c-ba-e5-8f-af-e8-83-bd-e7-9a-84-e9-85-8d-e7-bd-ae
+title: 高清播放机可能的配置
+wordpress_id: 808
+categories:
+- 社会评论
+---
+
+周海汉 2009.2.8
+
+
+
+新买了一台DVD播放机，给孩子放点教育片。岳父到这边来过春节，买了几张盗版DVD碟，结果发现现在市面上的DVD碟都不能播放或播放有问题。原来，现在市面比较流行的都是DVD9格式了，不再是几年前的DVD5了。一张DVD9碟压了10个DVD5质量的电影。唉，落伍了。
+
+
+
+原来DVD从容量上可区分为以下几种： DVD5、_DVD9_、DVD10和DVD18，其容量分别为4.7G、8.5G、9.4G和17G 。DVD5是单碟单层SS-SL或Single Side Single Layer，4.7G容量，就是普通的DVD容量。DVD9是单碟双层，8.5G容量。一般光驱和刻录机如果支持双层，会有DVD+R DL（double layer）,DVD-R DL, DVD+RW DL , DVD-RW DL之类的标示。
+
+
+
+ 
+
+
+如果现在要布置家庭影院，影碟机都要支持什么格式和接口才不会落伍呢？
+
+
+
+ 
+
+
+ 
+
+
+
+<table cellpadding="0" border="1" style="border-right:medium none;border-top:medium none;border-left:medium none;border-bottom:medium none;border-collapse:collapse;" cellspacing="0" >
+
+<tbody >
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:windowtext 1pt solid;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+存储介质
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:windowtext 1pt solid;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+首先，光盘介质肯定要支持DVD9，如果支持DVD10，DVD18也欢迎。支持蓝光DVD(blue-ray)和HD-DVD。另外需要支持300G以上大容量移动硬盘。具有USB 2.0接口，最好2个以上。同时最好影碟机也能当移动硬盘使用。硬盘要便于安装和取出。
+
+
+
+ 
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+输出分辨率
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+D5 1920×1080 1080P  16：9， D4 1280×720 720P，逐行/60Hz、D3 1920×1080 1080I 隔行/60Hz
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+在视频文件格式
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+双制式纯影院逐行扫描（PAL/NTSC）
+
+
+
+支持TS、MKV、RM/RMVB、TP、AVI、M2TS、VOB、DAT、MPG、MPEG、MOV  
+
+支持H.264、MPEG1/2/4、DIVX、XVID等全高清格式解码  
+
+支持RM/RMVB的720P的高清格式
+
+
+
+高清格式:MPEG2-HD :.mpg,.tp,.ts,.avi,.mkv  
+
+WMV-HD/VC-I: .wmv,.evo,.ts,.avi,.mkv  
+H.264(Mpeg4-AVC) :.mov,.m2ts,.mp4,.ts,.avi,.mkv  
+MPEG4(DivX-HD,Xvid-HD)---.avi,.mkv  
+标清格式: MPEG-1/2/4 -.mpg,.mpeg,.mp4,.m4p,.m2t,.m2p,.m1v,.m2v,.m4v,.trp,.dat  
+
+MPEG2:DVD .iso,.ifo,.vob  
+MPEG4:DivX&XviD -.avi,.mkv  
+WMV -.wmv,.asf 
+
+
+AVI, XVID, WMV9(MP@HL), H.264, AVC(HD) , VC-1(MP@HL, AP@L3) 
+
+
+
+蓝光的所有高清视频格式（H.264/Mpeg2），HD-DVD的高清视频格式（VC1）
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+音频支持
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+支持MP3、WMA格式  
+
+支持BTSC/A2/EIA-J解调  
+
+支持MPEG-1、MPEG-2(Layer I/II)、AAC、HE-AAC
+
+
+
+SACD（即Super Audio CD，超级CD）
+
+
+
+DVD-AUDIO
+
+
+虚拟环绕支持
+
+
+
+DTS 5.1和立体声输出（Digital Theatre System）
+
+
+
+杜比公司的杜比数码（AC-3）
+
+
+
+DTS-HD，Dolby TrueHD
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+画面浏览
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+支持JPEG、BMP、PNG、GIF
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+其它功能
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+中文文件浏览和播放   
+
+移动硬盘上文件的删除和拷贝
+
+
+
+支持WIFI功能
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+语言
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+简体中文、繁体中文和英文，UTF8和GB18030
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+字幕
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+支持各种外挂字幕, 支持多字幕, 多音轨切换，支持中文UTF8和GB18030字幕
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+视频接口
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+分量(Y Pb Pr)信号输出接口（隔行）  
+
+HDMI接口，最好支持HDMI 1.3版  
+
+同轴数码输出  
+光纤数码输出
+
+
+
+VGA（可转色差分量）  
+
+Composite (AV端子)  
+S-Video (S色差端子)
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+音频接口
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+支持数字音频同轴5.1声道输出
+
+
+
+数字光纤5.1声道(SPDIF: Sony/Philips Digital InterFace索尼和飞利浦数字接口)
+
+
+
+杜比立体双声道
+
+
+
+模拟立体声音频信号输出  
+
+WAV,MP3/MP2/MPA,ACC,WMA,OGG,RPCM
+
+
+AAC, AC3, DTS
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+其他接口
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+USB2.0  host接口2个，并有USB 2.0 device接口和能力。  
+
+SD/MMC/MS/XD接口
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+电源需求
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+110 V-240 V, 50/60 Hz
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+文件系统格式
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+NTFS, FAT32 ,EXT3系统文件
+
+<tr >
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:windowtext 1pt solid;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+字幕格式
+
+
+<td width="284" style="border-right:windowtext 1pt solid;border-top:#ece9d8;border-left:#ece9d8;width:213.05pt;border-bottom:windowtext 1pt solid;background-color:transparent;padding:0 5.4pt;" valign="top" >
+
+
+
+文字:SRT,SSA
+
+
+</td>
+
+</td></tr>
+</td></tr>
+
+</td>
+
+</td></tr>
+
+</td>
+
+</td>
+
+</td>
+
+</td></tr>
+
+</tr>
+
+</td></tr>
+
+</td>
+</td></tr>
+
+</td>
+
+</tr>
+
+</tbody></table>
+

@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2006-02-19 16:23:07+00:00
+layout: post
+link: http://abloz.com/index.php/2006/02/19/e5-a4-a9-e5-a0-82-e5-bf-ab-e9-80-92-e5-85-ac-e5-8f-b8/
+slug: e5-a4-a9-e5-a0-82-e5-bf-ab-e9-80-92-e5-85-ac-e5-8f-b8
+title: 天堂快递公司
+wordpress_id: 602
+categories:
+- 文艺
+---
+
+

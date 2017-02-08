@@ -1,0 +1,54 @@
+---
+author: abloz
+comments: true
+date: 2006-07-12 07:10:59+00:00
+layout: post
+link: http://abloz.com/index.php/2006/07/12/e4-bb-80-e4-b9-88-e6-98-afsns-ef-bc-9f/
+slug: e4-bb-80-e4-b9-88-e6-98-afsns-ef-bc-9f
+title: 什么是SNS？
+wordpress_id: 686
+categories:
+- 技术
+---
+
+在天极看到一篇《[什么是SNS](http://homepage.yesky.com/387/2295887.shtml)》的文章，说的天花乱坠。感觉SNS就是上帝，无所不能了。看完了，还是不明白SNS是什么，与P2P技术有何区别和联系？因此写这篇文章的人适合去写幻想小说，不是一个搞研究的态度。
+
+
+
+
+ 
+
+
+
+
+大部分的文章介绍SNS，都没说SNS语出何处。原来它是Social Networking Service的缩写，就是社会化网络。这应该就是一个概念吧？
+
+
+
+
+ 
+
+
+
+
+有人说google的orkut，[http://www.orkut.com/](http://www.orkut.com/)，微软的wallop，[http://www.wallop.com](http://www.wallop.com)，据说推出基于flash的SNS网络。还有yahoo 360度，[http://360.yahoo.com](http://360.yahoo.com)都是SNS，及日本现在很火的mixi [http://mixi.jp](http://mixi.jp)，还有运行了几年的uuzone等。
+
+
+
+
+ 
+
+
+
+
+如果按SNS字面的意思，应该是社会网络服务，传统的理解应该是基于美国的尔格伦（Stanley Milgram）的所谓的六度理论（Six Degrees of Separation），即世界上任何两个人之间可以通过六个熟人认识。 如果没有技术上的创新，但是社会网络的管理，我想远远达不到那位在天极上描述《什么是SNS》的美好远景的。
+
+
+
+
+ 
+
+
+
+
+基于P2P技术可能达到这么一种激动人心的状况，但还没有看到杀手级的应用和平台出现。skype虽然做的不错，但它还只是在语音方面表现突出。而对于知识管理，关系管理，基本是弱智和空白阶段。而且它的方向也不在这方面。

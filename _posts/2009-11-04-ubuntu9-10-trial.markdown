@@ -1,0 +1,198 @@
+---
+author: abloz
+comments: true
+date: 2009-11-04 06:45:00+00:00
+layout: post
+link: http://abloz.com/index.php/2009/11/04/ubuntu9-10-trial/
+slug: ubuntu9-10-trial
+title: ubuntu9.10 试用
+wordpress_id: 937
+categories:
+- 技术
+---
+
+周海汉 /文  
+ablozhou # gmail.com  
+2009.11.4 雪后初晴  
+  
+ubuntu 9.10  号称可以叫板windows7，功能方面相当强悍。比如可能引起下一波屏幕手写浪潮的多点触摸，ubuntu9.10也同样具有，而且还有ubuntu  one云计算2G 免费空间。 至于3D桌面等炫酷功能，也是更早版本就已经带了。不过由于本人电脑一直比较破，还没有试用过这些功能。  
+  
+在参加linux 内核大会时，坐旁边的是canonical上海公司的员工，看到他把苹果笔记本装了ubuntu 9.10 beta版，很是羡慕。因此一直翘首等待9.10正式版发行。  
+  
+-------------------------------  
+1. 下载ubuntu9.10和在windows下安装  
+-------------------------------  
+在ubuntu 刚刚发布当天，我就下载来最新官方正式版。
+
+ 
+
+国内下载比较快的地址是sohu和163的镜像，推荐一下。
+
+[http://mirrors.sohu.com/ubuntu-releases/karmic/](http://mirrors.sohu.com/ubuntu-releases/karmic/)
+
+[http://mirrors.163.com/ubuntu-releases/9.10/](http://mirrors.163.com/ubuntu-releases/9.10/)
+
+ 
+
+但ubuntu.com网站上并没有列举国内的镜像。
+
+ 
+
+下载完毕，可以用ultraiso 虚拟到光驱，如下图：
+
+![iso](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091106/iso.PNG)
+
+ 
+
+虚拟光驱完成后点开相应的盘，看到一个wubi.exe，双击看到安装提示界面：
+
+![wubi.exe](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091106/wubi.PNG)
+
+该版本非常人性化。可以用虚拟光驱在windows下面安装，并可以选择liveCD 方式进入再全面安装，也可以直接安装在windows分区。我选择后一种方式，提示是硬盘访问会稍微慢一点。但实际上感觉不到。
+
+  
+  
+点了"在windows中安装"后，奇怪的是语言包里各种语言都有，包括Japanese，居然没有Chinese的选项，只好选English(US)，挺郁闷的。如下图，一共提供了110多种语言选项，居然没有中文，害得我反复寻找，以为自己看花眼了。
+
+用English(US)选项安装，不仅安装过程是英文的，安装完毕的系统也是英文的，没有切换为中文的选项。必须手动从网上下中文语言包。  
+![language](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091106/ub.PNG)   
+系统解压，重新启动，会看到启动菜单里除了原来windows的选项，还有一个ubuntu的选项，选择该选项。系统自动安装，非常简单，没有指定安装任何驱动，即全部支持，包括网卡和声卡显卡。大概10多分钟就装完了。重启。  
+  
+------------------  
+2.缺省安装没有中文支持  
+------------------  
+进入后，全是英文界面，当然也不会有中文输入法。在System的Preferences(首选项)的Network Connections(网络链接)里，不是dhcp, 配好wired/wireless的 IP 和DNS ,即可上网，可以浏览中文网页。  
+![eng](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091107/Screenshot.png)   
+进入System->administrator->Language support, 里面可选的语言也只有English，没有中文。  
+  
+-------------  
+3.配置大陆更新源  
+-------------  
+先配一下大陆的下载源。可以将sohu和163的作为主要的。  
+  
+cd /etc/apt  
+sudo cp sources.list sources.list.bk  
+sudo gedit /etc/apt/sources.list  
+  
+将原来的us源清空，配置sources.list如下：  
+
+
+[view plain](http://blog.csdn.net/ablo_zhou/archive/2009/11/04/4767824.aspx#)[copy to clipboard](http://blog.csdn.net/ablo_zhou/archive/2009/11/04/4767824.aspx#)[print](http://blog.csdn.net/ablo_zhou/archive/2009/11/04/4767824.aspx#)[?](http://blog.csdn.net/ablo_zhou/archive/2009/11/04/4767824.aspx#)
+
+  1. #搜狐Ubuntu 9.10更新源
+  2. # Ping平均时长：40ms
+  3. deb http://mirrors.sohu.com/ubuntu/ karmic main restricted
+  4. deb-src http://mirrors.sohu.com/ubuntu/ karmic main restricted
+  5. deb http://mirrors.sohu.com/ubuntu/ karmic-updates main restricted
+  6. deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates main restricted
+  7. deb http://mirrors.sohu.com/ubuntu/ karmic universe
+  8. deb-src http://mirrors.sohu.com/ubuntu/ karmic universe
+  9. deb http://mirrors.sohu.com/ubuntu/ karmic-updates universe
+  10. deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates universe
+  11. deb http://mirrors.sohu.com/ubuntu/ karmic multiverse
+  12. deb-src http://mirrors.sohu.com/ubuntu/ karmic multiverse
+  13. deb http://mirrors.sohu.com/ubuntu/ karmic-updates multiverse
+  14. deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates multiverse
+  15. # 网易163 Ubuntu 9.10更新源
+  16. # Ping平均时长：60ms
+  17. deb http://mirrors.163.com/ubuntu/ karmic main restricted universe multiverse
+  18. deb http://mirrors.163.com/ubuntu/ karmic-security main restricted universe multiverse
+  19. deb http://mirrors.163.com/ubuntu/ karmic-updates main restricted universe multiverse
+  20. deb http://mirrors.163.com/ubuntu/ karmic-proposed main restricted universe multiverse
+  21. deb http://mirrors.163.com/ubuntu/ karmic-backports main restricted universe multiverse
+  22. deb-src http://mirrors.163.com/ubuntu/ karmic main restricted universe multiverse
+  23. deb-src http://mirrors.163.com/ubuntu/ karmic-security main restricted&n;
+bsp;universe multiverse
+  24. deb-src http://mirrors.163.com/ubuntu/ karmic-updates main restricted universe multiverse
+  25. deb-src http://mirrors.163.com/ubuntu/ karmic-proposed main restricted universe multiverse
+  26. deb-src http://mirrors.163.com/ubuntu/ karmic-backports main restricted universe multiverse
+
+#搜狐Ubuntu 9.10更新源 #      Ping平均时长：40ms deb http://mirrors.sohu.com/ubuntu/ karmic main restricted deb-src http://mirrors.sohu.com/ubuntu/ karmic main restricted deb http://mirrors.sohu.com/ubuntu/ karmic-updates main restricted deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates main restricted deb http://mirrors.sohu.com/ubuntu/ karmic universe deb-src http://mirrors.sohu.com/ubuntu/ karmic universe deb http://mirrors.sohu.com/ubuntu/ karmic-updates universe deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates universe deb http://mirrors.sohu.com/ubuntu/ karmic multiverse deb-src http://mirrors.sohu.com/ubuntu/ karmic multiverse deb http://mirrors.sohu.com/ubuntu/ karmic-updates multiverse deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates multiverse #      网易163 Ubuntu 9.10更新源 #      Ping平均时长：60ms deb http://mirrors.163.com/ubuntu/ karmic main restricted universe multiverse deb http://mirrors.163.com/ubuntu/ karmic-security main restricted universe multiverse deb http://mirrors.163.com/ubuntu/ karmic-updates main restricted universe multiverse deb http://mirrors.163.com/ubuntu/ karmic-proposed main restricted universe multiverse deb http://mirrors.163.com/ubuntu/ karmic-backports main restricted universe multiverse deb-src http://mirrors.163.com/ubuntu/ karmic main restricted universe multiverse deb-src http://mirrors.163.com/ubuntu/ karmic-security main restricted universe multiverse deb-src http://mirrors.163.com/ubuntu/ karmic-updates main restricted universe multiverse deb-src http://mirrors.163.com/ubuntu/ karmic-proposed main restricted universe multiverse deb-src http://mirrors.163.com/ubuntu/ karmic-backports main restricted universe multiverse    
+保存。  
+  
+sudo apt-get update更新源。  
+  
+----------------  
+4.解决中文界面问题  
+----------------  
+然后，进入System->administration->Language Support  
+Install/Remove Languages,安装语言，选Chinese simplified.装完注销，选界面语言为中文简体，进入即看到了熟悉的中文界面。  
+  
+系统会提示是否将此前缺省的英文目录改为相应的中文目录，我选择了否。  
+  
+系统会自动安装huang peng的基于python的 ibus中文输入法，而不是苏哲的scim。我第一次用该输入法。本文也是ibus输入法输入的，非常好用。ibus输入法源码地址：http://code.google.com/p/ibus/ 。  
+ibus输入法支持多种双拼方案，但双拼全拼不能同时支持，这是和搜狗拼音不一样的地方，也不太习惯。我用自然码输入本文时，碰到“安”字，不知如何输 入。偶然发现是字母“o”可以作为元音开头，终于解决了这一问题。使用中又碰到输入法的面板突然变成了竖排，非常不习惯，后面发现可以在“系 统”->"首选项"->"ibus"里面选候选表是横排还是竖排。  
+  
+系统自带的软件也相当好用。openoffice 3.1功能强大，支持ms office 2007的格式。自带字典软件不是胡正写的stardict，功能没有胡正的强大。  
+  
+-----------------  
+5.解决即时通讯客户端  
+-----------------  
+  
+empathy是一款IM 客户端软件，支持windows live，gtalk，jabber,yahoo,icq，irc等多种服务协议，甚至还支持QQ，不过我试用QQ 登录失败，用windows live(msn)成功。  
+  
+qq deb包下载： 
+
+  
+http://im.qq.com/qq/linux/download.shtml
+
+http://softdl1.tech.qq.com/soft/21/linuxqq_v1.0.2-beta1_i386.zip  
+http://ppa.launchpad.net/portis25/ppa/ubuntu/pool/main/l/linuxqq/  
+  
+下载完毕双击即可安装，试用登录OK。  
+  
+--------------  
+6.ubuntu one试用  
+--------------  
+在 应用程序->internet->ubuntu one  
+进入了https://login.launchpad.net/+openid  
+如有launchpad.net的用户，可以直接登录，没有则需要注册。  
+登入后，提示是否将本计算机加入 ubuntu one帐号，我将计算机改名为zhouhh,点"Subscribe and Add This Computer"  
+  
+进入https://one.ubuntu.com/  
+有files,notes,contacts,account四个标签页。但系统提示客户端比较新，因而不支持，说正在更新服务端，不日可用。  
+在files下可以创建目录，上传文件时报  
+Service Temporarily Unavailable  
+错误。  
+notes 里添加了一份备忘，但不支持中文，保存后会将中文直接抹去。下面是用Alt+print screen键直接抓的图。  
+![ubuntu one](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091104/%20New%20-%20Mozilla%20Firefox.png)
+
+  
+设置完，在 位置->ubuntu one 可以打开一个窗口，该窗口里面的文件应该可以和网上保持同步。由于我的系统总报兼容性问题，所以没有自动同步成功。
+
+ 
+
+--------------  
+7.音乐和电影播放  
+--------------  
+由于自由软件的版权问题，linux发行版一般不分发私有版权和版权或法律受限的软件，因此播放音乐和看电影经常不是自带的功能。  
+缺省的ubuntu 9.10也有同样的问题。  
+为来测试，本人下载了 “陶喆 蔡依林”的 “今天你要嫁给我.mp3"。但双击播放时，movie  player提示不能播放，需要下载插件。同意后，自动下载了具有不同版权协议的gstream 3个插件。重启后即可播放  mp3音乐了。但mplayer的播放列表中的中文歌名却变成了乱码了。但通过菜单打开乱码又变正常。而拖动时间条，会导致屏幕影像停滞不动。下载插件后 同时对wma格式也支持。  
+播放mts高清视频，同样自动下载gstreamer0.10-plugins-bad后可以播放，但停顿严重，并且有很严重锯齿。  
+  
+7.1 解决播放网络在线视频和flash的问题  
+firexfox3.5自动下载flash 播放器，可以下载adobe或gnu或gnome的，都可以。下载完后重启firefox，即可播放flash。测试http://v.youku.com/上的视频OK。  
+  
+--------------------  
+8. 解决sudo输密码的问题  
+--------------------  
+zhouhh@ubuntu:~$ sudo visudo  
+找到  
+root ALL=(ALL) ALL  
+依样画葫芦，在下面添加一行  
+zhouhh ALL=(ALL) ALL  
+其中zhouhh是我的用户名。
+
+ 
+
+%sudo ALL=NOPASSWD: ALL
+
+ 
+
+至此，体验了一下最新版的ubuntu9.10, 除了中文问题以及没有单独的中文发行版，其余都很满意。使用起来和windows一样，没有什么障碍。
+
+  
+  
+
+
+![](http://img.zemanta.com/pixy.gif?x-id=424e9c26-c088-8d24-a285-c980f025f580)

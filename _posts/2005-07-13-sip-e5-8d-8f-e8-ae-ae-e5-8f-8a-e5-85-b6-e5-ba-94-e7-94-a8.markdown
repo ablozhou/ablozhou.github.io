@@ -1,0 +1,243 @@
+---
+author: abloz
+comments: true
+date: 2005-07-13 02:46:07+00:00
+layout: post
+link: http://abloz.com/index.php/2005/07/13/sip-e5-8d-8f-e8-ae-ae-e5-8f-8a-e5-85-b6-e5-ba-94-e7-94-a8/
+slug: sip-e5-8d-8f-e8-ae-ae-e5-8f-8a-e5-85-b6-e5-ba-94-e7-94-a8
+title: SIP 协议及其应用
+wordpress_id: 482
+categories:
+- 技术
+---
+
+1。NGN以开放性，分布性，综合性为主要特征。NGN通过业务和呼叫控制分离，呼叫控制和承载网络分离来实现相对独立的业务体系。
+
+
+
+
+ 
+
+
+
+
+  
+
+
+
+
+
+•**Centrex Style Features **
+
+
+
+
+
+
+
+
+
+
+**Call Waiting / Multiple Calls RFC 3261 **
+
+
+
+
+**Hold RFC 3264 **
+
+
+
+
+**Transfer RFC 3515 / Replaces **
+
+
+
+
+**Conference RFC 3261 / RFC 3840 **
+
+
+
+
+**Message Waiting RFC 3842 **
+
+
+
+
+**Call Forward RFC 3261 **
+
+
+
+
+**Park RFC 3515 / Replaces **
+
+
+
+
+**Pickup Replaces **
+
+
+
+
+**Do Not Disturb RFC 3261 **
+
+
+
+
+•
+
+**Call Coverage ****RFC 3261**
+
+
+
+
+ 
+
+
+
+
+
+•**Boss/Admin Features **
+
+
+
+
+**Simultaneous Ringing RFC 3261 **
+
+
+
+
+**Basic Shared Lines Dialog pkg (stable) / RFC ****3680 **
+
+
+
+
+**Barge-In Join (ready) **
+
+
+
+
+**“Take” Replaces (ready) **
+
+
+
+
+**Shared-Line “Privacy” Dialog pkg **
+
+
+
+
+**Divert to Admin RFC 3261 **
+
+
+
+
+**Intercom URI convention **
+
+
+
+
+•**Attendant Services **
+
+
+
+
+**Auto-attendant RFC 3261 / RFC 2833 **
+
+
+
+
+**Attendant Console Dialog pkg **
+
+
+
+
+**Night Service RFC 3261**** **
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+**NAT/FW Traversal**
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+•**SIP **
+
+
+
+
+**Symmetric Response—RFC 3581 **
+
+
+
+
+**Connection Reuse—SIP WG ID **
+
+
+
+
+**Session Policy—Requirements done **
+
+
+
+
+**Globally Routable URIs—IESG Review **
+
+
+
+
+•**Media **
+
+
+
+
+**STUN—RFC 3489 **
+
+
+
+
+**TURN—Individual ID **
+
+
+
+
+**Protocol-specific Relays **
+
+
+
+
+**ICE—to become an MMUSIC WG ID **
+
+
+
+
+**B2BUAs with Media **
+
+
+
+
+•**Putting it all together **
+
+
+
+
+**NAT scenarios—SIPPING WG ID**

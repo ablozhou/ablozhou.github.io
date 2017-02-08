@@ -1,0 +1,21 @@
+---
+author: abloz
+comments: true
+date: 2007-08-03 08:35:02+00:00
+layout: post
+link: http://abloz.com/index.php/2007/08/03/e5-8f-8d-e5-b0-81-e9-94-81-e4-bb-a3-e7-90-86/
+slug: e5-8f-8d-e5-b0-81-e9-94-81-e4-bb-a3-e7-90-86
+title: 反封锁代理
+wordpress_id: 748
+categories:
+- 技术
+---
+
+http://proxy.myjpg.org 可以上维基百科中文版，新语丝等被封网站。  
+http://proxy.myjpg.org/google.php 可以通过代理访问google，查看google网页快照  
+  
+利用ssh 通道通过国外代理加密访问被GFW封锁的网站  
+http://www.chedong.com/blog/archives/001246.html  
+http://www.oaclub.com/2006/11/22/ssh-tunnel%E4%B9%8Bgfw%E6%95%B4%E4%BD%93%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/  
+  
+

@@ -1,0 +1,226 @@
+---
+author: abloz
+comments: true
+date: 2005-09-27 06:31:19+00:00
+layout: post
+link: http://abloz.com/index.php/2005/09/27/msn-space-e7-ae-80-e6-98-8e-e6-95-99-e7-a8-8b/
+slug: msn-space-e7-ae-80-e6-98-8e-e6-95-99-e7-a8-8b
+title: msn space简明教程
+wordpress_id: 517
+categories:
+- 技术
+---
+
+
+<table width="100%" border="0" cellspacing="0" >
+<tbody >
+<tr >
+
+<td >MSN 推出新模块！！！
+</td></tr>
+<tr >
+
+<td >
+</td></tr>
+<tr >
+
+<td >
+
+
+Rover of Windsor － 流浪者：[http://spaces.msn.com/members/wanganqi](http://spaces.msn.com/members/wanganqi)
+
+
+
+
+
+
+
+* * *
+
+
+
+
+
+
+
+这次一共推出了3个模块，“Media Player”，“自定义Html模块，“Msn Space 界面设定”。
+
+
+
+
+ 
+
+
+
+
+使用方法如下：
+
+
+
+
+ 
+
+
+
+
+1、在编辑状态下，在地址栏上显示的地址后添加以下代码后回车
+
+
+
+```
+
+
+
+&powertoy=musicvideo           //Media Player
+
+
+
+
+&powertoy=sandbox              //自定义Html模块
+
+
+
+
+&powertoy=tweakomatic       //Msn界面设定
+
+
+```
+
+
+
+注意，每次添加一项，把他们加在地址栏上显示的地址后回车。
+
+
+
+
+2、到自定义选项下的模块里选择该模块（一般在最下面）添加后，保存。
+
+
+
+
+3、对该新添加的模块进行参数设置。（详解如下） 
+
+
+
+
+ －－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+
+
+
+Media Player这个模块的用法参数设置
+
+
+
+```
+
+
+
+URL                         你要播放的视频或音乐的Url地址
+
+
+
+
+Postion in sec           设置开始播放的位置（秒）
+
+
+
+
+Time to play             设置播放次数
+
+
+
+
+Rate to play             设置播放速度
+
+
+
+
+Auto start                设置是否自动播放
+
+
+
+
+Display mode            播放形式
+
+
+
+
+Right Click Menus      设置是否允许右键菜单
+
+
+```
+
+
+
+ －－[进入详细教程](http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!1195.entry)－－
+
+
+
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+
+
+
+新的自定义Html模块实现置顶日志
+
+
+
+
+ 这就不用说了， 加上自己的代码就好了，可以先用微软的编辑器编辑下：
+
+
+
+
+[http://spaces.msn.com/RteCode.aspx?mkt=zh-hk](http://spaces.msn.com/RteCode.aspx?mkt=zh-hk)
+
+
+
+
+ 
+
+
+
+
+－－[进入详细教程](http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!1194.entry)－－
+
+
+
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+
+
+
+MSN 界面设定
+
+
+
+
+主要是要熟悉颜色代码，这里有提供详细的颜色代码如下：（或一个有趣的颜色代码页）
+
+
+
+
+[http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!155.entry](http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!155.entry)
+
+
+
+
+ 
+
+
+－－[进入详细教程](http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!1193.entry)－－  
+
+</td></tr></tbody></table>[http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!1168.entry](http://spaces.msn.com/members/wanganqi/Blog/cns!1pJ1K_K4vT2HZW460c2pa0ag!1168.entry)
+
+
+
+
+ 
+
+
+
+
+ 

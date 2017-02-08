@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2007-12-31 03:33:33+00:00
+layout: post
+link: http://abloz.com/index.php/2007/12/31/e7-a1-ac-e7-9b-98dv-e6-91-84-e5-83-8f-e6-9c-ba-e5-9c-a8-e7-94-b5-e8-84-91-e4-b8-8a-e6-92-ad-e6-94-be-e7-9a-84-e9-87-8d-e5-bd-b1-e5-92-8c-e6-af-9b-e8-be-b9-e7-8e-b0-e8-b1-a1/
+slug: e7-a1-ac-e7-9b-98dv-e6-91-84-e5-83-8f-e6-9c-ba-e5-9c-a8-e7-94-b5-e8-84-91-e4-b8-8a-e6-92-ad-e6-94-be-e7-9a-84-e9-87-8d-e5-bd-b1-e5-92-8c-e6-af-9b-e8-be-b9-e7-8e-b0-e8-b1-a1
+title: 硬盘DV摄像机在电脑上播放的重影和毛边现象
+wordpress_id: 71
+categories:
+- 文艺
+---
+
+

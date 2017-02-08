@@ -1,0 +1,268 @@
+---
+author: abloz
+comments: true
+date: 2016-09-21 04:03:06+00:00
+layout: post
+link: http://abloz.com/index.php/2016/09/21/2750/
+slug: '2750'
+title: linux不开账号允许远程执行命令
+wordpress_id: 2750
+categories:
+- 技术
+tags:
+- key
+- linux
+---
+
+周海汉 2016.9.21
+
+
+
+
+如果允许用户可以远程执行一些linux命令，但并不希望在系统中给用户单独建立账号。而每个用户还需要隔离，需要认证是否是系统允许的合法用户。同时需要限制操作的范围和权限，限制用户远程登录，具有良好的安全性。有什么好的办法呢？
+
+
+
+
+
+
+
+下面是一种解决方案。
+
+
+
+
+
+
+
+用户端生成证书：
+
+
+
+
+➜ .ssh % ssh-keygen
+
+
+
+
+Generating public/private rsa key pair.
+
+
+
+
+Enter file in which to save the key (/Users/zhh/.ssh/id_rsa): test
+
+
+
+
+Enter passphrase (empty for no passphrase):
+
+
+
+
+Enter same passphrase again:
+
+
+
+
+Your identification has been saved in test.
+
+
+
+
+Your public key has been saved in test.pub.
+
+
+
+
+The key fingerprint is:
+
+
+
+
+2d:c4:10:61:ed:51:84:18:58:c8:72:a8:8c:cc:1c:08 zhh@zhhdeMacBook-Pro.local
+
+
+
+
+➜ .ssh % scp test.pub dutucn:~/.
+
+
+
+
+test.pub                                      100%  408     0.4KB/s   00:00
+
+
+
+
+
+
+
+服务端配置证书和可以执行的命令
+
+
+
+
+[zhouhh@dutucn ~]$ cat test.pub >> .ssh/authorized_keys
+
+
+
+
+[zhouhh@dutucn ~]$ cat mycmd.sh
+
+
+
+
+#!/bin/bash
+
+
+
+
+# author andy zhou
+
+
+
+
+# http://abloz.com
+
+
+
+
+# 2016.9.10
+
+
+
+
+
+
+
+case "$SSH_ORIGINAL_COMMAND" in
+
+
+
+
+    "ps")
+
+
+
+
+        ps -ef
+
+
+
+
+        ;;
+
+
+
+
+    "echo")
+
+
+
+
+        echo "$SSH_ORIGINAL_COMMAND">> echo.txt
+
+
+
+
+        ;;
+
+
+
+
+    "httpd stop")
+
+
+
+
+        /etc/init.d/httpd stop
+
+
+
+
+        ;;
+
+
+
+
+    "httpd start")
+
+
+
+
+        /etc/init.d/httpd start
+
+
+
+
+        ;;
+
+
+
+
+    *)
+
+
+
+
+        echo "cmd is $SSH_ORIGINAL_COMMAND"
+
+
+
+
+        echo "Only these commands are available to you:"
+
+
+
+
+        echo "ps, vmstat, echo, httpd stop, httpd start"
+
+
+
+
+        exit 1
+
+
+
+
+        ;;
+
+
+
+
+esac
+
+
+
+
+
+
+
+[zhouhh@dutucn ~]$ cat .ssh/authorized_keys
+
+
+
+
+...
+
+
+
+
+command="/home/zhouhh/mycmd.sh echo",no-port-forwarding,no-X11-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYLVw7y2DdCSaBPyC8NvsI5Rixqo5Ojv/xPyi1WvNibeMS6h8V/ndMDfXS/o/njf4POhBe5CCoFWKo/1bkwehyTFkq6xxEdxnlUySyHFdCd91iEZ9iMz/4VMEQkNVpQn/IQ5uNtpoHD/S7kFTqTux5i3nvkXvdT3CHvwNxu29Q+EjNTsa6WPmGD/oVkuCA1pLH/HfaMXfbwqIV4G8Z3R1NsecL5gr7e14soP/DxE7dRfTSUey1I8eaHhnutemuRI+LVyQ+impu3XuZJ3oZEysSAlRLg9my3eL374lI1loQdngoCfAZvJ2DkOcpB5w9yVO4zTjMzzQ3KV3p2VjfuN3 zhh@zhhdeMacBook-Pro.local
+
+
+
+
+
+
+
+这时用户就可以在远程执行相应的命令。服务端会对执行权限和范围进行检验，但并不为用户在系统开户。
+
+
+
+
+
+
+
+这可以在web系统中对用户操作进行很好的控制。目前已经在一些系统中得到应用。

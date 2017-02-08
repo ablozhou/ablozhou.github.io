@@ -1,0 +1,60 @@
+---
+author: abloz
+comments: true
+date: 2006-05-30 00:52:33+00:00
+layout: post
+link: http://abloz.com/index.php/2006/05/30/dotnet-e8-b5-84-e6-ba-90/
+slug: dotnet-e8-b5-84-e6-ba-90
+title: dotnet资源
+wordpress_id: 668
+categories:
+- 技术
+---
+
+在线Microsoft .NET 框架 SDK 快速入门教程 [_http://chs.gotdotnet.com/QuickStart_](http://chs.gotdotnet.com/quickstart)
+
+
+
+
+ 
+
+
+
+
+在线中文MSDN [http://www.microsoft.com/china/MSDN/default.asp](http://www.microsoft.com/china/MSDN/default.asp)
+
+
+
+
+在线英文MSDN [http://msdn.microsoft.com/](http://msdn.microsoft.com/)
+
+
+
+
+ 
+
+
+
+
+.NET主页[_http://www.microsoft.com/china/net_](http://www.microsoft.com/china/net)
+
+
+
+
+ 
+
+
+
+
+Visual Studio 2005 主页 [http://www.microsoft.com/china/msdn/vstudio/](http://www.microsoft.com/china/msdn/vstudio/)
+
+
+
+
+ 
+
+
+
+
+CSDN　文档 开发中心 [http://dev.csdn.net/](http://dev.csdn.net/)[__](http://www.csdn.net/develop/)  
+CSDN　论坛 技术社区 [http://community.csdn.net/](http://community.csdn.net/)

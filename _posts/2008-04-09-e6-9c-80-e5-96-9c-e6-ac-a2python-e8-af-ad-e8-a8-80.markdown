@@ -1,0 +1,78 @@
+---
+author: abloz
+comments: true
+date: 2008-04-09 09:24:11+00:00
+layout: post
+link: http://abloz.com/index.php/2008/04/09/e6-9c-80-e5-96-9c-e6-ac-a2python-e8-af-ad-e8-a8-80/
+slug: e6-9c-80-e5-96-9c-e6-ac-a2python-e8-af-ad-e8-a8-80
+title: 最喜欢python语言
+wordpress_id: 37
+categories:
+- 社会评论
+---
+
+周海汉/文
+
+python真是简单好用，而又非常强大。你可以完全不懂编程，就开始使用。python支持各种平台，包括windows，linux, Unix, Mac等流行操作系统。
+
+最简单的方式，执行python，然后用来做计算器用。
+
+<table cellpadding="2" width="400" border="1" cellspacing="0" > <tbody > <tr >
+<td width="400" valign="top" >
+
+>$ python  
+Python 2.5.2 (r252:60911, Apr  2 2008, 16:09:21)  
+[GCC 3.4.6 20060404 (Red Hat 3.4.6-3)] on linux2  
+Type "help", "copyright", "credits" or "license" for more information.  
+>>>
+
+</td></tr></tbody></table>
+
+比如算一下0x234ade的十进制是多少：
+
+<table cellpadding="2" width="400" border="1" cellspacing="0" > <tbody > <tr >
+<td width="400" valign="top" >
+
+>>> 0x234ade  
+2312926
+
+</td></tr></tbody></table>
+
+再如算一下2的32次方是多少，因为你想知道4G的具体数值：
+
+<table cellpadding="2" width="400" border="1" cellspacing="0" > <tbody > <tr >
+<td width="400" valign="top" >
+
+>>> 2**32  
+4294967296L
+
+</td></tr></tbody></table>
+
+当然，你如果想知道343456的十六进制值，也没有问题：
+
+<table cellpadding="2" width="400" border="1" cellspacing="0" > <tbody > <tr >
+<td width="400" valign="top" >
+
+>>> hex(343456)  
+'0x53da0'
+
+</td></tr></tbody></table>
+
+你想看看字母C的ASCII码值？
+
+<table cellpadding="2" width="400" border="1" cellspacing="0" > <tbody > <tr >
+<td width="400" valign="top" >
+
+>>> ord('C')  
+67
+
+</td></tr></tbody></table>
+
+真是非常实用，比用windows自带的计算器快多了，方便多了，强大多了。
+
+更进一步，想做别的语言能干的任何事，都可以用python脚本来做。它有相当丰富的外部模块可供引用。  
+在提示符下敲help()，就进入帮助模式。可以在帮助模式下敲需要帮助的关键字，或敲"modules","keywords","topics"显示可选的模块，关键字和话题列表。
+
+python支持文件读写，网络通讯，图形界面，正则表达式，面向对象编程。语法很简单，习惯后比C语言少敲很多字符。Perl语言是类C的脚本语言。据行家反映，说Perl语言不适合做比较大型的程序，而python却可以。而且python可以与C语言等编译语言结合，以提高效率。
+
+总之，接触python后，非常喜欢。它可以为我们提高很多工作效率。

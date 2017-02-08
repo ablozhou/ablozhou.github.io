@@ -1,0 +1,100 @@
+---
+author: abloz
+comments: true
+date: 2016-09-23 15:46:20+00:00
+layout: post
+link: http://abloz.com/index.php/2016/09/23/2752/
+slug: '2752'
+title: 用nodejs写简单爬虫抓取https淘宝页面
+wordpress_id: 2752
+categories:
+- 技术
+tags:
+- https
+- nodejs
+- 淘宝
+---
+
+周海汉 2016.9.23
+
+淘宝有很多反爬措施。其中https就是反爬措施之一。一般的支持http协议的爬取失效了。
+
+nodejs 是采用google V8引擎写成的javascript后台框架。自从有了nodejs，前端的开发才插上了腾飞的翅膀。由于javascript 是前端所使用最普遍的脚本，因此在用nodejs处理网页抓取时是非常方便，省力和独到的。
+
+比如我们想抓取淘宝的连衣裙的列表页。（https://s.taobao.com/list?spm=a217f.8051907.312041.2.FfgfAo&style=grid&seller_type=taobao&cps=yes&cat=51108009）
+
+先实现将页面抓下来。
+
+    
+    /*
+     * crawler.js
+     * Copyright (C) 2016 zhh <zhh@zmac.local>
+     * http://abloz.com
+     * ablo_zhou#163.com
+     * Distributed under terms of the MIT license.
+     */
+    var https = require('https')
+    var fs = require('fs')
+    var url='https://s.taobao.com/list?spm=a217f.8051907.312041.2.FfgfAo&style=grid&seller_type=taobao&cps=yes&cat=51108009';
+    
+    https.get(url, function(res) {
+        var html='';
+        res.on('data', function(data) {
+            html += data;
+        });
+        res.on('end',function() {
+            console.log(html);
+            fs.writeFile('taobao.html',html)
+        });
+    }).on('error', function() {
+        console.log('error');
+    });
+
+
+zhh@test % node crawler.js
+
+...
+
+    
+       <div class="js-disabled">
+            <div class="bg"></div>
+            <a class="logo" href="//www.taobao.com"></a>
+    
+            <p class="text">启用脚本才能显示当前页面, <a class="link"
+                                             href="//bangpai.taobao.com/group/thread/400769-7367089.htm#reply60023761"
+                                             target="_blank">点击启用</a></p>
+            <img src="/noscript.img" style="width: 0px;height: 0px;"/>
+    
+            <p class="bottom">&copy; 2003-2016 Taobao.com 版权所有</p>
+        </div>
+    </noscript>
+    
+    <!-- hello hotfix -->
+    
+    </body>
+    </html>
+    <!--<?php Yii::app()->wm->runWidget('debuginfo') ?>-->
+
+
+结果发现淘宝的页面还是php实现的，而且还用了Yii框架。
+
+zhh@test % ls
+crawler.js taobao.html
+
+taobao.html就是我们刚抓取的页面。和终端打印的内容一样。
+
+    
+    zhh@test % tail taobao.html
+    
+            <p class="bottom">&copy; 2003-2016 Taobao.com 版权所有</p>
+        </div>
+    </noscript>
+    
+    <!-- hello hotfix -->
+    
+    </body>
+    </html>
+    <!--<?php Yii::app()->wm->runWidget('debuginfo') ?>-->
+
+
+所以https抓取成功。

@@ -1,0 +1,32 @@
+---
+author: abloz
+comments: true
+date: 2005-06-06 22:15:36+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/07/asp-net-e7-bc-96-e7-a8-8b-e7-9a-84-e4-b8-80-e4-ba-9b-e7-bb-8f-e9-aa-8c/
+slug: asp-net-e7-bc-96-e7-a8-8b-e7-9a-84-e4-b8-80-e4-ba-9b-e7-bb-8f-e9-aa-8c
+title: asp.net编程的一些经验
+wordpress_id: 464
+categories:
+- 技术
+---
+
+1。DataView的用法：
+
+DataView dv = dataset.Tables[0].DefaultView;
+
+int k = 0;
+
+string currentUserID = dv[k]["UserID"].ToString();
+
+2.强制转换为整型
+
+int i = int.Parse(currentUserID );
+
+3.强制转换为string类型
+
+string strID = i.ToString();
+
+4.强制转换为其他对象
+
+DataView dv = (DataView) Cache["Users"];

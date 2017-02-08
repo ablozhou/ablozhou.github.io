@@ -1,0 +1,50 @@
+---
+author: abloz
+comments: true
+date: 2007-07-04 07:01:12+00:00
+layout: post
+link: http://abloz.com/index.php/2007/07/04/posix/
+slug: posix
+title: POSIX 最新标准下载
+wordpress_id: 226
+categories:
+- 技术
+tags:
+- posix
+---
+
+本文遵循CPL协议，可以免费自由使用，但不得去掉作者信息。
+作者: ablo
+主页：[http://blog.csdn.net/ablo_zhou](http://blog.csdn.net/ablo_zhou)
+Email:ablozhou  at gmail.com
+日期：2007.7.4 0:54
+
+很多人听说了POSIX标准，但标准具体长什么样，在哪里下载到，则 不清楚。现在我开放出来，供相关人员使用。
+
+Single UNIX Specification V3，IEEE Std 1003.1,2004 Edition
+
+标准线上地址：
+[http://www.unix.org/version3/online.html](http://www.unix.org/version3/online.html)
+注 册后可以在线阅读或者下载。
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+如不能下载，可以通过subversion，到我的hanos开源操作系 统的资料里面下载。
+地址：
+[http://gforge.osdn.net.cn/projects/hanos/](http://gforge.osdn.net.cn/projects/hanos/)
+该 项目的SVN可以通过如下指令进行匿名checke out
+svn checkout [http://gforge.osdn.net.cn/svn/hanos/reference/book/posix](http://gforge.osdn.net.cn/svn/hanos/reference/book/posix)
+
+或通过subversion客户端，在地址栏输入
+[http://gforge.osdn.net.cn/svn/hanos/reference/book/posix](http://gforge.osdn.net.cn/svn/hanos/reference/book/posix)
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+IEEE和Open Group 的POSIX认证：
+[http://www.opengroup.org/certification/idx/posix.html](http://www.opengroup.org/certification/idx/posix.html)
+
+相关页面：
+[http://www.unix.org/version3/ieee_std.html](http://www.unix.org/version3/ieee_std.html)
+
+标准说明：
+IEEE Std 1003.1,2004 Edition
+The core of the Single UNIX  Specification, Version 3 is also IEEE Std 1003.1. The latest 2004  edition incorporates IEEE Std 1003.1-2001 and two technical corrigendum.  IEEE Std 1003.1-2001 is a major revision and incorporates IEEE Std  1003.1-1990 (POSIX.1) and its subsequent amendments, and IEEE Std  1003.2-1992 (POSIX.2) and its subsequent amendments, combined with the  core volumes of the Single UNIX Specification, Version 2. It is  technically identical to The Open Group, Base Specifications, Issue 6;  they are one and the same documents, the front cover having both  designations. The final draft achieved 98% approval by the IEEE ballot  group and was officially approved by the IEEE-SA Standards Board on  December 6th 2001.
+
+During 2002, Technical Corrigendum 1 was developed. It was approved  by the IEEE-SA Standards Board on December 11th 2002. In 2004 , IEEE Std  1003.1-2001/Cor 2-2004 was approved, and IEEE Std 1003.1 is officially  designated as including IEEE Std 1003.1-2001, IEEE Std 1003.1-2001/Cor  1-2002. and IEEE Std 1003.1-2001/Cor 2-2004.

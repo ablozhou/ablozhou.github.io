@@ -1,0 +1,21 @@
+---
+author: abloz
+comments: true
+date: 2007-03-27 01:56:20+00:00
+layout: post
+link: http://abloz.com/index.php/2007/03/27/e5-b7-a6-e5-8f-b3-e4-ba-92-e6-90-8f-e7-bc-96-e7-bd-91/
+slug: e5-b7-a6-e5-8f-b3-e4-ba-92-e6-90-8f-e7-bc-96-e7-bd-91
+title: '[左右互搏] 编网'
+wordpress_id: 745
+categories:
+- 社会评论
+---
+
+  
+[http://www.programmableweb.com/](http://www.programmableweb.com/) 是一家提供各网站API的网站。例如 google earth之类的。  
+  
+  
+   
+  
+--  
+ 由  梦想家  于  3/27/2007 09:55:00 上午  在  [ 左右互搏 ](http://ablo.blogspot.com/2007/03/blog-post_27.html)  上发表 

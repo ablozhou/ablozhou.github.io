@@ -1,0 +1,39 @@
+---
+author: abloz
+comments: true
+date: 2008-12-09 10:11:18+00:00
+layout: post
+link: http://abloz.com/index.php/2008/12/09/openoffice-3-0-e4-b8-8d-e9-94-99/
+slug: openoffice-3-0-e4-b8-8d-e9-94-99
+title: OpenOffice 3.0 不错
+wordpress_id: 2162
+categories:
+- 社会评论
+---
+
+下了个中文版，用起来挺顺畅，比以前使用的感觉好很多。
+
+
+我下的是windows版本。对中文支持很不错。有点不喜欢文档缺省的边框，在工具->选项的[openoffice.org](http://openoffice.org)选项的"外观"，将"正文边界"的勾去掉，就没有那个边框了。
+
+另外，windows下界面的字符偏小，可以在"桌面"点右键，点"属性"，设置系统的"外观"，在"高级"选项里点活动窗口的菜单，将字体大小由8设为9即可。
+
+
+
+
+  
+
+
+OpenOffice是sun公司支持的开源项目，由sun的staroffice开源而成。基于java，跨平台。对微软office兼容性还不错。但它现在推的格式是所谓ODF格式，国际标准的文档格式，基于xml，并用zip压缩。而微软的格式是半开放的。
+
+  
+
+
+
+
+
+<table border="0" cellspacing="0" ><tr >
+<td >
+</td></tr><tr >
+<td valign="top" >[![](http://byfiles.storage.live.com/y1pyiGjor6ByJ7ISKNPiHL47cg50B1Xa_WMkpsBCJkExsuVK8gnzvNBI6j-oud2fFO80aofiWRLoRo)](http://byfiles.storage.live.com/y1pyiGjor6ByJ7ISKNPiHL47c2PDunZcahRKFW8Z4iYUMnEodO829GtjeSmRiDBgAMammxVS9T_CtI)
+</td></tr></table>

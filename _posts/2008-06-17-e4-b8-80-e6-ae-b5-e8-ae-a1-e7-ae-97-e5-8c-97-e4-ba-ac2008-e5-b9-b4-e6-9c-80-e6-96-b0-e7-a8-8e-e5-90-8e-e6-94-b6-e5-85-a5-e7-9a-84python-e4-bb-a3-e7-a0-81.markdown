@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2008-06-17 08:29:22+00:00
+layout: post
+link: http://abloz.com/index.php/2008/06/17/e4-b8-80-e6-ae-b5-e8-ae-a1-e7-ae-97-e5-8c-97-e4-ba-ac2008-e5-b9-b4-e6-9c-80-e6-96-b0-e7-a8-8e-e5-90-8e-e6-94-b6-e5-85-a5-e7-9a-84python-e4-bb-a3-e7-a0-81/
+slug: e4-b8-80-e6-ae-b5-e8-ae-a1-e7-ae-97-e5-8c-97-e4-ba-ac2008-e5-b9-b4-e6-9c-80-e6-96-b0-e7-a8-8e-e5-90-8e-e6-94-b6-e5-85-a5-e7-9a-84python-e4-bb-a3-e7-a0-81
+title: 一段计算北京2008年最新税后收入的python代码
+wordpress_id: 796
+categories:
+- 社会评论
+---
+
+

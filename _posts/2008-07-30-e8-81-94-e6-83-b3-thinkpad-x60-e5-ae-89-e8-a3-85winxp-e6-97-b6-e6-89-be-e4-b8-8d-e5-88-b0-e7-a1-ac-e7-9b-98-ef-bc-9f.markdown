@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2008-07-30 03:11:07+00:00
+layout: post
+link: http://abloz.com/index.php/2008/07/30/e8-81-94-e6-83-b3-thinkpad-x60-e5-ae-89-e8-a3-85winxp-e6-97-b6-e6-89-be-e4-b8-8d-e5-88-b0-e7-a1-ac-e7-9b-98-ef-bc-9f/
+slug: e8-81-94-e6-83-b3-thinkpad-x60-e5-ae-89-e8-a3-85winxp-e6-97-b6-e6-89-be-e4-b8-8d-e5-88-b0-e7-a1-ac-e7-9b-98-ef-bc-9f
+title: 联想 thinkpad x60 安装winxp时找不到硬盘？
+wordpress_id: 801
+categories:
+- 社会评论
+---
+
+朋友一台X60的笔记本，不知是何原因进不去系统了。重装每次windows xp安装程序都是开了个头检查一下，就提示找不到硬盘。但通过win98 dos进入能发现硬盘。通过pamagic也能发现。用bios的硬盘检测程序没有发现问题。但知道了硬盘型号是toshiba mk6034gsx（60G 5400r，SATA）。我怀疑是SATA硬盘的驱动问题，但朋友没有硬盘驱动光盘。后面在BIOS里面找到了一个ATA 硬盘配置，发现原来的配置是AHCI mode，还有一个选项是兼容模式。将其配成兼容模式，再安装操作系统，硬盘找到了。顺利安装完成。 

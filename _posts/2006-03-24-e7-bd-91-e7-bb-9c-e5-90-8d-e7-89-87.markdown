@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2006-03-24 05:53:52+00:00
+layout: post
+link: http://abloz.com/index.php/2006/03/24/e7-bd-91-e7-bb-9c-e5-90-8d-e7-89-87/
+slug: e7-bd-91-e7-bb-9c-e5-90-8d-e7-89-87
+title: 网络名片
+wordpress_id: 651
+categories:
+- 文艺
+---
+
+[Plaxo](https://www.plaxo.com) 是做电子名片的。不知这个概念能不能流行起来。

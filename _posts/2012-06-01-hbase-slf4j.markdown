@@ -1,0 +1,52 @@
+---
+author: abloz
+comments: true
+date: 2012-06-01 09:47:14+00:00
+layout: post
+link: http://abloz.com/index.php/2012/06/01/hbase-slf4j/
+slug: hbase-slf4j
+title: hbase  multiple SLF4J bindings 警告
+wordpress_id: 1661
+categories:
+- 技术
+tags:
+- hbase
+- slf4j
+---
+
+hbase shell 和命令操作中经常有个烦人的警告，说SLF4J有多个绑定：
+
+    
+    hbase(main):003:0> list
+    TABLE
+    SLF4J: Class path contains multiple SLF4J bindings.
+    SLF4J: Found binding in [jar:file:/home/zhouhh/hbase-0.94.0/lib/slf4j-log4j12-1.5.8.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+    SLF4J: Found binding in [jar:file:/home/zhouhh/hadoop-1.0.3/lib/slf4j-log4j12-1.4.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+    SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+    t1
+    1 row(s) in 0.4300 seconds
+
+
+查看一下classpath，果然，hadoop和hbase各有一个jar文件：
+
+    
+    [zhouhh@Hadoop48 test]$ hbase classpath | tr ":" "n" | grep -i slf4j
+    /home/zhouhh/hbase-0.94.0/lib/slf4j-api-1.5.8.jar
+    /home/zhouhh/hbase-0.94.0/lib/slf4j-log4j12-1.5.8.jar
+    /home/zhouhh/hadoop-1.0.3/libexec/../lib/slf4j-api-1.4.3.jar
+    /home/zhouhh/hadoop-1.0.3/libexec/../lib/slf4j-log4j12-1.4.3.jar
+
+
+解决办法，将<del>一个</del>hbase lib下的jar移除,警告消除。(不能将hadoop lib下的jar文件移除，否则调用shell 脚本start-all.sh远程启动hadoop时会报找不到log4j包的错误。)
+
+    
+    [zhouhh@Hadoop48 test]$ cd /home/zhouhh/hbase-0.94.0/lib/
+     [zhouhh@Hadoop48 lib]$ mv slf4j-log4j12-1.5.8.jar ../.
+
+
+
+    
+    hbase(main):001:0> list
+    TABLE
+    t1
+    1 row(s) in 0.4300 seconds

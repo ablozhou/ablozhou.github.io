@@ -1,0 +1,84 @@
+---
+author: abloz
+comments: true
+date: 2006-01-06 11:15:24+00:00
+layout: post
+link: http://abloz.com/index.php/2006/01/06/linux-e7-9a-84-e5-87-a0-e4-b8-aa-e7-9b-ae-e5-bd-95/
+slug: linux-e7-9a-84-e5-87-a0-e4-b8-aa-e7-9b-ae-e5-bd-95
+title: linux的几个目录
+wordpress_id: 569
+categories:
+- 技术
+---
+
+bin:存管理员和用户使用的命令，不可以有子目录
+
+
+
+
+boot:存放系统核心和启动程序
+
+
+
+
+dev:devices information
+
+
+
+
+etc:配置文件目录，X11子目录保存X window的配置；sysconfig保存网络配置；skel用来保存创建用户时的配置文件。
+
+
+
+
+home:保存用户目录
+
+
+
+
+lib:共享的系统文件和内核模块
+
+
+
+
+mnt：临时文件系统安装点
+
+
+
+
+opt：用来安装应用文件的目录
+
+
+
+
+proc：保存进程信息
+
+
+
+
+root：root用户的家目录，不要和“/”搞混，虽然都叫root目录。
+
+
+
+
+sbin：存放管理员和超级用户使用的系统二进制文件
+
+
+
+
+tmp：系统存放临时文件的地方
+
+
+
+
+usr：经常装在独立的分区上，存放共享的和只读信息，应用程序经常安装在/usr/local
+
+
+
+
+var: 存放会变动的信息。如系统log。
+
+
+
+
+ 

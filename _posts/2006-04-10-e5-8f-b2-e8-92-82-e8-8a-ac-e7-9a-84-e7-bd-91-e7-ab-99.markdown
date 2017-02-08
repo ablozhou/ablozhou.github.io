@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2006-04-10 06:44:28+00:00
+layout: post
+link: http://abloz.com/index.php/2006/04/10/e5-8f-b2-e8-92-82-e8-8a-ac-e7-9a-84-e7-bd-91-e7-ab-99/
+slug: e5-8f-b2-e8-92-82-e8-8a-ac-e7-9a-84-e7-bd-91-e7-ab-99
+title: 史蒂芬的网站
+wordpress_id: 658
+categories:
+- 技术
+---
+
+加拿大国家研究委员会一个研究网络的人，有一头狂野的头发，挺不错的。可以向他学习[网络技术](http://www.downes.ca/)。如，他写了个[脚本](http://www.downes.ca/referrers.htm)，用于显示通过哪些网站访问到你的网站（谁链接了你的网站，反向链接）。

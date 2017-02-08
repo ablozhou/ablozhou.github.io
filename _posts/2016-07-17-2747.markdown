@@ -1,0 +1,1472 @@
+---
+author: abloz
+comments: true
+date: 2016-07-17 16:16:19+00:00
+layout: post
+link: http://abloz.com/index.php/2016/07/18/2747/
+slug: '2747'
+title: mongodb Mac安装和基本操作
+wordpress_id: 2747
+categories:
+- 技术
+tags:
+- mongodb
+---
+
+周海汉 2016.7.17
+
+
+
+
+Mac安装
+
+
+
+
+➜ ~ % sudo brew install mongodb
+
+
+
+
+
+
+
+启动失败,因为没有创建缺省的/data/db目录
+
+
+
+
+➜ ~ % mongod
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] MongoDB starting : pid=21779 port=27017 dbpath=/data/db 64-bit host=zhhdeMacBook-Pro.local
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] db version v3.2.1
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] git version: a14d55980c2cdc565d4704a7e3ad37e4e535c1b2
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] allocator: system
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] modules: none
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] build environment:
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten]     distarch: x86_64
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+
+
+
+
+2016-07-17T14:44:27.027+0800 I CONTROL  [initandlisten] options: {}
+
+
+
+
+2016-07-17T14:44:27.030+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /data/db not found., terminating
+
+
+
+
+2016-07-17T14:44:27.030+0800 I CONTROL  [initandlisten] dbexit:  rc: 100
+
+
+
+
+
+
+
+连接失败
+
+
+
+
+➜ ~ % mongo
+
+
+
+
+MongoDB shell version: 3.2.1
+
+
+
+
+connecting to: test
+
+
+
+
+2016-07-17T14:44:33.593+0800 W NETWORK  [thread1] Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused
+
+
+
+
+2016-07-17T14:44:33.594+0800 E QUERY    [thread1] Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed :
+
+
+
+
+connect@src/mongo/shell/mongo.js:224:14
+
+
+
+
+@(connect):1:6
+
+
+
+
+
+
+
+exception: connect failed
+
+
+
+
+
+
+
+➜ ~ % ls /data/db
+
+
+
+
+ls: /data/db: No such file or directory
+
+
+
+
+➜ ~ % sudo mkdir -p /data/db
+
+
+
+
+
+
+
+用超级用户可以启动成功,但不推荐
+
+
+
+
+➜ ~ % sudo mongod
+
+
+
+
+2016-07-17T14:45:27.670+0800 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+
+
+
+
+
+
+
+修改数据目录所有者为zhh.
+
+
+
+
+➜ ~ % sudo chown -R zhh:staff /data
+
+
+
+
+
+
+
+启动成功
+
+
+
+
+ ~ % mongod
+
+
+
+
+2016-07-17T14:52:08.608+0800 I CONTROL  [initandlisten] MongoDB starting : pid=21978 port=27017 dbpath=/data/db 64-bit host=zhhdeMacBook-Pro.local
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten] db version v3.2.1
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten] git version: a14d55980c2cdc565d4704a7e3ad37e4e535c1b2
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten] allocator: system
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten] modules: none
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten] build environment:
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten]     distarch: x86_64
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+
+
+
+
+2016-07-17T14:52:08.609+0800 I CONTROL  [initandlisten] options: {}
+
+
+
+
+2016-07-17T14:52:08.610+0800 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+
+
+
+
+2016-07-17T14:52:08.610+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+
+
+
+
+2016-07-17T14:52:10.127+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+
+
+
+
+2016-07-17T14:52:10.128+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+
+
+
+
+2016-07-17T14:52:10.128+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+
+
+
+
+
+
+
+服务器端启动完毕.
+
+
+
+
+
+
+
+客户端
+
+
+
+
+➜ ~ % mongo
+
+
+
+
+MongoDB shell version: 3.2.1
+
+
+
+
+connecting to: test
+
+
+
+
+Welcome to the MongoDB shell.
+
+
+
+
+For interactive help, type "help".
+
+
+
+
+For more comprehensive documentation, see
+
+
+
+
+    http://docs.mongodb.org/
+
+
+
+
+Questions? Try the support group
+
+
+
+
+    http://groups.google.com/group/mongodb-user
+
+
+
+
+> help
+
+
+
+
+    db.help()                    help on db methods
+
+
+
+
+    db.mycoll.help()             help on collection methods
+
+
+
+
+    sh.help()                    sharding helpers
+
+
+
+
+    rs.help()                    replica set helpers
+
+
+
+
+    help admin                   administrative help
+
+
+
+
+    help connect                 connecting to a db help
+
+
+
+
+    help keys                    key shortcuts
+
+
+
+
+    help misc                    misc things to know
+
+
+
+
+    help mr                      mapreduce
+
+
+
+
+
+
+
+    show dbs                     show database names
+
+
+
+
+    show collections             show collections in current database
+
+
+
+
+    show users                   show users in current database
+
+
+
+
+    show profile                 show most recent system.profile entries with time >= 1ms
+
+
+
+
+    show logs                    show the accessible logger names
+
+
+
+
+    show log [name]              prints out the last segment of log in memory, 'global' is default
+
+
+
+
+    use <db_name>                set current database
+
+
+
+
+    db.foo.find()                list objects in collection foo
+
+
+
+
+    db.foo.find( { a : 1 } )     list objects in foo where a == 1
+
+
+
+
+    it                           result of the last line evaluated; use to further iterate
+
+
+
+
+    DBQuery.shellBatchSize = x   set default number of items to display on shell
+
+
+
+
+    exit
+
+
+
+
+
+
+
+> 2+2
+
+
+
+
+4
+
+
+
+
+> db.help()
+
+
+
+
+DB methods:
+
+
+
+
+    db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [ just calls db.runCommand(...) ]
+
+
+
+
+    db.auth(username, password)
+
+
+
+
+    db.cloneDatabase(fromhost)
+
+
+
+
+    db.commandHelp(name) returns the help for the command
+
+
+
+
+    db.copyDatabase(fromdb, todb, fromhost)
+
+
+
+
+    db.createCollection(name, { size : ..., capped : ..., max : ... } )
+
+
+
+
+    db.createUser(userDocument)
+
+
+
+
+    db.currentOp() displays currently executing operations in the db
+
+
+
+
+    db.dropDatabase()
+
+
+
+
+    db.eval() - deprecated
+
+
+
+
+    db.fsyncLock() flush data to disk and lock server for backups
+
+
+
+
+    db.fsyncUnlock() unlocks server following a db.fsyncLock()
+
+
+
+
+    db.getCollection(cname) same as db['cname'] or db.cname
+
+
+
+
+    db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+
+
+
+
+    db.getCollectionNames()
+
+
+
+
+    db.getLastError() - just returns the err msg string
+
+
+
+
+    db.getLastErrorObj() - return full status object
+
+
+
+
+    db.getLogComponents()
+
+
+
+
+    db.getMongo() get the server connection object
+
+
+
+
+    db.getMongo().setSlaveOk() allow queries on a replication slave server
+
+
+
+
+    db.getName()
+
+
+
+
+    db.getPrevError()
+
+
+
+
+    db.getProfilingLevel() - deprecated
+
+
+
+
+    db.getProfilingStatus() - returns if profiling is on and slow threshold
+
+
+
+
+    db.getReplicationInfo()
+
+
+
+
+    db.getSiblingDB(name) get the db at the same server as this one
+
+
+
+
+    db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+
+
+
+
+    db.hostInfo() get details about the server's host
+
+
+
+
+    db.isMaster() check replica primary status
+
+
+
+
+    db.killOp(opid) kills the current operation in the db
+
+
+
+
+    db.listCommands() lists all the db commands
+
+
+
+
+    db.loadServerScripts() loads all the scripts in db.system.js
+
+
+
+
+    db.logout()
+
+
+
+
+    db.printCollectionStats()
+
+
+
+
+    db.printReplicationInfo()
+
+
+
+
+    db.printShardingStatus()
+
+
+
+
+    db.printSlaveReplicationInfo()
+
+
+
+
+    db.dropUser(username)
+
+
+
+
+    db.repairDatabase()
+
+
+
+
+    db.resetError()
+
+
+
+
+    db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into { cmdObj : 1 }
+
+
+
+
+    db.serverStatus()
+
+
+
+
+    db.setLogLevel(level,<component>)
+
+
+
+
+    db.setProfilingLevel(level,<slowms>) 0=off 1=slow 2=all
+
+
+
+
+    db.setWriteConcern( <write concern doc> ) - sets the write concern for writes to the db
+
+
+
+
+    db.unsetWriteConcern( <write concern doc> ) - unsets the write concern for writes to the db
+
+
+
+
+    db.setVerboseShell(flag) display extra information in shell output
+
+
+
+
+    db.shutdownServer()
+
+
+
+
+    db.stats()
+
+
+
+
+    db.version() current version of the server
+
+
+
+
+
+
+
+
+
+
+> db.t.insert(x:10)
+
+
+
+
+
+
+
+2016-07-17T14:59:16.272+0800 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:13
+
+
+
+
+
+
+
+> db.t.insert({x:10})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> db.t.find()
+
+
+
+
+{ "_id" : ObjectId("578b3693a845f1e3e0e2595e"), "x" : 10 }
+
+
+
+
+> db.getCollectionNames()
+
+
+
+
+[ "t" ]
+
+
+
+
+> db.getName()
+
+
+
+
+test
+
+
+
+
+> use zhhdb
+
+
+
+
+switched to db zhhdb
+
+
+
+
+> db.getName()
+
+
+
+
+zhhdb
+
+
+
+
+> db.getCollectionNames()
+
+
+
+
+[ ]
+
+
+
+
+> db.t.insert({x:10})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> show tables
+
+
+
+
+t
+
+
+
+
+> show collections
+
+
+
+
+t
+
+
+
+
+> show profile
+
+
+
+
+db.system.profile is empty
+
+
+
+
+Use db.setProfilingLevel(2) will enable profiling
+
+
+
+
+Use db.system.profile.find() to show raw profile entries
+
+
+
+
+> show users
+
+
+
+
+> db.person.insert({name:'zhh',age:10,date:'2001-07-01'})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> db.person.insert({name:'zhh1',age:12,date:'2003-07-01'})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> db.person.insert({name:'zhh2',age:11,date:'2005-07-01'})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> db.persion.find()
+
+
+
+
+> db.person.find()
+
+
+
+
+{ "_id" : ObjectId("578b386ba845f1e3e0e25960"), "name" : "zhh", "age" : 10, "date" : "2001-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+
+
+
+> db.person.find(name='zhh')
+
+
+
+
+Error: error: {
+
+
+
+
+    "ok" : 0,
+
+
+
+
+    "errmsg" : "ReferenceError: zhh is not defined :\n_funcs1@:1:24\n",
+
+
+
+
+    "code" : 139
+
+
+
+
+}
+
+
+
+
+> db.person.find('zhh')
+
+
+
+
+Error: error: {
+
+
+
+
+    "ok" : 0,
+
+
+
+
+    "errmsg" : "ReferenceError: zhh is not defined :\n_funcs1@:1:24\n",
+
+
+
+
+    "code" : 139
+
+
+
+
+}
+
+
+
+
+> db.person.find({name:'zhh'})
+
+
+
+
+{ "_id" : ObjectId("578b386ba845f1e3e0e25960"), "name" : "zhh", "age" : 10, "date" : "2001-07-01" }
+
+
+
+
+> db.person.find({name:'zhh2'})
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+> db.person.find({name:zhh2})
+
+
+
+
+2016-07-17T15:51:26.021+0800 E QUERY    [thread1] ReferenceError: zhh2 is not defined :
+
+
+
+
+@(shell):1:17
+
+
+
+
+
+
+
+> db.person.find({age>11})
+
+
+
+
+2016-07-17T15:51:41.877+0800 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:19
+
+
+
+
+> db.person.find({age:0})
+
+
+
+
+> db.person.find({},{age:0})
+
+
+
+
+{ "_id" : ObjectId("578b386ba845f1e3e0e25960"), "name" : "zhh", "date" : "2001-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "date" : "2003-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "date" : "2005-07-01" }
+
+
+
+
+> db.person.find({},{age:1})
+
+
+
+
+{ "_id" : ObjectId("578b386ba845f1e3e0e25960"), "age" : 10 }
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "age" : 12 }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "age" : 11 }
+
+
+
+
+> db.person.find({name:'zhh'},{age:1})
+
+
+
+
+{ "_id" : ObjectId("578b386ba845f1e3e0e25960"), "age" : 10 }
+
+
+
+
+> db.person.find({age:{$gt:11}} );
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+> db.person.find({age:{$gt:10}} );
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+> db.person.find({age:{$gte:11}} );
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+> db.person.find({age:{$gte:10,$lte:11}});
+
+
+
+
+{ "_id" : ObjectId("578b386ba845f1e3e0e25960"), "name" : "zhh", "age" : 10, "date" : "2001-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+
+
+
+
+
+
+集合检索
+
+
+
+
+$all:值全部在集合中. $in 值的一个在集合中. **$nin** 跟 $in 操作相反
+
+
+
+
+> db
+
+
+
+
+zhhdb
+
+
+
+
+> db.t.insert({a:[3,4,1,5]})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> db.t.find({a:{$all:[1,4]}})
+
+
+
+
+{ "_id" : ObjectId("578b3dada845f1e3e0e25963"), "a" : [ 3, 4, 1, 5 ] }
+
+
+
+
+> db.t.find({a:{$all:[6]}})
+
+
+
+
+> db.t.find({a:{$all:[1,6]}})
+
+
+
+
+> db.t.find({a:{$in:[1,6]}})
+
+
+
+
+{ "_id" : ObjectId("578b3dada845f1e3e0e25963"), "a" : [ 3, 4, 1, 5 ] }
+
+
+
+
+> db.t.insert({a:[7,1,6]})
+
+
+
+
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+> db.t.find({a:{$in:[1,6]}})
+
+
+
+
+{ "_id" : ObjectId("578b3dada845f1e3e0e25963"), "a" : [ 3, 4, 1, 5 ] }
+
+
+
+
+{ "_id" : ObjectId("578b3e22a845f1e3e0e25964"), "a" : [ 7, 1, 6 ] }
+
+
+
+
+> db.t.find({a:{$in:[6]}})
+
+
+
+
+{ "_id" : ObjectId("578b3e22a845f1e3e0e25964"), "a" : [ 7, 1, 6 ] }
+
+
+
+
+> db.t.find({a:{$all:[1,6]}})
+
+
+
+
+{ "_id" : ObjectId("578b3e22a845f1e3e0e25964"), "a" : [ 7, 1, 6 ] }
+
+
+
+
+>
+
+
+
+
+
+
+
+检索字段
+
+
+
+
+$exist 字段是否存在
+
+
+
+
+> db.t.find({a:{$exists:true}})
+
+
+
+
+{ "_id" : ObjectId("578b3dada845f1e3e0e25963"), "a" : [ 3, 4, 1, 5 ] }
+
+
+
+
+{ "_id" : ObjectId("578b3e22a845f1e3e0e25964"), "a" : [ 7, 1, 6 ] }
+
+
+
+
+> db.t.find({a:{$exists:true}}).limit(1)
+
+
+
+
+{ "_id" : ObjectId("578b3dada845f1e3e0e25963"), "a" : [ 3, 4, 1, 5 ] }
+
+
+
+
+
+
+
+**$nor** 跟 $or 相反
+
+
+
+
+**$size** 操作将会查询数组长度等于输入参数的数组
+
+
+
+
+**$where**
+
+
+
+
+**$type** 将会根据字段的 BSON 类型来检索数据
+
+
+
+
+
+
+
+
+
+**类型名称映射**
+
+
+
+
+
+
+
+
+
+
+
+
+● Double : 1
+● String : 2
+● Object : 3
+● Array : 4
+● Binary data : 5
+● Object id ：7
+● Boolean ：8
+● Date ：9
+● Null : 10
+● Regular expression : 11
+● JavaScript code : 13
+● Symbol : 14
+● JavaScript code with scope : 15
+● 32-bit integer : 16
+● Timestamp : 17
+● 64-bit integer : 18
+● Min key : 255
+
+
+● Max key : 127
+
+
+
+
+
+
+
+正则检索
+
+
+
+
+检索z打头,数字结尾的名字
+
+
+
+
+> db.person.find({name:/^z.*\d$/i})
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+> db.person.find({name:/^z.*\d$/}).limit(1)
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+
+
+
+排序 1升序,-1降序
+
+
+
+
+> db.person.find({name:/^z.*\d$/}).sort({date:1})
+
+
+
+
+{ "_id" : ObjectId("578b387aa845f1e3e0e25961"), "name" : "zhh1", "age" : 12, "date" : "2003-07-01" }
+
+
+
+
+{ "_id" : ObjectId("578b3889a845f1e3e0e25962"), "name" : "zhh2", "age" : 11, "date" : "2005-07-01" }
+
+
+
+
+
+
+
+去重 distinct, 跳过skip,用于和limit配合分页.
+
+
+
+
+
+
+
+count
+
+
+
+
+> db.person.find({name:/^z.*\d$/,date:{$gt:'2003-08-01'}}).sort({date:1}).count()
+
+
+
+
+1
+
+
+
+
+
+
+
+**$slice,remove,save,$inc,$set,$unset,$push,$pushAll**
+
+
+
+
+**$代表匹配的第一个记录**
+
+
+
+
+
+

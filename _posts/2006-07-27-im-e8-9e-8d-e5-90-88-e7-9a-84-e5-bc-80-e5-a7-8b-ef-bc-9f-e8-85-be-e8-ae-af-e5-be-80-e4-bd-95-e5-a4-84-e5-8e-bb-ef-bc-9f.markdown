@@ -1,0 +1,85 @@
+---
+author: abloz
+comments: true
+date: 2006-07-27 02:39:14+00:00
+layout: post
+link: http://abloz.com/index.php/2006/07/27/im-e8-9e-8d-e5-90-88-e7-9a-84-e5-bc-80-e5-a7-8b-ef-bc-9f-e8-85-be-e8-ae-af-e5-be-80-e4-bd-95-e5-a4-84-e5-8e-bb-ef-bc-9f/
+slug: im-e8-9e-8d-e5-90-88-e7-9a-84-e5-bc-80-e5-a7-8b-ef-bc-9f-e8-85-be-e8-ae-af-e5-be-80-e4-bd-95-e5-a4-84-e5-8e-bb-ef-bc-9f
+title: IM融合的开始？腾讯往何处去？
+wordpress_id: 689
+categories:
+- 技术
+---
+
+刚刚收到一封“垃圾邮件”，内容如下：
+
+
+
+
+“
+
+
+
+
+
+
+
+_![Windows Live Messenger Beta logo](http://ads.msn.com/ads/pronws/ideas/en/us/WLMes_Beta.gif)_
+
+_
+
+
+* * *
+
+
+_
+
+
+_您好！  
+  
+漫长的等待终于结束了。您现在可以通过 Windows Live™ Messenger 与您的雅虎联系人交流了。为了与不同的联系人交流而登录多个帐户的历史已经过去了，现在一个帐户就搞定了。  
+  
+您必须单击下面的链接以参加此试用版活动。注册后，在联系人列表中添加您朋友的雅虎电子邮件地址，然后就可以聊天了！   
+  
+  
+_
+
+
+
+
+__立即尝试__
+
+
+
+
+  
+  
+_想了解更多信息吗？   
+  
+转到 ___Windows Live Ideas___ 了解 Windows Live ? Messenger 该项新功能的更多信息及其他服务的最新信息。_  
+  
+_此致  
+  
+Windows Live Messenger 工作组  
+  
+附：如果您在登录试用版时遇到问题或需要帮助，请转到 _http://support.live.com/default.aspx?productkey=wlmessenger&locale=zh-cn_。如果您想提供反馈，可以转到我们的网络日志页面 _http://spaces.msn.com/members/windowslivebeta_ 或 _http://feedback.live.com/default.aspx?productkey=wlmessenger&locale=zh-cn_。 _
+
+
+
+
+ 
+
+
+
+
+”
+
+
+
+
+传说很久了的Msn和YahooMessenger的融合终于开始了！国内yahoo messenger的用户量可能不太多。但国外却很多。这两个都是IM巨头，互连互通不知会是什么结局。是双赢还是一方独大还是以强扶弱？而我一个朋友所在的创业公司[www.keepc.com](http://www.keepc.com)，做的就是私下里将各IM联系起来互通的事情。不过还没有太完善。在用他们软件的同时，居然还要被代理的软件也一起运行。这我就不知道用他们的工具有何意义了。Linux下早有IM终端将ICQ，MSN和Yahoo Messenger一个界面登陆了。不过就是不能互通(记不太清了)。而青牛公司就做了一个MSN群的shell(私下里觉得有点小儿科了)。
+
+
+
+
+腾讯QQ在大陆拥有五千万以上的年轻用户群体。但他的协议不仅保密，而且时时做不兼容的变化。如果开放和融合是趋势的话，腾讯的“抱残守缺”会对他是保护还是伤害？尽管腾讯拥有大量铁杆年轻用户，但优质用户却逐渐舍弃。开放还是自闭，这是个问题。而Msn和yahoo Messenger的互通，对两者的强大肯定是有利的。会更加排挤ICQ等没有互通的IM软件。

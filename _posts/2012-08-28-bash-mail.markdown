@@ -1,0 +1,70 @@
+---
+author: abloz
+comments: true
+date: 2012-08-28 08:26:19+00:00
+layout: post
+link: http://abloz.com/index.php/2012/08/28/bash-mail/
+slug: bash-mail
+title: bash 发邮件
+wordpress_id: 1833
+categories:
+- 技术
+tags:
+- mail
+---
+
+1.启动sendmail或postfix 邮局服务
+
+2.用mail发邮件
+
+
+
+我们用一个bash脚本来发送邮件
+
+    
+    [zhouhh@h185 mgr]$ vi sendmail.sh
+
+
+
+    
+    #!/bin/bash
+    # script to send simple email
+    # email subject
+    if [ "$#" -lt 1 ]; then
+     echo "cant send email."
+     echo "usage:"
+     echo " $0 mail_msg_file [mail_title]"
+     exit 0
+    fi
+    echo "sendmail args:$@"
+    SUBJECT="Hadoop 系统告警"
+    if [ "$#" -ge 2 ]; then
+     SUBJECT=$2
+    fi
+    # Email To ?
+    EMAIL="zhouhh@aa.com,zhoux@aa.com"
+    # Email text/message
+    EMAILMESSAGE=$1
+    #echo "send msg file:$EMAILMESSAGE"
+    #echo "系统告警!!!"> $EMAILMESSAGE
+    #echo "内存错误" >>$EMAILMESSAGE
+    # send an email using /bin/mail
+    
+    /bin/mail -s "${SUBJECT}" "${EMAIL}" < ${EMAILMESSAGE}
+
+
+使用：
+
+    
+    [zhouhh@h185 mgr]$ ./sendmail.sh myemailmsg.txt
+
+
+为什么不直接用mail发而写成bash脚本呢？
+
+这样可以方便对一些参数进行设置和检查，用于hadoop的告警时进行调用。
+
+
+
+
+
+

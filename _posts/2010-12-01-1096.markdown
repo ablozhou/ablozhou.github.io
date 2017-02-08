@@ -1,0 +1,135 @@
+---
+author: abloz
+comments: true
+date: 2010-12-01 06:27:27+00:00
+layout: post
+link: http://abloz.com/index.php/2010/12/01/1096/
+slug: '1096'
+title: 系统栈大小
+wordpress_id: 1096
+categories:
+- 技术
+tags:
+- stack
+---
+
+http://abloz.com 2010.12.1
+
+windows程序默认栈大小是1M，如果要修改该值需要设置vc的设置。如vc6里link选项里output下填写reserved的值。
+
+linux下不在编译时确定，因为这是一个系统设置。
+
+﻿﻿﻿﻿
+
+```
+zhouhh@zhh64:~/sms$ ulimit -a
+
+
+core file size          (blocks, -c) 0
+
+
+
+
+data seg size           (kbytes, -d) unlimited
+
+
+
+
+scheduling priority             (-e) 20
+
+
+
+
+file size               (blocks, -f) unlimited
+
+
+
+
+pending signals                 (-i) 16382
+
+
+
+
+max locked memory       (kbytes, -l) 64
+
+
+
+
+max memory size         (kbytes, -m) unlimited
+
+
+
+
+open files                      (-n) 1024
+
+
+
+
+pipe size            (512 bytes, -p) 8
+
+
+
+
+POSIX message queues     (bytes, -q) 819200
+
+
+
+
+real-time priority              (-r) 0
+
+
+
+
+**stack size              (kbytes, -s) 8192**
+
+
+
+
+cpu time               (seconds, -t) unlimited
+
+
+
+
+max user processes              (-u) unlimited
+
+
+
+
+virtual memory          (kbytes, -v) unlimited
+
+
+
+
+file locks                      (-x) unlimited
+
+
+
+
+zhouhh@zhh64:~/sms$ ulimit -s
+
+
+
+
+8192
+
+
+```
+
+可以看到，我的系统stack默认大小是8MB.
+
+如果想扩大，可以用ulimit -s sizeKB 来设置。
+
+或者在执行程序的shell中调整该值。
+
+常用系统默认堆栈大小：
+
+```
+sunOS/Solaris 8192KB
+
+Linux  10240KB(我的系统是8192KB因为我的是ubuntu桌面版，ubuntu有调整此值，但另一台centos 5.2操作系统的是机器缺省是10240KB）
+
+Windows 1024KB
+
+AIX 65536KB
+```
+

@@ -1,0 +1,44 @@
+---
+author: abloz
+comments: true
+date: 2007-11-03 07:31:06+00:00
+layout: post
+link: http://abloz.com/index.php/2007/11/03/e7-9b-b4-e6-8e-a5-e7-bc-96-e8-be-91-e7-bd-91-e9-a1-b5/
+slug: e7-9b-b4-e6-8e-a5-e7-bc-96-e8-be-91-e7-bd-91-e9-a1-b5
+title: 直接编辑网页
+wordpress_id: 753
+categories:
+- 社会评论
+---
+
+
+
+
+
+
+
+
+
+
+
+
+在网上看到一段好玩的脚本。
+
+
+
+
+将下面的代码复制到打开的IE地址栏,网页就成为可编辑的了。可用于解决屏蔽右键不好拷贝的问题。
+
+
+
+
+ 
+
+
+
+
+javascript:document.body.contentEditable='true';
+document.designMode='on'; void 0
+
+
+

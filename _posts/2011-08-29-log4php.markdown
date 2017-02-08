@@ -1,0 +1,93 @@
+---
+author: abloz
+comments: true
+date: 2011-08-29 07:33:30+00:00
+layout: post
+link: http://abloz.com/index.php/2011/08/29/log4php/
+slug: log4php
+title: log4php
+wordpress_id: 1379
+categories:
+- 技术
+---
+
+很多人在写php代码时并不直接调试，而是喜欢用log。log4php是一款强大的工具。2011年8月最新版为2.1版。
+
+下载：
+
+http://logging.apache.org/log4php/download.html
+
+直接下载source，linux下：
+apache-log4php-2.1.0-src.tar.gz
+windows下：
+apache-log4php-2.1.0-src.zip
+
+本人在windows下测试。国内也可以直接用http://mirror.bjtu.edu.cn/apache//logging/log4php/2.1.0/apache-log4php-2.1.0-src.tar.gz
+http://mirror.bjtu.edu.cn/apache//logging/log4php/2.1.0/apache-log4php-2.1.0-src.zip
+这个镜像下载。
+下载完成后，解压main目录下的php目录，到项目下的libs，并将php重命名为log4php目录。
+
+假设我的测试项目是feedback。
+在跟目录下新建log4php的配置文件log4php.properties
+
+    
+    
+    log4php.threshold = DEBUG
+    log4php.rootLogger = WARN, default
+    #log4php.appender.fdidx = LoggerAppenderRollingFile
+    #log4php.appender.fdidx.File = d:/log4php/feedback.log
+    #log4php.appender.fdidx.layout = LoggerLayoutPattern
+    #log4php.appender.fdidx.layout.ConversionPattern = "%d %-5p: %m (%F:%L)%n"
+    log4php.appender.default = LoggerAppenderDailyFile
+    log4php.appender.default.layout = LoggerLayoutPattern
+    log4php.appender.default.layout.ConversionPattern = "%d{ISO8601} [%p] %c: %m (at %F line %L)%n"
+    log4php.appender.default.datePattern = Ymd
+    log4php.appender.default.file = logs/error_%s.log
+    
+
+
+该properties会适用default规则。
+
+再在根下新建index.php
+
+    
+    
+    
+    <html>
+    <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></meta>
+    </head>
+    <body>
+    ';
+    echo '中国人';
+    
+    //设置日志显示时间所在的时区
+    require_once(LOG4PHP_DIR."/Logger.php");
+    Logger::configure(APPLICATION_PATH."/log4php.properties");
+    //APPLICATION_PATH是工程目录的路径
+    $logger = @Logger::getLogger("index");
+    $msg = "error error !!!";
+    $logger->error($msg); //输出错误 $msg
+    //$logger->info($msg); //输出信息 $msg
+    //$logger->warn($msg);  //输出警告 $msg
+    ?>
+    </body>
+    </html>
+    
+
+
+
+执行，可以看到根目录下有一个logs目录，下面有一个debug_20110829.log文件。内容为
+
+    
+    
+    2011-08-29 15:32:28,047 [ERROR] fdidx: error error !!! (at D:myphpfeedbackindex.php line 20)
+    2011-08-29 15:32:28,048 [WARN] fdidx: warn 警告 (at D:myphpfeedbackindex.php line 24)
+    
+
+
+
+可以看到，info没有输出。因为配置里面debug是最低级别。
+
+参考：
+http://blog.csdn.net/cjy37/article/details/5610437

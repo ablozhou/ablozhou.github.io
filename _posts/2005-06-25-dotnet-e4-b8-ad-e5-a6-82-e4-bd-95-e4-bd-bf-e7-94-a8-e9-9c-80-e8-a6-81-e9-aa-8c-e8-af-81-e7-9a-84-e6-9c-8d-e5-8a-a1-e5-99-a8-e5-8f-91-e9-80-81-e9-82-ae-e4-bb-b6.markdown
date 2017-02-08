@@ -1,0 +1,31 @@
+---
+author: abloz
+comments: true
+date: 2005-06-25 00:03:53+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/25/dotnet-e4-b8-ad-e5-a6-82-e4-bd-95-e4-bd-bf-e7-94-a8-e9-9c-80-e8-a6-81-e9-aa-8c-e8-af-81-e7-9a-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-8f-91-e9-80-81-e9-82-ae-e4-bb-b6/
+slug: dotnet-e4-b8-ad-e5-a6-82-e4-bd-95-e4-bd-bf-e7-94-a8-e9-9c-80-e8-a6-81-e9-aa-8c-e8-af-81-e7-9a-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-8f-91-e9-80-81-e9-82-ae-e4-bb-b6
+title: dotnet 中如何使用需要验证的服务器发送邮件
+wordpress_id: 474
+categories:
+- 技术
+---
+
+//原来以为微软提供的发送电子邮件的组件太简单，根本不能发送邮件。看了很多书上的例子，都没有提到认证怎么配。后来看到一篇文章，终于学到这一点。在自己的机器上测试成功，采用smtp.163.com的服务器
+
+
+
+
+MailMessage mail = new MailMessage();   
+mail.To = "me@mycompany.com";   
+mail.From = "you@yourcompany.com";   
+mail.Subject = "this is a test email.";   
+mail.Body = "Some text goes here";   
+mail.Fields.Add("[http://schemas.microsoft.com/cdo/configuration/smtpauthenticate"](http://schemas.microsoft.com/cdo/configuration/smtpauthenticate"), "1"); //basic authentication   
+mail.Fields.Add("[http://schemas.microsoft.com/cdo/configuration/sendusername"](http://schemas.microsoft.com/cdo/configuration/sendusername"), "my_username_here"); //set your username here   
+mail.Fields.Add("[http://schemas.microsoft.com/cdo/configuration/sendpassword"](http://schemas.microsoft.com/cdo/configuration/sendpassword"), "super_secret"); //set your password here   
+  
+SmtpMail.SmtpServer = "mail.mycompany.com"; //your real server goes here   
+SmtpMail.Send( mail );   
+  
+

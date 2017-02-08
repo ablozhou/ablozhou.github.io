@@ -1,0 +1,24 @@
+---
+author: abloz
+comments: true
+date: 2008-05-27 13:40:52+00:00
+layout: post
+link: http://abloz.com/index.php/2008/05/27/e6-8b-85-e5-bf-83-e6-8d-90-e6-ac-be-e8-a2-ab-e8-85-90-e8-b4-a5-ef-bc-9f-e6-8e-a8-e8-8d-90-e5-87-a0-e4-b8-aa-e5-87-a0-e4-b8-aa-e6-94-bf-e5-ba-9c-e7-9a-84-e4-b8-be-e6-8a-a5-e7-bd-91-e7-ab-99/
+slug: e6-8b-85-e5-bf-83-e6-8d-90-e6-ac-be-e8-a2-ab-e8-85-90-e8-b4-a5-ef-bc-9f-e6-8e-a8-e8-8d-90-e5-87-a0-e4-b8-aa-e5-87-a0-e4-b8-aa-e6-94-bf-e5-ba-9c-e7-9a-84-e4-b8-be-e6-8a-a5-e7-bd-91-e7-ab-99
+title: 担心捐款被腐败？推荐几个几个政府的举报网站
+wordpress_id: 30
+categories:
+- 社会评论
+---
+
+周海汉/文
+
+政府在行政公开上还是做了些工作。以往的来信来访工作，举报人必须亲自前往，因而风险很大。比如某些信访人士就被当地警察从北京的中央信访办抓走。或者腐败官员在路上设卡堵上访者，导致某些基层腐败不公不断发生。
+
+如今网络不仅让言论得以传播，而且连反腐也方便了不少。例如，有人担心四川震灾捐款被人腐败掉，如有证据，可以向审计署网站举报。审计署网站：[http://www.audit.gov.cn/](http://www.audit.gov.cn/)，可以看到“[信访举报平台](http://203.207.93.61:8088/consult/index.jsp?category=1)”，点击进入后就可以举报。
+
+如果掌握官员渎职，贪污受贿等腐败证据，可以向中华人民共和国监察部和中央纪委举报，其网站是：[http://www.mos.gov.cn/](http://www.mos.gov.cn/)，[举报网址：http://www.jubao.gov.cn/](http://www.jubao.gov.cn/)
+
+如果受到司法不公正对待，可以找中华人民共和国最高人民检察院举报，其网站是[http://www.spp.gov.cn/](http://www.spp.gov.cn/)，可以看到一个“最高人民检察院举报中心”，网址为：[http://jubao.spp.gov.cn/](http://jubao.spp.gov.cn/)，点击进入后有个地图，可以选地方。
+
+另外，像湖南红网也有一个“百姓呼声”栏目，可以投诉举报，或进行相关咨询。虽得到政府支持，但只是地方性的网站，管的事情有限。

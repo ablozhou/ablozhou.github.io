@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2006-06-19 08:08:56+00:00
+layout: post
+link: http://abloz.com/index.php/2006/06/19/e4-bb-80-e4-b9-88-e6-98-afweb-2-0/
+slug: e4-bb-80-e4-b9-88-e6-98-afweb-2-0
+title: 什么是Web 2.0
+wordpress_id: 674
+categories:
+- 转载
+---
+
+

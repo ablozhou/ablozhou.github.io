@@ -1,0 +1,16 @@
+---
+author: abloz
+comments: true
+date: 2005-06-14 11:04:30+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/14/e4-bb-8emsn-e8-81-8a-e5-a4-a9-e8-ae-b0-e5-bd-95-e5-a4-a7-e5-b0-8f-e7-9c-8b-e4-bd-a0-e5-92-8c-e5-a5-bd-e5-8f-8b-e7-9a-84-e5-85-b3-e7-b3-bb/
+slug: e4-bb-8emsn-e8-81-8a-e5-a4-a9-e8-ae-b0-e5-bd-95-e5-a4-a7-e5-b0-8f-e7-9c-8b-e4-bd-a0-e5-92-8c-e5-a5-bd-e5-8f-8b-e7-9a-84-e5-85-b3-e7-b3-bb
+title: 从msn聊天记录大小看你和好友的关系
+wordpress_id: 400
+categories:
+- 文艺
+---
+
+不小心打开了 C:Documents and SettingszhouhhMy DocumentsMy Chat Logs，
+
+看到里面有和不同的人的聊天记录，聊天记录是以聊天的对象名字加日期组成不同的文件的。发现记录文件越大的，你和他（她）的关系越好，彼此聊得比较多。而聊的少的说明你们关系比较疏淡。假如你不能确定和朋友关系的远近的话，log文件的字节数是最好的量化。

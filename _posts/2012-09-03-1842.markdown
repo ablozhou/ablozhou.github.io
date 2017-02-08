@@ -1,0 +1,100 @@
+---
+author: abloz
+comments: true
+date: 2012-09-03 10:27:26+00:00
+layout: post
+link: http://abloz.com/index.php/2012/09/03/1842/
+slug: '1842'
+title: hadoop 很莫名其妙的错误Child Error
+wordpress_id: 1842
+categories:
+- 技术
+tags:
+- hadoop
+---
+
+周海汉
+2012.9.3
+
+在一个新环境，执行mapreduce时，报Child Error错误。提示非常不详细。
+
+    
+    
+    java.lang.Throwable: Child Error
+    	at org.apache.hadoop.mapred.TaskRunner.run(TaskRunner.java:271)
+    Caused by: java.io.IOException: Task process exit with nonzero status of 1.
+    	at org.apache.hadoop.mapred.TaskRunner.run(TaskRunner.java:258)
+    
+
+
+执行一个简单的示例，居然也报错。
+
+    
+    
+    [zhouhh@h185 hadoop]$ hadoop jar hadoop-examples-1.0.3.jar wordcount input.txt output
+    12/09/03 17:53:56 INFO input.FileInputFormat: Total input paths to process : 1
+    12/09/03 17:53:56 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+    12/09/03 17:53:56 WARN snappy.LoadSnappy: Snappy native library not loaded
+    12/09/03 17:53:57 INFO mapred.JobClient: Running job: job_201208311632_0040
+    12/09/03 17:53:58 INFO mapred.JobClient:  map 0% reduce 0%
+    12/09/03 17:54:05 INFO mapred.JobClient: Task Id : attempt_201208311632_0040_m_000002_0, Status : FAILED
+    java.lang.Throwable: Child Error
+            at org.apache.hadoop.mapred.TaskRunner.run(TaskRunner.java:271)
+    Caused by: java.io.IOException: Task process exit with nonzero status of 1.
+            at org.apache.hadoop.mapred.TaskRunner.run(TaskRunner.java:258)
+    attempt_201208311632_0040_m_000002_0: execvp: Permission denied
+    12/09/03 17:54:11 INFO mapred.JobClient: Task Id : attempt_201208311632_0040_r_000002_0, Status : FAILED
+    ...
+    
+
+
+不能执行？
+查询一下java属性，发现安装都有问题：
+
+    
+    
+    [zhouhh@h183 ~]$ ls  $JAVA_HOME/jre/bin -l
+    total 420
+    -rw-r--r--. 1 root root   6395 Aug  8 15:49 ControlPanel
+    -rw-r--r--. 1 root root   7622 Aug  8 15:49 java
+    -rw-r--r--. 1 root root  19320 Aug  8 15:49 java_vm
+    -rw-r--r--. 1 root root  95113 Aug  8 15:49 javaws
+    -rw-r--r--. 1 root root   6395 Aug  8 15:49 jcontrol
+    -rw-r--r--. 1 root root   7829 Aug  8 15:49 keytool
+    -rw-r--r--. 1 root root   8021 Aug  8 15:49 orbd
+    -rw-r--r--. 1 root root   7861 Aug  8 15:49 pack200
+    -rw-r--r--. 1 root root   7877 Aug  8 15:49 policytool
+    -rw-r--r--. 1 root root   7829 Aug  8 15:49 rmid
+    -rw-r--r--. 1 root root   7829 Aug  8 15:49 rmiregistry
+    -rw-r--r--. 1 root root   7845 Aug  8 15:49 servertool
+    -rw-r--r--. 1 root root   8053 Aug  8 15:49 tnameserv
+    -rw-r--r--. 1 root root 219400 Aug  8 15:49 unpack200
+    
+    
+
+
+正常环境应该是：
+
+    
+    
+    [zhouhh@h183 ~]$  ls -l  $JAVA_HOME/jre/bin
+    total 412
+    lrwxrwxrwx. 1 root root      8 Sep  3 18:01 ControlPanel -> jcontrol
+    -rwxr-xr-x. 1 root root   7622 Aug  8 15:50 java
+    -rwxr-xr-x. 1 root root  19320 Aug  8 15:50 java_vm
+    -rwxr-xr-x. 1 root root  95113 Aug  8 15:50 javaws
+    -rwxr-xr-x. 1 root root   6395 Aug  8 15:50 jcontrol
+    -rwxr-xr-x. 1 root root   7829 Aug  8 15:50 keytool
+    -rwxr-xr-x. 1 root root   8021 Aug  8 15:50 orbd
+    -rwxr-xr-x. 1 root root   7861 Aug  8 15:50 pack200
+    -rwxr-xr-x. 1 root root   7877 Aug  8 15:50 policytool
+    -rwxr-xr-x. 1 root root   7829 Aug  8 15:50 rmid
+    -rwxr-xr-x. 1 root root   7829 Aug  8 15:50 rmiregistry
+    -rwxr-xr-x. 1 root root   7845 Aug  8 15:50 servertool
+    -rwxr-xr-x. 1 root root   8053 Aug  8 15:50 tnameserv
+    -rwxr-xr-x. 1 root root 219400 Aug  8 15:50 unpack200
+    
+    
+
+
+于是采用rsync将正确的文件同步过去，mapreduce执行正常。

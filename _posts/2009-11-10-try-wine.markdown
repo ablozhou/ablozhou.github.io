@@ -1,0 +1,170 @@
+---
+author: abloz
+comments: true
+date: 2009-11-10 06:45:00+00:00
+layout: post
+link: http://abloz.com/index.php/2009/11/10/try-wine/
+slug: try-wine
+title: wine试用
+wordpress_id: 949
+categories:
+- 技术
+---
+
+[周海汉](http://blog.csdn.net/ablo_zhou) /文 
+
+09.11.11 光棍节
+
+ablozhou # gmail.com
+
+ 
+
+Wine 是一个在linux下模拟windows环境并执行windows程序的windows  api封装。将windows调用转为linux调用。但和虚拟机不一样，虚拟机是独立的环境，不能和母环境统一起来。官方网 站：http://www.winehq.org/
+
+ 
+
+下面在ubuntu9.10 环境安装wine。
+
+ 
+
+wine最新稳定版是 1.01 beta，但最新版应该是1.1.32
+
+ 
+
+1. 先配置源
+
+ 
+
+在“系统->系统管理->软件源”里，“其他软件”标签点添加，apt 行里填入“_ppa:ubuntu-wine/ppa”，_
+
+![s](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091110/Screenshot-source-1.png)
+
+系统会在source.list里加入一行：
+
+ 
+
+deb ttp://ppa.launchpad.net/ubuntu-wine/ppa/ubuntu karmic main
+
+ 
+
+2. 解决软件源信任问题
+
+确认后提示更新，但可能会碰到如下所示的验证的问题。
+
+![e](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091110/Screenshot-%E6%97%A0%E6%A0%87%E9%A2%98%E7%AA%97%E5%8F%A3.png)
+
+WineHQ官网提示，对ubuntu9.10 不存在源验证问题，但我碰到了。
+
+对ubuntu 9.10前的版本，可以下载 **[ Scott Ritchie公钥 ](http://wine.budgetdedicated.com/apt/Scott%20Ritchie.gpg) ** 再导入到软件源的“身份验证”里面，我在ubuntu9.10试了没效。
+
+![s](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091110/Screenshot-%E8%BD%AF%E4%BB%B6%E6%BA%90.png)
+
+  
+
+但可能不一定会遇到。如果遇到，可以在终端命令行里输入：
+
+zhouhh@zhhofs:~$ sudo add-apt-repository ppa:ubuntu-wine  
+[sudo] password for zhouhh:   
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring  --secret-keyring /etc/apt/secring.gpg --trustdb-name  /etc/apt/trustdb.gpg --keyring /etc/apt/trusted.gpg --keyserver  keyserver.ubuntu.com --recv 883E8688397576B6C509DF495A9A06AEF9CB8DB0  
+gpg: 下载密钥‘F9CB8DB0’，从 hkp 服务器 keyserver.ubuntu.com
+
+ 
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091111/Screenshot-%E8%BD%AF%E4%BB%B6%E6%BA%901.png)
+
+  
+
+更新后可能会遇到这样的问题，可以忽略：
+
+ 
+
+无法下载 http://ppa.launchpad.net/ubuntu-wine/ppa/ubuntu/dists/karmic/main/binary-i386/Packages.bz2 Hash 校验和不符  
+有一些索引文件不能下载，它们可能被忽略了，也可能转而使用了旧的索引文件。
+
+  
+
+3. 安装wine
+
+进入新立得软件包管理器，搜索Wine，标记 wine1.2，并应用。
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091111/Screenshot-%E6%96%B0%E7%AB%8B%E5%BE%97%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%20.png)
+
+ 
+
+一共有120多M需要下载和更新。
+
+ 
+
+4. 测试
+
+安装完毕，就可以试用windows程序了。可以直接执行windows的exe程序（如需安装，则也可以将其安装在wine中。在“应用程序”下 面，有个wine，里面有一些相关wine的程序和配置。新版可以支持到windows xp, vista和windows 2008  模拟，但没有支持windows 7.
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091111/Screenshot-Wine%20%E8%AE%BE%E7%BD%AE.png)
+
+ 
+
+不过，我测试winrar的安装时报错。
+
+ 
+
+5.安装软件
+
+a. wrar390sc.exe 
+
+右键->wine ...loader打开，立即报错：
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091111/Screenshot-Program%20Error-2.png)
+
+ 
+
+直接报错。安装不完。
+
+ 
+
+b.谷歌金山词霸 v2.0本地增强版.exe
+
+ 
+
+一会儿报错：
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091111/Screenshot-Program%20Error.png)
+
+ 
+
+但可以安装完，只是执行后查不到任何单词，也不能配置。在桌面创建几个垃圾文件。
+
+ 
+
+c.安装QQ
+
+安装界面中文全是框框，也一会儿报错：
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/ablo_zhou/EntryImages/20091111/Screenshot-Program%20Error-1.png)
+
+但也可以安装完。QQ 执行时一会儿自动退出，看不到登录界面，在桌面创建一些快捷方式的垃圾。
+
+ 
+
+d.直接执行windows小程序exe，可以成功。
+
+ 
+
+6.小结：
+
+wine 在linux下的可用性还存在问题。由于没有一个windows程序是可以在wine下顺畅使用的，所以也没有测微软的office等大型软件。
+
+不知是不是本人使用的版本有问题，使用方法不当？
+
+ 
+
+7.参考
+
+wine的安装说明英文原站：
+
+http://www.winehq.org/download/deb
+
+  
+  
+
+
+![](http://img.zemanta.com/pixy.gif?x-id=288cb4d2-e789-8a65-b8e9-dcdfabacdfce)

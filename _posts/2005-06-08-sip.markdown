@@ -1,0 +1,24 @@
+---
+author: abloz
+comments: true
+date: 2005-06-08 04:47:44+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/08/sip/
+slug: sip
+title: sip
+wordpress_id: 465
+categories:
+- 技术
+---
+
+Sip 中的几个角色
+
+1。Registrar Server：接受用户的注册信息，并将其保存到同域的Location Server。增加或者删除用户的外部账号和它具体地址的映射。可以鉴权。
+
+2。Redirect Server：对一个用户的请求，查询被叫地址后返回3xx，将新地址族存在Contact域中，让该用户重新和被叫的新地址建立连接。
+
+3。Stateless Proxy：直接转发用户请求和响应。不关心重传，不会记住以前的Transaction的状态。传完即忘。
+
+4。stateful Proxy：转发用户请求和响应，并记住Tranction的状态。
+
+ 

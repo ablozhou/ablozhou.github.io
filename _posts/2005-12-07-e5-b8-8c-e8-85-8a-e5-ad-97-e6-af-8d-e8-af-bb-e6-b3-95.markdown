@@ -1,0 +1,46 @@
+---
+author: abloz
+comments: true
+date: 2005-12-07 10:14:16+00:00
+layout: post
+link: http://abloz.com/index.php/2005/12/07/e5-b8-8c-e8-85-8a-e5-ad-97-e6-af-8d-e8-af-bb-e6-b3-95/
+slug: e5-b8-8c-e8-85-8a-e5-ad-97-e6-af-8d-e8-af-bb-e6-b3-95
+title: 希腊字母读法
+wordpress_id: 536
+categories:
+- 社会评论
+---
+
+
+
+
+## Αα：阿尔法 Alpha  
+Ββ：贝塔 Beta  
+Γγ：伽玛 Gamma  
+Δδ：德尔塔
+Delte  
+Εε：艾普西龙 Epsilon  
+ζ ：捷塔 Zeta  
+Ζη：依塔 Eta  
+Θθ：西塔 Theta  
+Ιι：艾欧塔
+Iota  
+Κκ：喀帕 Kappa  
+Λλ：拉姆达 Lambda  
+Μμ：缪 Mu  
+Νν：拗 Nu  
+Ξξ：克西
+Xi  
+Οο：欧麦克轮 Omicron  
+Ππ：派 Pi  
+Ρρ：柔 Rho  
+Σσ：西格玛 Sigma  
+Ττ：套
+Tau  
+Υυ：宇普西龙 Upsilon  
+Φφ：fai Phi  
+Χχ：器 Chi  
+Ψψ：普赛 Psi  
+Ωω：欧米伽
+Omega  
+

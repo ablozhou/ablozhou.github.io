@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2006-07-12 05:58:49+00:00
+layout: post
+link: http://abloz.com/index.php/2006/07/12/e7-94-a8css-e8-80-8c-e4-b8-8d-e6-98-aftable-e6-9d-a5-e5-af-b9-e7-bd-91-e9-a1-b5-e5-b8-83-e5-b1-80/
+slug: e7-94-a8css-e8-80-8c-e4-b8-8d-e6-98-aftable-e6-9d-a5-e5-af-b9-e7-bd-91-e9-a1-b5-e5-b8-83-e5-b1-80
+title: 用CSS而不是Table来对网页布局
+wordpress_id: 685
+categories:
+- 技术
+---
+
+传统的网页定位都是用Table的。但由于Table布局有很多问题，如嵌套混乱，下载慢等，推荐的方式是用CSS，没有Table那么乱。我曾经尝试用CSS做了个圆脚框成功。今天看到天极网的《[CSSVault推荐的130个CSS布局站点](http://homepage.yesky.com/128/2299628.shtml)》，那些站点没见一个Table标签。不知他们用什么工具做的。

@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2010-09-28 08:22:38+00:00
+layout: post
+link: http://abloz.com/index.php/2010/09/28/hello-world-2-2/
+slug: hello-world-2-2
+title: Hello world!
+wordpress_id: 811
+categories:
+- 社会评论
+---
+
+Welcome to [WordPress.com](http://wordpress.com/). This is your first post. Edit or delete it and start blogging!

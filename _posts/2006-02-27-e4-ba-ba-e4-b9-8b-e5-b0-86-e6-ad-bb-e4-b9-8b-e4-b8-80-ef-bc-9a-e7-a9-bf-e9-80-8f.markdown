@@ -1,0 +1,211 @@
+---
+author: abloz
+comments: true
+date: 2006-02-27 06:59:55+00:00
+layout: post
+link: http://abloz.com/index.php/2006/02/27/e4-ba-ba-e4-b9-8b-e5-b0-86-e6-ad-bb-e4-b9-8b-e4-b8-80-ef-bc-9a-e7-a9-bf-e9-80-8f/
+slug: e4-ba-ba-e4-b9-8b-e5-b0-86-e6-ad-bb-e4-b9-8b-e4-b8-80-ef-bc-9a-e7-a9-bf-e9-80-8f
+title: 人之将死之一：穿透
+wordpress_id: 619
+categories:
+- 技术
+---
+
+1.NAT穿越
+
+
+
+
+NAT分两大类，一类是对称的（Symmetric NAT），5元组(源端口，IP，目的端口IP，协议）限制更加严格，很大一部分企业的NAT是对称的；一类是非对称的（Cone NAT，锥型），非对称的。非对称Cone包括完全锥形（穿透后任何IP和端口都可以往私网发送包），限制锥型（穿透后，同一IP的程序可以往私网发送包），和端口限制锥形（只有接到私网内部包的IP和端口可以往私网发送包）。
+
+
+
+
+1.1 STUN Simple Traversal of User Datagram Protocol (UDP)  Through Network Address Translators (NATs) rfc3489
+
+
+
+
+STUN的精髓：
+
+
+
+
+ 
+
+
+
+
+                           /-----  
+                          // STUN    
+                         |   Server  |  
+                                 //  
+                            -----/
+
+
+
+
+  
+                       +--------------+             Public Internet  
+       ................|     NAT 2    |.......................  
+                       +--------------+
+
+
+
+
+  
+                       +--------------+             Private NET 2  
+       ................|     NAT 1    |.......................  
+                       +--------------+
+
+
+
+
+                            /-----  
+                          // STUN    
+                         |   Client  |  
+                                 //               Private NET 1  
+                            -----/
+
+
+
+
+                     Figure 1: STUN Configuration
+
+
+
+
+ 
+
+
+
+
+STUN 是用来探测NAT类型和获取私网内部客户程序IP地址和端口的。它只适用于锥形的NAT，和发送UDP包。STUN Server并不保存Client的IP地址和端口。但会在绑定回复包里告诉Client它的IP地址和端口。比较源IP 端口和回复包里的给的IP端口，如果不一致，就知道客户端在NAT后。为了探清楚NAT类型，可以发送绑定请求，让STUN Server换个IP和端口发回复，如果收到，就是完全锥形。
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+  
+1.2.TURN
+
+
+
+
+  
+TURN相当于一个Proxy服务器，可以用来对TCP协议穿透和Symmetric NAT的穿透。
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+    TURN server  ======= TURN Server
+
+
+
+
+       /                                           
+
+
+
+
+-----------------------          ------------------------- Symmetric NAT
+
+
+
+
+    /                                               
+
+
+
+
+     A                                            B
+
+
+
+
+ 
+
+
+
+
+1.3.ICE  
+将TURN和STUN协议结合起来用。
+
+
+
+
+ 
+
+
+
+
+    NAT                                                               NAT
+
+
+
+
+A   |      ---------ICE(TURN+STUN server)--------| B
+
+
+
+
+ 
+
+
+
+
+1.4.Full Proxy
+
+
+
+
+解析协议报文并转发。客户端不用任何修改
+
+
+
+
+ 
+
+
+
+
+2. 防火墙穿透
+
+
+
+
+2.1 HTTP代理 rfc2616 用GET，POST，CONNECT方法，CONNECT建立连接后直接发送数据。可能需要一个proxy或前置机来处理HTTP信息，再重新组包发给真正的接受主机或进程。
+
+
+
+
+ 
+
+
+
+
+2.2 Socks 5代理 RFC1928 知名端口1080，支持TCP，UDP的防火墙穿透。其报文也是TLV（Type，Length，Value）的形式。
+
+
+
+
+ 

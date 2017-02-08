@@ -1,0 +1,49 @@
+---
+author: abloz
+comments: true
+date: 2007-11-07 02:09:20+00:00
+layout: post
+link: http://abloz.com/index.php/2007/11/07/g-cn/
+slug: g-cn
+title: g.cn
+wordpress_id: 755
+categories:
+- 社会评论
+---
+
+
+
+
+
+
+
+
+
+
+
+
+Google（谷歌）市场部在其“黑板报”发布消息，google中国启用新域名g.cn。以后可以通过[g.cn](http://www.g.cn)访问谷歌中国了。同时启用的域名还有guge.cn,guge.com,都会转到google.cn.
+
+
+
+
+ 
+
+
+
+
+[picasa for linux
+](http://picasa.google.com/linux/)也在2006年5月发布，这款优秀的软件为linux下管理照片提供了方便。
+
+
+
+
+ 
+
+
+
+
+[http://googlechinablog.com/2007/10/gcn.html](http://googlechinablog.com/2007/10/gcn.html)
+
+
+

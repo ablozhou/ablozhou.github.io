@@ -1,0 +1,25 @@
+---
+author: abloz
+comments: true
+date: 2008-11-25 09:48:39+00:00
+layout: post
+link: http://abloz.com/index.php/2008/11/25/e5-92-aa-e5-a4-9a-e5-92-aa/
+slug: e5-92-aa-e5-a4-9a-e5-92-aa
+title: 咪多咪
+wordpress_id: 9
+categories:
+- 社会评论
+---
+
+[http://www.midomi.com](http://www.midomi.com)
+
+  
+
+
+
+这个网站可以通过自己的哼唱来搜歌，用flash做的界面。命中率还挺高的。这是音乐爱好者的福音。以后要多用用。
+
+不足的地方是上传声音到返回结果有点慢。
+
+
+

@@ -1,0 +1,31 @@
+---
+author: abloz
+comments: true
+date: 2005-06-25 08:22:14+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/25/dotnet-e5-a6-82-e4-bd-95-e6-8f-90-e4-ba-a4-e5-b8-a6-e5-b0-96-e6-8b-ac-e5-8f-b7-e7-9a-84-e6-96-87-e6-9c-ac-ef-bc-9f/
+slug: dotnet-e5-a6-82-e4-bd-95-e6-8f-90-e4-ba-a4-e5-b8-a6-e5-b0-96-e6-8b-ac-e5-8f-b7-e7-9a-84-e6-96-87-e6-9c-ac-ef-bc-9f
+title: dotnet 如何提交带尖括号的文本？
+wordpress_id: 475
+categories:
+- 技术
+---
+
+
+
+dotnet中为了安全起见，缺省不允许提交带尖括号的文本，防止提交脚本，出现安全问题。当提交这种文本时，出现下面的错误：
+
+_A potentially dangerous Request.Form value was detected from the client (tbFrom=""zhouhh"<ablo_zhou@163.com>")._
+
+**Description: **Request Validation has detected a potentially dangerous client input value, and processing of the request has been aborted. This value may indicate an attempt to compromise the security of your application, such as a cross-site scripting attack. You can disable request validation by setting validateRequest=false in the Page directive or in the configuration section. However, it is strongly recommended that your application explicitly check all inputs in this case. 
+
+**Exception Details: **System.Web.HttpRequestValidationException: A potentially dangerous Request.Form value was detected from the client (tbFrom=""zhouhh"<ablo_zhou@163.com>").
+
+
+这可以有两种解决办法。1种，就是牺牲安全性，在Web.Config中加入一行：<pages validateRequest="false"></pages> 
+
+这当然不是终极解决办法。
+
+另一种，就是用Server.UrlEncode("text"), Server.UrlDecode("text");
+
+

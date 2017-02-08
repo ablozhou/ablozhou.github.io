@@ -1,0 +1,14 @@
+---
+author: abloz
+comments: true
+date: 2006-10-18 03:23:28+00:00
+layout: post
+link: http://abloz.com/index.php/2006/10/18/e6-95-b0-e6-8d-ae-e5-85-8b-e9-9a-86-e8-ba-ab-e4-bb-bd-e9-aa-8c-e8-af-81/
+slug: e6-95-b0-e6-8d-ae-e5-85-8b-e9-9a-86-e8-ba-ab-e4-bb-bd-e9-aa-8c-e8-af-81
+title: 数据克隆身份验证
+wordpress_id: 700
+categories:
+- 社会评论
+---
+
+我的共享空间已申请网易博客-博客数据克隆服务，克隆数据目标： [http://blog.163.com/ablo_zhou](http://blog.163.com/ablo_zhou) 。

@@ -1,0 +1,739 @@
+---
+author: abloz
+comments: true
+date: 2016-01-07 14:26:12+00:00
+layout: post
+link: http://abloz.com/index.php/2016/01/07/2716/
+slug: '2716'
+title: postgresql 实际操作
+wordpress_id: 2716
+categories:
+- 技术
+tags:
+- postgres
+---
+
+周海汉 2016.1.7
+
+
+Ubuntu下安装postgres：
+
+
+
+
+zhh@uhost1:~$ sudo apt-get install postgresql-client postgresql pgadmin3
+
+
+
+
+Mac下可以从http://postgresapp.com直接下载postgres.dmg. 本文以ubuntu 14.04下为例。
+
+
+
+
+用系统用户操作数据库
+
+
+
+
+zhh@uhost1:~$ sudo adduser dbuser
+
+
+
+
+zhh@uhost1:~$ sudo su - postgres
+
+
+
+
+postgres@uhost1:~$ psql
+
+
+
+
+psql (9.3.10)
+
+
+
+
+Type "help" for help.
+
+
+
+
+
+
+
+postgres=# \password postgres
+
+
+
+
+Enter new password:
+
+
+
+
+Enter it again:
+
+
+
+
+postgres=# create user dbuser with password ‘postgres’;
+
+
+
+
+CREATE ROLE
+
+
+
+
+postgres=# create database mydb owner dbuser;
+
+
+
+
+CREATE DATABASE
+
+
+
+
+postgres=# grant all privileges on database mydb to dbuser;
+
+
+
+
+GRANT
+
+
+
+
+postgres=# \q
+
+
+
+
+postgres@uhost1:~$ exit
+
+
+
+
+注销
+
+
+
+
+zhh@uhost1:~$ su - dbuser
+
+
+
+
+密码：
+
+
+
+
+dbuser@uhost1:~$
+
+
+
+
+dbuser@uhost1:~$ psql -d mydb
+
+
+
+
+psql (9.3.10)
+
+
+
+
+Type "help" for help.
+
+
+
+
+
+
+
+mydb=>
+
+
+
+
+mydb=> create table mytable(id int, name varchar(32), age int, cdate date);
+
+
+
+
+CREATE TABLE
+
+
+
+
+mydb=> insert into mytable(id,name,age,cdate) values(0,'myname', 32,'2016-1-1');
+
+
+
+
+INSERT 0 1
+
+
+
+
+mydb=> select * from mytable;
+
+
+
+
+ id |  name  | age |   cdate
+
+
+
+
+----+--------+-----+------------
+
+
+
+
+  0 | myname |  32 | 2016-01-01
+
+
+
+
+(1 row)
+
+
+
+
+mydb=> \h
+
+
+
+
+Available help:
+
+
+
+
+  ABORT                            DEALLOCATE
+
+
+
+
+  ALTER AGGREGATE                  DECLARE
+
+
+
+
+  ALTER COLLATION                  DELETE
+
+
+
+
+  ALTER CONVERSION                 DISCARD
+
+
+
+
+  ALTER DATABASE                   DO
+
+
+
+
+  ALTER DEFAULT PRIVILEGES         DROP AGGREGATE
+
+
+
+
+  ALTER DOMAIN                     DROP CAST
+
+
+
+
+  ALTER EVENT TRIGGER              DROP COLLATION
+
+
+
+
+  ALTER EXTENSION                  DROP CONVERSION
+
+
+
+
+  ALTER FOREIGN DATA WRAPPER       DROP DATABASE
+
+
+
+
+  ALTER FOREIGN TABLE              DROP DOMAIN
+
+
+
+
+  ALTER FUNCTION                   DROP EVENT TRIGGER
+
+
+
+
+  ALTER GROUP                      DROP EXTENSION
+
+
+
+
+  ALTER INDEX                      DROP FOREIGN DATA WRAPPER
+
+
+
+
+  ALTER LANGUAGE                   DROP FOREIGN TABLE
+
+
+
+
+  ALTER LARGE OBJECT               DROP FUNCTION
+
+
+
+
+  ALTER MATERIALIZED VIEW          DROP GROUP
+
+
+
+
+  ALTER OPERATOR                   DROP INDEX
+
+
+
+
+  ALTER OPERATOR CLASS             DROP LANGUAGE
+
+
+
+
+  ALTER OPERATOR FAMILY            DROP MATERIALIZED VIEW
+
+
+
+
+  ALTER ROLE                       DROP OPERATOR
+
+
+
+
+  ALTER RULE                       DROP OPERATOR CLASS
+
+
+
+
+  ALTER SCHEMA                     DROP OPERATOR FAMILY
+
+
+
+
+  ALTER SEQUENCE                   DROP OWNED
+
+
+
+
+  ALTER SERVER                     DROP ROLE
+
+
+
+
+  ALTER SYSTEM                     DROP RULE
+
+
+
+
+  ALTER TABLE                      DROP SCHEMA
+
+
+
+
+  ALTER TABLESPACE                 DROP SEQUENCE
+
+
+
+
+  ALTER TEXT SEARCH CONFIGURATION  DROP SERVER
+
+
+
+
+  ALTER TEXT SEARCH DICTIONARY     DROP TABLE
+
+
+
+
+  ALTER TEXT SEARCH PARSER         DROP TABLESPACE
+
+
+
+
+  ALTER TEXT SEARCH TEMPLATE       DROP TEXT SEARCH CONFIGURATION
+
+
+
+
+  ALTER TRIGGER                    DROP TEXT SEARCH DICTIONARY
+
+
+
+
+  ALTER TYPE                       DROP TEXT SEARCH PARSER
+
+
+
+
+  ALTER USER                       DROP TEXT SEARCH TEMPLATE
+
+
+
+
+  ALTER USER MAPPING               DROP TRIGGER
+
+
+
+
+  ALTER VIEW                       DROP TYPE
+
+
+
+
+  ANALYZE                          DROP USER
+
+
+
+
+  BEGIN                            DROP USER MAPPING
+
+
+
+
+  CHECKPOINT                       DROP VIEW
+
+
+
+
+  CLOSE                            END
+
+
+
+
+  CLUSTER                          EXECUTE
+
+
+
+
+  COMMENT                          EXPLAIN
+
+
+
+
+  COMMIT                           FETCH
+
+
+
+
+  COMMIT PREPARED                  GRANT
+
+
+
+
+  COPY                             INSERT
+
+
+
+
+  CREATE AGGREGATE                 LISTEN
+
+
+
+
+  CREATE CAST                      LOAD
+
+
+
+
+  CREATE COLLATION                 LOCK
+
+
+
+
+  CREATE CONVERSION                MOVE
+
+
+
+
+  CREATE DATABASE                  NOTIFY
+
+
+
+
+  CREATE DOMAIN                    PREPARE
+
+
+
+
+  CREATE EVENT TRIGGER             PREPARE TRANSACTION
+
+
+
+
+  CREATE EXTENSION                 REASSIGN OWNED
+
+
+
+
+  CREATE FOREIGN DATA WRAPPER      REFRESH MATERIALIZED VIEW
+
+
+
+
+  CREATE FOREIGN TABLE             REINDEX
+
+
+
+
+  CREATE FUNCTION                  RELEASE SAVEPOINT
+
+
+
+
+  CREATE GROUP                     RESET
+
+
+
+
+  CREATE INDEX                     REVOKE
+
+
+
+
+  CREATE LANGUAGE                  ROLLBACK
+
+
+
+
+  CREATE MATERIALIZED VIEW         ROLLBACK PREPARED
+
+
+
+
+  CREATE OPERATOR                  ROLLBACK TO SAVEPOINT
+
+
+
+
+  CREATE OPERATOR CLASS            SAVEPOINT
+
+
+
+
+  CREATE OPERATOR FAMILY           SECURITY LABEL
+
+
+
+
+  CREATE ROLE                      SELECT
+
+
+
+
+  CREATE RULE                      SELECT INTO
+
+
+
+
+  CREATE SCHEMA                    SET
+
+
+
+
+  CREATE SEQUENCE                  SET CONSTRAINTS
+
+
+
+
+  CREATE SERVER                    SET ROLE
+
+
+
+
+  CREATE TABLE                     SET SESSION AUTHORIZATION
+
+
+
+
+  CREATE TABLE AS                  SET TRANSACTION
+
+
+
+
+  CREATE TABLESPACE                SHOW
+
+
+
+
+  CREATE TEXT SEARCH CONFIGURATION START TRANSACTION
+
+
+
+
+  CREATE TEXT SEARCH DICTIONARY    TABLE
+
+
+
+
+  CREATE TEXT SEARCH PARSER        TRUNCATE
+
+
+
+
+  CREATE TEXT SEARCH TEMPLATE      UNLISTEN
+
+
+
+
+  CREATE TRIGGER                   UPDATE
+
+
+
+
+  CREATE TYPE                      VACUUM
+
+
+
+
+  CREATE USER                      VALUES
+
+
+
+
+  CREATE USER MAPPING              WITH
+
+
+
+
+  CREATE VIEW
+
+
+
+
+(END)
+
+
+
+
+
+
+
+修改配置
+
+
+
+
+修改侦听ip，允许远程连接。避免报如下错误：
+
+
+
+
+➜ ~ % psql -h 192.168.1.100 -U dbuser -p5432
+psql: could not connect to server: Connection refused
+
+
+
+
+➜ ~ % nc -v 192.168.1.100 5432
+nc: connectx to 192.168.1.100 port 5432 (tcp) failed: Connection refused
+
+
+
+
+远程拒绝连接，但本地是可以连接的。
+
+
+
+
+zhh@uhost1:~$ sudo vi /etc/postgresql/9.3/main/postgresql.conf
+
+
+
+
+listen_addresses = '*' #将缺省的localhost改为全部IP
+
+
+
+
+
+
+
+修改pg_hba.conf，允许IP范围
+
+
+
+
+避免远程连接失败：
+
+
+
+
+Connection Failed
+
+
+
+
+FATAL:  no pg_hba.conf entry for host "192.168.1.4", user "dbuser", database "mydb", SSL off
+
+
+
+
+zhh@uhost1:~$ sudo vi /etc/postgresql/9.3/main/pg_hba.conf
+
+
+
+
+host    all             all             192.168.1.1/24          md5
+
+
+
+
+
+
+
+重启postgres
+
+
+
+
+zhh@uhost1:~$ su - postgres
+密码：
+postgres@uhost1:~$ /etc/init.d/postgresql restart
+* Restarting PostgreSQL 9.3 database server [ OK ]
+
+
+
+
+
+
+
+然后可以通过navicat，psql命令行等工具远程连接postgres。
+
+
+
+
+➜ ~ % psql -h 192.168.1.100 -p5432 -U dbuser -d mydb
+Password for user dbuser:
+psql (9.4.4, server 9.3.10)
+
+
+
+
+mydb=> \d
+List of relations
+Schema | Name | Type | Owner
+--------+---------+-------+--------
+public | mytable | table | dbuser
+(1 row)

@@ -1,0 +1,81 @@
+---
+author: abloz
+comments: true
+date: 2007-11-26 01:54:22+00:00
+layout: post
+link: http://abloz.com/index.php/2007/11/26/e4-bb-8e-e7-94-b5-e4-bf-a1-e6-9c-8d-e5-8a-a1-e7-9c-8b-e6-98-af-e5-90-a6-e5-8f-91-e5-b1-95-e4-b8-ad-e5-9b-bd-e5-ae-b6/
+slug: e4-bb-8e-e7-94-b5-e4-bf-a1-e6-9c-8d-e5-8a-a1-e7-9c-8b-e6-98-af-e5-90-a6-e5-8f-91-e5-b1-95-e4-b8-ad-e5-9b-bd-e5-ae-b6
+title: 从电信服务看是否发展中国家
+wordpress_id: 90
+categories:
+- 文艺
+---
+
+龙应台说现在很多发展中国家，单看其城市的高楼大厦，已经和发达国家没有太多差别。比如置身中国北京上海，看起来比欧洲一些城市还豪华些。但通过下一场大雨，看看雨水排泄情况，就可以看出是否是发展中国家。
+
+其实，从电信服务也可以看出这一点。
+
+在老家湖南常德的石门县，县城里面中国电信是不收初装费的，因为有铁通，网通等竞争。而到了郊区农村，不仅收300元初装费，还必须按年付电话费。如果不付，就拆除电话，初装费不退。下次开通还交一次初装费。而已经包年的ADSL网络费也不退。因为中国电信嫌麻烦，将所有业务承包给了下面的个人。这个人说：“你有本事投诉我去啊，你投诉无门。就算你投诉了也就扣我20元钱，我出的起。”因为农村只有中国电信一家，我开始以为农村没有电信市场。但据调查，现在农村的电话安装已经相当普遍，可怜的农村人就享受着这样恶劣的服务。
+
+而如果在北京上海深圳，电信服务虽然没有到位，相对而言，不容易发生上述耍赖的事情。
+
+从国家（地区）之间的比较看，也可以看出电信服务是否落后。今天想申请google日历的移动服务，到其支持列表一看，中国就一家“中国联通”。就算“中国移动”也加入，不过两家。只有一家移动运营商的国家（地区）是“阿富汗”，“阿塞拜疆”，“古巴”之类。而看看香港的运营商，也达到6家：
+
+  * 3 (Hutchison Telecom)  
+  * Hong Kong CSL Limited  
+  * New World PCS  
+  * Peoples Telephone Company Ltd  
+  * SmarTone-Vodafone  
+  * SUNDAY Communications Ltd 
+
+看看美国的运营商，惊呆了：
+
+**美国 (United States of America)**
+
+  
+
+  * Alaska Communications Systems  
+  * Alaska Wireless  
+  * Alltel  
+  * AT&T (now Cingular)  
+  * Bluegrass Cellular  
+  * Cellcom  
+  * Cellular One of San Luis Obispo  
+  * Cellular South  
+  * CellularOne  
+  * Centennial Wireless  
+  * Cincinnati Bell  
+  * Cingular  
+  * Copper Wireless  
+  * Helio  
+  * MetroPCS  
+  * Midwest Wireless  
+  * Nextel  
+  * nTelos  
+  * Omnipoint  
+  * Qwest  
+  * Sprint  
+  * SRT WIRELESS  
+  * SunCom Wireless  
+  * SureWest  
+  * T-Mobile  
+  * Tracfone  
+  * Unicel  
+  * US Cellular  
+  * Verizon  
+  * Virgin Mobile  
+  * Western Wireless 
+
+连印度的运营商也有7家：
+
+**印度 (India)**
+
+  * Hutch-Mumbai  
+  * Hutch-Delhi  
+  * Hutch-Gujarat  
+  * Hutchison Essar Cellular Limited  
+  * Hutch-Kolkata  
+  * Spice Karnataka  
+  * Spice Punjab
+
+比较一下才知道，难怪中国的电信费用居高不下了。就像中国只有两家黑店，服务也差不多，都出售人肉叉烧包。选来选去就那样。 发达国家的人大概也会感叹可怜的中国人只能享受这样的电信服务。

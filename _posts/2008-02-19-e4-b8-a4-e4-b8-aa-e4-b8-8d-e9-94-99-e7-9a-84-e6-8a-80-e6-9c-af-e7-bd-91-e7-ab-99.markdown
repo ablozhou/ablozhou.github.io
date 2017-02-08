@@ -1,0 +1,18 @@
+---
+author: abloz
+comments: true
+date: 2008-02-19 06:04:18+00:00
+layout: post
+link: http://abloz.com/index.php/2008/02/19/e4-b8-a4-e4-b8-aa-e4-b8-8d-e9-94-99-e7-9a-84-e6-8a-80-e6-9c-af-e7-bd-91-e7-ab-99/
+slug: e4-b8-a4-e4-b8-aa-e4-b8-8d-e9-94-99-e7-9a-84-e6-8a-80-e6-9c-af-e7-bd-91-e7-ab-99
+title: 两个不错的技术网站
+wordpress_id: 47
+categories:
+- 社会评论
+---
+
+一个是外国的[viemu](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)，关于vim的，发布了一张键盘图，如下： 
+
+[![vi-vim-cheat-sheet](http://bxlgpg.bay.livefilestore.com/y1peMriR2dR5OC3lVIwFRiEg8bMB0CYBiQ4-r1zR4tOkutbfmRvi_a8q2fd7p8y9j-nzKNBVZ5cJ-x6mUa-y5txUZ1AA2CRT7W_?PARTNER=WRITER)](http://bxlgpg.bay.livefilestore.com/y1pMK0awpTmoicx0KobWzr5SQUPvpaLLB3ckhcwni3vAlHivl5tXfrmOEjt8nps5Mktzn-1J9a5vv-OmcnvL_rrdQ?PARTNER=WRITER)
+
+另一个是台湾[李果正的个人网站](http://edt1023.sayya.org/)，具有不错的资源。

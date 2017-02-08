@@ -1,0 +1,36 @@
+---
+author: abloz
+comments: true
+date: 2007-03-27 08:54:12+00:00
+layout: post
+link: http://abloz.com/index.php/2007/03/27/crack/
+slug: crack
+title: 反编译后破解软件经验反编译后破解软件经验
+wordpress_id: 200
+categories:
+- 技术
+tags:
+- crack
+- 破解
+---
+
+本人非破解专家，也是偶然接触这一行。
+加壳脱壳本人没干过，所以不清楚。
+
+我破解的是lib文件或dll
+
+破解工 具：w32dasm，ultraedit,vc
+
+首先用VC写个测试程序加载程序，执行到弹出过期的对话窗口的地方，查看汇编代码。这可能 会费些事。
+
+然后用w32dasm反编译 该lib/dll,或者
+用VC带的dumpbin /disasm  /out:out.asm  xxx.dll/lib 可以生成汇编代码。
+
+找到对应的地方查看汇编，再用ultraedit打开，修改对 应的汇编代码。
+
+经常会有
+663dd807  cmp ax ,07d8 //07d8 即 2008年
+7240            jb xxxxxx //小于，跳到xxxxxx,这是正确的地方
+7515           jne xxxx   //不等于，跳到xxxx，这肯定错了，过期了
+
+将7515改为7538 之类，就跳过了时间检查了。：）

@@ -1,0 +1,57 @@
+---
+author: abloz
+comments: true
+date: 2006-03-03 02:01:56+00:00
+layout: post
+link: http://abloz.com/index.php/2006/03/03/2006-e5-b9-b4-e6-9c-80-e6-9c-89-e5-89-8d-e9-80-94-e7-9a-84web-2-0-e8-bd-af-e4-bb-b6-e5-88-97-e8-a1-a8-e3-80-90-e8-bd-ac-e3-80-91/
+slug: 2006-e5-b9-b4-e6-9c-80-e6-9c-89-e5-89-8d-e9-80-94-e7-9a-84web-2-0-e8-bd-af-e4-bb-b6-e5-88-97-e8-a1-a8-e3-80-90-e8-bd-ac-e3-80-91
+title: 2006年最有前途的web 2.0软件列表【转】
+wordpress_id: 621
+categories:
+- 转载
+---
+
+(from donews)个人计划管理类：[_Zoho Planner_](http://zohoplanner.com/organizer/login.do)软件 Zoho Planner 是基于Ajax技术的在线个人计划管理软件，可以做列表、安排约会和记事本等。此外还有一款很好的个人计划管理软件[_Plaxo_](https://plaxo.com/)，通过Plaxo你可以同步你的outlook里的日历、联系人、任务和记事本等，这样可以保证你的信息随时更新，你也可以使用手机版的Plaxo来访问你的数据（这些和365kit功能一样撒）。
+
+
+    搜索类：[_Google Desktop Search 3.0_](http://desktop.google.com/) 性能比较优异，紧随其后的是[_Gravee_](http://gravee.com/)。
+
+
+
+
+    视频存储和共享：在这领域有一些有意思的服务，例如[_Stickam_](http://stickam.com/)为你的网站或者blog提供500M免费空间和无限带宽存储视频文件，[_VideoBomb_](http://videobomb.com/)软件也有类似的功能。 
+
+
+
+
+    音乐管理类：[_Podbop_](http://podbop.org/)的特性和功能优于其后的[_SongBird_](http://songbirdnest.com/)和[_Jamendo_](http://www.jamendo.com/us/)。
+
+
+
+
+    个性化主页：在Ajax技术自定义主页领域[_Pageflakes_](http://www.pageflakes.com/)明显优于[_Linkedfeed_](http://linkedfeed.com/)。
+
+
+
+
+    其它比较有前途的web 2.0服务还包括：
+
+
+
+
+    [_Cocomment_](http://cocomment.com/)，可以把你在许多blog上的评论集中在一个页面上。
+
+
+
+
+    [_Zoomtags_](http://zoomtags.com/)，基于tag的内容管理和过滤。
+
+
+
+
+    [_Springadoo_](http://springdoo.com/)：用电脑和电话和email对话管理软件。
+
+
+
+
+    [_Campfire_](http://campfirenow.com/)：一个即时群组聊天软件。

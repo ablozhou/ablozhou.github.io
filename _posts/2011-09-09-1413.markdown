@@ -1,0 +1,85 @@
+---
+author: abloz
+comments: true
+date: 2011-09-09 09:31:36+00:00
+layout: post
+link: http://abloz.com/index.php/2011/09/09/1413/
+slug: '1413'
+title: jquery mobile 折叠效果演示源码
+wordpress_id: 1413
+categories:
+- 技术
+tags:
+- jquery mobile
+---
+
+
+    
+    
+    <html>
+    
+     <head>
+     	<meta charset="utf-8">
+    	<meta content="width=device-width, initial-scale=1" name="viewport">
+     <title>jquery隐藏内容测试</title>
+    	<link href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" rel="stylesheet"></link>
+    	<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+    	<script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+     </head>
+     <body>
+     <div data-role="page" id="home">
+     <div data-role="header">
+     <h1>测试jquery </h1>
+     </div>
+     <div data-role="content">
+     <div data-role="collapsible-set">
+    
+    	<div data-role="collapsible" data-collapsed="false">
+    	<h3>隐藏集合 A</h3>
+    	<p>隐藏集合内容A.</p>
+    	</div>
+    
+    	<div data-role="collapsible">
+    	<h3>Section B</h3>
+    	<p>I'm the collapsible set content for section B.</p>
+    	</div>
+        	<div data-role="collapsible">
+    	<h3>Section B</h3>
+    	<p>I'm the collapsible set content for section B.</p>
+    	</div>
+    
+        	<div data-role="collapsible">
+    	<h3>Section B</h3>
+    	<p>I'm the collapsible set content for section B.</p>
+    	</div>
+    		<div data-role="collapsible">
+    	<h3>Section B</h3>
+    	<p>I'm the collapsible set content for section B.</p>
+    	</div>
+    
+    
+    </div>
+    
+     <div data-role="collapsible" data-state="collapsed">
+     <h5><span style="color:#f00;"> 好友：</span> 中文测试，哈哈!<div class="ui-grid-a">
+    	<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+    	<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+    </div></h5>
+     <p style="color:#f00;">中文测试，哈哈!</p>
+      <p>中文测试，哈哈哈哈!</p>
+     </div>
+     <div data-role="collapsible" data-state="collapsed">
+     <h5>About<color="red"> this app</color></h5>
+     <p>This app rocks!</p>
+      <p>This app rocks!</p>
+     </div>
+     </div>
+     </div>
+     </body>
+    
+    </html>
+    
+
+
+这是jquery mobile 做的自动隐藏和展示的效果源码。第一行表示html5，低版本浏览器不支持。可以自动收缩和展开，可用于做浏览列表。
+[效果演示](http://abloz.com/test/testjq1.html)

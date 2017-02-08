@@ -1,0 +1,24 @@
+---
+author: abloz
+comments: true
+date: 2005-12-24 10:22:36+00:00
+layout: post
+link: http://abloz.com/index.php/2005/12/24/picasa-e6-9d-a5-e4-ba-86/
+slug: picasa-e6-9d-a5-e4-ba-86
+title: picasa来了
+wordpress_id: 557
+categories:
+- 技术
+---
+
+使用了一下google公司出的图片管理软件picasa,感觉效果非常好。速度很快，具有本地搜索，编辑，拼图，网上打印，加标志，加注释等管理等功能，还可以直接向blogger.com提交图片发布到blog上面。这款软件发布出来，恐怕acdsee岌岌可危了。picasa目前已经出到2.1版本。
+
+
+
+
+ 
+
+
+
+
+下载地址：[picasa](http://picasa.google.com/intl/zh-CN/)

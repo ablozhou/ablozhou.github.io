@@ -1,0 +1,66 @@
+---
+author: abloz
+comments: true
+date: 2007-01-05 07:32:19+00:00
+layout: post
+link: http://abloz.com/index.php/2007/01/05/e7-94-b5-e4-bf-a1-e6-9c-af-e8-af-ad-e8-be-a8-e6-9e-90/
+slug: e7-94-b5-e4-bf-a1-e6-9c-af-e8-af-ad-e8-be-a8-e6-9e-90
+title: 电信术语辨析
+wordpress_id: 724
+categories:
+- 社会评论
+---
+
+author：周海汉 
+
+
+
+
+email: [ablo_zhou@hotmail.com](mailto:ablo_zhou@hotmail.com)
+
+
+
+
+blog: [http://ablozhou.spaces.live.com](http://ablozhou.spaces.live.com);
+
+
+
+
+date: 2006.12.18
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+下面是一些电信术语意思的解释，容易让人迷惑。
+
+
+
+
+ 
+
+
+
+
+Call forward
+：呼叫前转。所谓前转，是指呼叫没有建立起来，被叫应答前，就按照规则转移到预设的另一个号码了。分为交换机设定和用户设定。交换机有前转规则，同时用户也可以通过电话在交换机上设定规则，且用户设定具有较高优先级。如可以无条件前转，遇忙前转，分时段前转，关机前转等。例如，你可以将上班时间手机的呼叫无条件前转到公司座机上，下班后将手机设为遇忙前转到家庭座机上。
+
+
+
+
+ 
+
+
+
+
+Call transfer:
+呼叫转接。呼叫转接，是被叫电话已经接通，接受者通过在座机上拍叉簧听到拨号音后，拨第三方号码。如不希望和第三方通话，在听到回铃音后即可挂断。也可以先和第三方通话，再挂断。转接服务，主叫方不知接受方是谁。

@@ -1,0 +1,89 @@
+---
+author: abloz
+comments: true
+date: 2007-10-31 07:17:51+00:00
+layout: post
+link: http://abloz.com/index.php/2007/10/31/e6-90-9c-e7-8b-97-e6-96-87-e5-93-81-e6-8c-87-e6-95-b0/
+slug: e6-90-9c-e7-8b-97-e6-96-87-e5-93-81-e6-8c-87-e6-95-b0
+title: 搜狗文品指数
+wordpress_id: 751
+categories:
+- 文艺
+---
+
+## 
+
+
+## 搜狗实验室推出了个[文品指数](http://www.sogou.com/labs/wenpin/)，可惜测试时老不出结果，果然是实验室。我用IE和firefox测试，测了数十次，总共才看到两次成功。
+
+
+
+
+## 搜狗文品对《一碗冰雪奇毒》的评价：
+
+
+
+
+没显示。
+
+
+## 搜狗文品对《市场经济的缺陷》这篇文章的评测：
+
+
+
+
+## 周海汉，您的总体评价：
+
+
+
+
+语言的智慧来源于生活的积累与敏锐的思维；幽默开心之余，也能带来一些思索，此为难得。架构清晰，逻辑性强，情节缜密，可读性强；文章内容丰富，观点翔实可圈可点；在用词范围方面可以着重下功夫改进。情节缜密题材的小说值得尝试，将推理、悬念、历史的因素掺杂其中；同时也可以尝试杂文、评论等文体。行文时留心描写与情节结构的紧密配合，必然会诞生令人耳目一新的作品。
+
+
+
+
+## 周海汉，您的评测结果：
+
+
+
+
+
+
+
+
+
+
+
+[黄健翔](http://www.sogou.com/web?query= 黄健翔)
+    ![](http://www.sogou.com/images/statsword/bar1.gif)
+    44%
+    虽然不明显，但是文章跟这位作家的风格有些形似呢。
+
+
+
+
+
+
+
+
+[张朝阳](http://www.sogou.com/web?query= 张朝阳)
+    ![](http://www.sogou.com/images/statsword/bar2.gif)
+    21%
+    这个区间是比较正常的，看来你已经有了掌握神韵的感觉喔。
+
+
+
+
+
+
+
+
+[霍金](http://www.sogou.com/web?query= 霍金)
+    ![](http://www.sogou.com/images/statsword/bar3.gif)
+    17%
+    这个区间是比较正常的，看来你已经有了掌握神韵的感觉喔。
+
+
+
+
+[有意思，我也要去试试！](http://www.sogou.com/websearch/test/statsword.jsp)

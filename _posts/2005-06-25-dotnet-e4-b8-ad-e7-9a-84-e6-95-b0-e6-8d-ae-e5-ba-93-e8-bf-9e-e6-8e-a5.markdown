@@ -1,0 +1,47 @@
+---
+author: abloz
+comments: true
+date: 2005-06-25 01:10:41+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/25/dotnet-e4-b8-ad-e7-9a-84-e6-95-b0-e6-8d-ae-e5-ba-93-e8-bf-9e-e6-8e-a5/
+slug: dotnet-e4-b8-ad-e7-9a-84-e6-95-b0-e6-8d-ae-e5-ba-93-e8-bf-9e-e6-8e-a5
+title: dotnet 中的数据库连接
+wordpress_id: 476
+categories:
+- 技术
+---
+
+1.在Web.Config里增加
+
+<appSettings>  
+  <add key="connectionString" value="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:WebSitesmywebdatamydb.mdb;"/>  
+ </appSettings>
+
+2.读取
+
+string strConString = ConfigurationSettings.AppSettings["connectionString"];
+
+3.可以在Application中保存
+
+protected void Application_Start(Object sender, EventArgs e)  
+  {  
+   Application["conn"]="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:WebSitesmywebdatamydb.mdb";  
+  }
+
+protected void Application_End(Object sender, EventArgs e)  
+  {  
+   Application["conn"]="";  
+  }
+
+在程序把Application["conn"]当成字符串用就可以了。
+
+4.在Session中保存
+
+protected void Session_Start(Object sender, EventArgs e)  
+  {  
+   OleDbConnection conn= new System.Data.SqlClient.SqlConnection();  
+   conn.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:WebSitesmywebdatamydb.mdb";  
+Session["conn"]=conn;    
+  }  
+  
+

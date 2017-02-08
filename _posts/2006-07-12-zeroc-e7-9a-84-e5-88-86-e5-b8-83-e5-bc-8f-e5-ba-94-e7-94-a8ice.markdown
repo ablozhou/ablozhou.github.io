@@ -1,0 +1,27 @@
+---
+author: abloz
+comments: true
+date: 2006-07-12 09:10:22+00:00
+layout: post
+link: http://abloz.com/index.php/2006/07/12/zeroc-e7-9a-84-e5-88-86-e5-b8-83-e5-bc-8f-e5-ba-94-e7-94-a8ice/
+slug: zeroc-e7-9a-84-e5-88-86-e5-b8-83-e5-bc-8f-e5-ba-94-e7-94-a8ice
+title: Zeroc的分布式应用ICE
+wordpress_id: 688
+categories:
+- 技术
+---
+
+
+
+
+ICE这个词快用滥了，大概因为单词太简单，所以还不断有人取这个名字。Zeroc的分布式开源平台就是叫这个名字。这里有一篇应用经验《[_正确使用corba，ice等分布式应用的一种思路_](http://blog.csdn.net/h8135/archive/2005/03/02/307245.aspx)》。 
+
+
+
+
+Zeroc的ICE据说是比CORBA和SOAP更好的分布式平台。而且是电信级应用，支持各种语言和平台。我还没有试用，想用一下。
+
+
+
+
+下载地址：[_http://www.zeroc.com/_](http://www.zeroc.com/)

@@ -1,0 +1,86 @@
+---
+author: abloz
+comments: true
+date: 2010-08-10 02:17:28+00:00
+layout: post
+link: http://abloz.com/index.php/2010/08/10/iis-ftp/
+slug: iis-ftp
+title: IIS ftp  权限控制
+wordpress_id: 359
+categories:
+- 技术
+tags:
+- ftp
+- iis
+- 权限
+---
+
+周海汉 2010.8.10
+http://abloz.com
+
+linux下用vsftp等程序，可以很方便设置ftp。而sftp则更具有安全性。ubuntu自带sftp浏览下载功能，相当方便。但工作中恰好有一台win2003 server，
+常年开机，具有公网地址，所以需配置IIS自带ftp或另装server-U.我个人更喜欢自带到IIS ftp.
+
+
+
+## 需求：
+
+
+有客户端和服务器端程序需通过ftp上传和下载。权限分配如下：
+客户端client账户可以上传修改删除，而匿名账号可以下载，不可以增删改。服务器程序server账号可以上传增删改，匿名账户不可以访问。
+
+
+
+## 实施：
+
+
+
+
+### 1、ftp目录准备
+
+
+在D:新建ftp目录，下面建client和server目录，目录结构如下
+
+    
+    
+    .
+    ├─client
+    │  ├─normal
+    │  └─reduce
+    └─server
+       └─work
+    
+
+
+
+
+
+### 2、帐号准备
+
+
+windows到用户管理里添加client和server用户。这里用户和目录一致，系统会自动在用户登录后分配到相应用户名到目录下。而匿名登录会在ftp根下面。
+
+
+### 3、IIS 设置
+
+
+IIS到ftp里面将缺省到ftp停止，新建ftp，不隔离用户。目录指到我们新建的ftp目录。缺省权限设为可读，可写，可记录。
+
+
+### 4、权限设置
+
+
+采用ntfs到权限控制。在ftp根目录，右键:属性->安全，增加guests组，设置**可以读取和运行，查看目录，读取，并拒绝修改**权限。
+增加users组，完全控制权限。
+对ftp下面的client目录，在安全里设置增加client用户，完全控制。高级里去掉继承到目前权限，并复制权限。
+对ftp下面的server目录，在安全里设置增加server用户，完全控制。高级里去掉继承到目前权限，并复制权限。去掉users组到完全控制权限，禁止clients组访问。
+
+
+
+### 5、测试
+
+
+ftp上去，用匿名(anonymous)，server,client三个帐号登录，测试权限设置是否正确。
+实践中碰到在本机测试权限没有问题，到我自己机器上测试，写权限会被拒绝（550 access is denied)。后面查到[有人说isa防火墙对ftp缺省是readonly](http://www.bugx.org/146)的原因。网管查了半天，因为同一网段某些人又可以写，某些人不行，可能是对IP有限制。但没查到限制的地方。后修改IP测试正确。
+
+

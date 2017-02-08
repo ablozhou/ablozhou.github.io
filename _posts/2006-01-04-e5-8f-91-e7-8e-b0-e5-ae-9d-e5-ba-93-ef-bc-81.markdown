@@ -1,0 +1,69 @@
+---
+author: abloz
+comments: true
+date: 2006-01-04 14:11:27+00:00
+layout: post
+link: http://abloz.com/index.php/2006/01/04/e5-8f-91-e7-8e-b0-e5-ae-9d-e5-ba-93-ef-bc-81/
+slug: e5-8f-91-e7-8e-b0-e5-ae-9d-e5-ba-93-ef-bc-81
+title: 发现宝库！
+wordpress_id: 565
+categories:
+- 技术
+---
+
+在看TCP/IP协议详解卷3时，里面有HTTP协议的解析。看到作者说http的server比浏览器要简单，并举例说NCSA的http服务器1.3版本只有6千多行，而Unix下的Mosaic 2.5浏览器有约8万行代码，不是一个数量级啊。终于悟到其实一个服务器也不是想象中那么难哦。平时配IIS，APACHE什么的，感觉应该挺复杂的，没想到事实真相并不完全如此。
+
+
+
+
+我的好奇心不由被点燃，想看看NCSA的HTTP服务器1.3版到底是什么样的，便到google上一搜。居然发现原来APACHE服务器的来历是A PATCH，一个补丁。什么的补丁呢？就是NCSA的Http服务器1.3的补丁。Apache服务器就是在这个源码的基础上改进的。
+
+
+
+
+这更增加了我看源码的好奇心，经过几次尝试，终于找到了NCSA的Httpd源码。不仅找到了NCSA的Httpd源码，还发现这是NCSA的匿名服务器，NCSA的HTTPD所有版本都放在这里。
+
+
+
+
+ 
+
+
+
+
+地址：
+
+
+
+
+[ftp://ftp.ncsa.uiuc.edu/Web/httpd/Unix/ncsa_httpd/](ftp://ftp.ncsa.uiuc.edu/Web/httpd/Unix/ncsa_httpd/)
+
+
+
+
+ 
+
+
+
+
+该目录下的current是最新版本，old里面有从0.5-1.3的所有版本源码。
+
+
+
+
+ 
+
+
+
+
+说Google的HTTP服务器是自己写的，我开始还想这公司太牛叉了，现在想想其实也不是想象的那么难。:-)
+
+
+
+
+ 
+
+
+
+
+同时在该服务器发现1994年写的tool ：DocFinder，就是原始的搜索引擎。NCSA真是一个老始祖了。说不定yahoo，google都从这里发现了致富门径呢。

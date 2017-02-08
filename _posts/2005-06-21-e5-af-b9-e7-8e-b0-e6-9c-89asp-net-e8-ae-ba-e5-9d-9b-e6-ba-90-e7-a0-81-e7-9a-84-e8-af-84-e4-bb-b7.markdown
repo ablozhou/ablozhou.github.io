@@ -1,0 +1,58 @@
+---
+author: abloz
+comments: true
+date: 2005-06-21 06:21:05+00:00
+layout: post
+link: http://abloz.com/index.php/2005/06/21/e5-af-b9-e7-8e-b0-e6-9c-89asp-net-e8-ae-ba-e5-9d-9b-e6-ba-90-e7-a0-81-e7-9a-84-e8-af-84-e4-bb-b7/
+slug: e5-af-b9-e7-8e-b0-e6-9c-89asp-net-e8-ae-ba-e5-9d-9b-e6-ba-90-e7-a0-81-e7-9a-84-e8-af-84-e4-bb-b7
+title: 对现有asp.net论坛源码的评价
+wordpress_id: 473
+categories:
+- 技术
+---
+
+作者 周海汉 
+
+1. Community Server 
+
+hidotnet.com翻译维护的hiForums，完全开源，完全免费（不能抹掉其标志），设计很牛。方方面面遵循微软推荐设计。不过是SqlServer数据库的。不知什么时候推出支持Access版的。因为其绝好的设计可以方便的实现对不同数据库的支持。支持多语言。
+
+[英文官方]
+
+由MS官方[http://www.asp.net](http://www.asp.net/)和Telligent Systems公司[http://www.telligentsystems.com/Solutions/Forums/](http://www.telligentsystems.com/Solutions/Forums/)主持开发一个完全基于.net Framework技术的，功能强大、高性能、可伸缩的超级大型论坛。
+
+[中文官方]
+
+[http://www.hiDotNet.com](http://www.hidotnet.com/)
+
+该源码是学习asp.net的重要代码。
+
+2.绝世好坛 aspxbbs 当前版本4.3
+
+作者：彭宁新
+
+地址：[http://www.9k8.com](http://www.9k8.com/)  
+源码没有完全公开，后台代码只提供DLL。支持Sqlserver和Access数据库。作者在其论坛说论坛绝对安全，不存在漏洞。而且作者设计时论坛只作为一个大平台的一部分。看了作者的数据库，发现其字段和表名完全没有意义，根本没法维护。可能是作者为了防止代码被反编译所做的保护。这种论坛最好不要使用，否则一旦上了贼船就后悔莫及了。其提供的“安全盾”功能非常有意思。可以禁止进行所设置区域的拷贝。哪怕直接查看源文件都看不到设定区域的文字。这个放在论坛中没什么好处，不过在其他地方也许会有用。作者实现了一个将动网SqlServer数据库导到aspxbbs的工具。
+
+3.中国非常论坛 cnVeryBBS access版
+
+论坛名称： 中国非常论坛  
+发布站点： [http://www.cnVery.net/](http://www.cnvery.net/)  
+设计制作： 卫星
+
+没有提供所有代码。后台代码做成了DLL。只制作了论坛必要的和基本的功能，所以不太适合要求功能全面者；
+
+4.先锋论坛
+
+ 程序制作: 四海.net  
+主页地址: [http://www.aspx.net.cn](http://www.aspx.net.cn/)     asp.net中华网([www.aspx.net.cn](http://www.aspx.net.cn/) [www.aspcn.com](http://www.aspcn.com/))  
+论坛地址: [http://www.aspx.net.cn/bb](http://www.aspx.net.cn/bb)  
+该论坛提供所有源码。支持Access数据库。论坛支持生成4种类型的帖子：aspx,html,shtml,xml。我手上的是一个较早期的版本1.0，功能还比较简陋。不过基本够用。作者还在改进中。这也是一个有前途的论坛。背靠PCworld，应该可以不断发展。这个论坛和动网先锋论坛没有关系。动网论坛还没有推出.net的论坛。还有好事者写了将动网论坛7的数据库转到先锋论坛的代码。
+
+5.盛天论坛
+
+官方网站：[http://senty.ok800.cn/bbs](http://senty.ok800.cn/bbs)
+
+只有SQLServer版本，不提供所有源码。完全免费。当前版本1.1
+
+综合权衡，Community Server 和先锋论坛最有发展前途，推荐使用。

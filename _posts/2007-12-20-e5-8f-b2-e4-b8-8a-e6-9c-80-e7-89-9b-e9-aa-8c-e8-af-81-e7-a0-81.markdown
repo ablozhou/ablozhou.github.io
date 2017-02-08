@@ -1,0 +1,16 @@
+---
+author: abloz
+comments: true
+date: 2007-12-20 17:52:47+00:00
+layout: post
+link: http://abloz.com/index.php/2007/12/20/e5-8f-b2-e4-b8-8a-e6-9c-80-e7-89-9b-e9-aa-8c-e8-af-81-e7-a0-81/
+slug: e5-8f-b2-e4-b8-8a-e6-9c-80-e7-89-9b-e9-aa-8c-e8-af-81-e7-a0-81
+title: 史上最牛验证码
+wordpress_id: 765
+categories:
+- 社会评论
+---
+
+[http://www.kawise.com](http://www.kawise.com) 网站注册的验证码超复杂，要求给出复杂数学式和化学式答案。赶快重新拿出大学课本复习一下吧。
+
+[![image](http://byfiles.storage.msn.com/y1pH2nFw-2E9SYYQ-59Iu1vT6OmVnTIkcoJkPk70WD3WcrSi38muATU7MTk-sCK3y9Lx0QqTMhCPL8?PARTNER=WRITER)](http://byfiles.storage.msn.com/y1pH2nFw-2E9SaJExgSb-M1aEWaiL_2nRfp9N0DFyA-JCtTwthKKgDJ81BTRhBlMQ4F0pOVk9utInU?PARTNER=WRITER)

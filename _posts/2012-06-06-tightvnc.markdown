@@ -1,0 +1,93 @@
+---
+author: abloz
+comments: true
+date: 2012-06-06 09:22:17+00:00
+layout: post
+link: http://abloz.com/index.php/2012/06/06/tightvnc/
+slug: tightvnc
+title: tightvnc
+wordpress_id: 1672
+categories:
+- 技术
+tags:
+- tight vnc
+- vnc
+---
+
+[tightvnc](http://www.tightvnc.com) 是一款很小但很好用的vnc软件，包括服务器端server和客户端viewer。
+
+
+
+**全屏后退出快捷键**：
+
+Ctrl+alt+shift+f
+
+
+
+**linux server端配置**：
+
+如果没有安装gnome，先安装：
+
+[root@Hadoop48 ~]# yum groupinstall "X Window System" "GNOME Desktop Environment"
+
+也可以安装kde
+
+
+
+如果没有安装vnc，也需先安装。
+
+然后，直接执行vncserver命令，输入一个密码，记着分配的屏幕号id。
+
+
+
+    
+    [zhouhh@Hadoop48 ~]$ vncserver
+    
+    New 'Hadoop48:1 (zhouhh)' desktop is Hadoop48:1
+    
+    Starting applications specified in /home/zhouhh/.vnc/xstartup
+
+
+启动gnome
+
+[zhouhh@Hadoop48 ~]$ vi .vnc/xstartup
+
+    
+    #!/bin/sh
+    
+    # Uncomment the following two lines for normal desktop:
+    unset SESSION_MANAGER
+    exec /etc/X11/xinit/xinitrc
+    
+    [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+    [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+    xsetroot -solid grey
+    vncconfig -iconic &
+    xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+    #twm &
+    gnome-session &
+
+
+**配置vnc客户端分辨率：**
+[zhouhh@Hadoop48 ~]$ sudo vi /etc/sysconfig/vncservers
+
+    
+    VNCSERVERS="1:zhouhh"
+    VNCSERVERARGS[1]="-geometry 1440x900"
+
+
+或者在启动vncserver时加参数-geometry 1440x900
+
+
+
+**tightvnc客户端下载：**
+
+[http://www.tightvnc.com/download.php](http://www.tightvnc.com/download.php)
+
+最新版2.5.1
+
+才10多MB大小。
+
+
+
+

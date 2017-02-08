@@ -1,0 +1,130 @@
+---
+author: abloz
+comments: true
+date: 2006-09-04 08:26:10+00:00
+layout: post
+link: http://abloz.com/index.php/2006/09/04/boot-asm/
+slug: boot-asm
+title: boot.asm
+wordpress_id: 177
+categories:
+- 技术
+tags:
+- asm
+- boot
+---
+
+boot.asm 是用于实现软盘启动系统的程序，系统加电后bios会读取软盘（硬盘，光驱）中是否有启动程序，本启动程序即是。然后本启动程序再去加载硬盘中的操作系统。
+
+    
+    
+    ;本汇编程序实现软盘启动并读取软盘下一个节的内容显示
+    ;作者 周海汉
+    
+    org 07c00h
+    
+    jmp start
+    msg db "welcome to hanos..."
+    db 0dh,0ah
+    db 0h
+    msgstart db "start hanos now ..."
+    db 0dh,0ah ;回车换行
+    db 0h                ;以0结尾
+    
+    times 20  db 0h    ;为安全,留下一些空白
+    
+    ;-----------------------------------
+    ;显示服务Int 10h的功能0EH
+    
+    ;功能描述： 在Teletype模式下显示字符
+    ;入口参数： AH＝0EH
+    ;AL＝字符
+    ;BH＝页码
+    ;BL＝前景色(图形模式)
+    ;出口参数： 无
+    
+    dispstr:
+    
+    next:
+    lodsb
+    or al,al
+    jz fin
+    mov ah,0eh
+    int 10h
+    jmp next
+    
+    fin:
+    ret
+    ;------------------------------------
+    
+    start:
+    xor ax,ax
+    mov ds,ax
+    mov es,ax
+    mov si,msg
+    
+    call dispstr
+    
+    mov si, msgstart
+    call dispstr
+    ;-------------------------------------
+    ;读取磁盘的下一个段
+    ;读取磁盘Int 13h的功能02H
+    
+    ; 功能描述： 读扇区
+    ;入口参数： AH＝02H
+    ;AL＝扇区数
+    ;CH＝柱面
+    ;CL＝扇区
+    ;DH＝磁头
+    ;DL＝驱动器，00H~7FH：软盘；80H~0FFH：硬盘
+    ;ES:BX＝缓冲区的地址
+    ;出口参数： CF＝0 操作成功，AH＝00H，AL＝传输的扇区数，否则，AH＝状态代码，00无错
+    
+    ;定义缓冲区地址
+    mov ax, 0820h
+    mov es, ax    ;将段置为0820h*16=8200h
+    mov bx, 0h    ;偏移为0,地址为8200h
+    mov ah,02h
+    mov al,01h     ;读1个扇区
+    mov ch, 0        ;0柱面
+    mov cl,    2        ;第二扇区
+    mov dh,    0        ;0 磁头
+    mov dl,    0        ;0表示软盘A
+    int 13h
+    jc error        ;出错处理
+    
+    ;显示读出的字符
+    mov si,08200h
+    call dispstr
+    jmp myloop
+    
+    error:
+    mov si,errmsg1
+    call dispstr;
+    
+    myloop:
+    hlt
+    jmp myloop
+    
+    
+    errmsg1 db "read sector error!",0dh,0ah,0h
+    
+    times 510-($-$$) db 0
+    
+    dw 0aa55h
+    
+    sector2:
+    msg2 db "This is the msg in sector2...",0dh,0ah,0h
+    times 512-($-sector2) db 0
+    
+
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+用nasm编译通过，在vmware上作为启动盘启动
+运行结果显示：
+welcome to hanos...
+start hanos now ...
+This is the msg in sector2...
+
+

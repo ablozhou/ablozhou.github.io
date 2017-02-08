@@ -1,0 +1,24 @@
+---
+author: abloz
+comments: true
+date: 2005-09-14 23:53:25+00:00
+layout: post
+link: http://abloz.com/index.php/2005/09/15/c/
+slug: c
+title: C++++
+wordpress_id: 511
+categories:
+- 技术
+---
+
+C  ->  C++  ->  C#
+
+
+
+
+前天忽然想到，微软之所以把C＃叫做C＃，而没有叫C￥，是取C++＋++之意。
+
+
+
+
+果然是好名字。
