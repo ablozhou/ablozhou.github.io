@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "pymysql 解决utf8mb4扩展"
+date:   2017-02-28 20:17:26 +0800
+categories: 技术
+---
+
 # 问题
 在将一些emoji表情符号入库时, 发现utf8的表插入会失败. mysql5.6以上支持utf8mb4的扩展, 必须配置相应的扩展, 并且客户端python程序采用最新的pymysql,设置charset='utf8mb4'才可以正确插入.
 采用MySqlDB则不能解决该中文乱码问题.
