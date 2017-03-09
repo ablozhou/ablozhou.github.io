@@ -48,7 +48,7 @@ open('a.gif','wb').write(req1.content)
 
 原文链接： http://ent.huanqiu.com/article/2017-02/10204718.html
 
-```json
+```python
 import requests
 url='http://ent.huanqiu.com/article/2017-02/10204718.html'
 req=requests.get(url)
@@ -66,23 +66,30 @@ if req.encoding == 'ISO-8859-1':
 
 content = req.content.decode(encoding, 'replace').encode('utf-8', 'replace')
 ```
-```json
+
+```python
 >>> req.encoding
 'ISO-8859-1'
 >>> req.apparent_encoding
 'ISO-8859-2'
 ```
+
 ## 判断原始编码:
 - html5
+
 ```html
 <html lang="zh-CN"><head><meta charset="utf-8" /> </head>
 ```
+
 - 旧的html标准
+
 ```html
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 ```
+
 python判断网页内容编码,缺省设为utf8:
-```json
+
+```python
 encodings='utf8'
 if req.encoding == 'ISO-8859-1':
     encodings = requests.utils.get_encodings_from_content(req.text)
@@ -93,6 +100,7 @@ if req.encoding == 'ISO-8859-1':
     if encoding.startswith('ISO'):
         encoding='utf8'
 ```
+
 # 参考
 http://blog.chinaunix.net/uid-13869856-id-5747417.html
 
