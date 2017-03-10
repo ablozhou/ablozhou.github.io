@@ -34,7 +34,7 @@ Powered-By-ChinaCache: HIT from 01017623gD.6
 requests可以直接设置header模拟浏览器, 自动解压.
 用requests可以直接解压.
 
-```json
+```python
 import requests
 url1='http://news.xinhuanet.com/politics/2017-03/01/1120551648_14883580941071n.gif'
 req1=requests.get(url1)
