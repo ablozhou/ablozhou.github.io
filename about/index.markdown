@@ -7,7 +7,7 @@ link: http://abloz.com/about/
 slug: about
 title: 关于
 wordpress_id: 8
-header-img: "/img/contact-bg.jpg"
+header-img: "http://abloz.com/img/contact-bg.jpg"
 ---
 
 [![星空有烂](http://abloz.com/img/about-bg.jpg)](http://abloz.com)
