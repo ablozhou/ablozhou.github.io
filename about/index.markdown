@@ -3,11 +3,11 @@ author: abloz
 comments: false
 date: 2010-07-11 06:36:15+00:00
 layout: page 
-link: http://abloz.com/index.php/about/
+link: http://abloz.com/about/
 slug: about
 title: 关于
 wordpress_id: 8
-header-img: "img/about-bg.jpg"
+header-img: "/img/contact-bg.jpg"
 ---
 
 [![星空有烂](http://abloz.com/img/about-bg.jpg)](http://abloz.com)
