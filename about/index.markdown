@@ -2,14 +2,15 @@
 author: abloz
 comments: false
 date: 2010-07-11 06:36:15+00:00
-layout: page
+layout: page 
 link: http://abloz.com/index.php/about/
 slug: about
 title: 关于
 wordpress_id: 8
+header-img: "img/about-bg.jpg"
 ---
 
-[![星空有烂](http://abloz.com/wp-content/uploads/2010/07/yiwangwuyu-300x196.jpg)](http://abloz.com)
+[![星空有烂](http://abloz.com/img/about-bg.jpg)](http://abloz.com)
 
 
 ## 星空有烂，观而忘我
@@ -68,3 +69,17 @@ email:  [ablo](mailto://ablozhou@gmail.com)_zhou##163.com
 2010.7.11 安装完毕wordpress博客。
 
 2010.6.4 购买独立空间。
+
+</pre>
+<!-- 多说 Share start -->
+</style>
+<div class="ds-share"
+style="text-align: right"
+data-thread-key="{{page.id}}"
+data-title="{{page.title}}"
+data-url="{{site.url}}{{site.baseurl}}{{page.url}}"
+data-images="{{ site.url }}{{site.baseurl}}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
+data-content="{{ content | strip_html | truncate:80 }} | {{ site.SEOTitle }} " >
+<hr>
+</div>
+<!-- 多说 Share end-->

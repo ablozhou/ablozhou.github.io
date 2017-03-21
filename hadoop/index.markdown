@@ -3,9 +3,9 @@ author: abloz
 comments: true
 date: 2010-09-26 06:14:19+00:00
 layout: page
-link: http://abloz.com/index.php/hadoop/
+link: http://abloz.com/hbase/book.html
 slug: hadoop
-title: hadoop
+title: HBase中文官方
 wordpress_id: 423
 ---
 
