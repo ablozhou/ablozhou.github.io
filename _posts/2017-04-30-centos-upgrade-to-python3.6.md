@@ -1,15 +1,14 @@
 ---
 layout: post
-title:  ""
+title:  "Centos安装升级python3.6"
 date:   2017-05-1 20:18:26 +0800
 categories: 技术
 tags:
-    - 机器学习
-    - PCA
-    - 主成分分析
+    - python
+    
 ---
 
-# 安装流程
+安装流程
 - 安装python3.6可能使用的依赖
 - 下载解压安装包
 - 编译安装
