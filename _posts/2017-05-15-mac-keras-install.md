@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "在linux上安装机器学习开发环境"
+title:  "在mac osx上安装机器学习开发环境"
 date:   2017-05-15 23:50:26 +0800
 categories: 技术
 tags:
