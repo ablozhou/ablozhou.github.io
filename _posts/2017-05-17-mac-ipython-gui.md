@@ -178,5 +178,5 @@ plot(X,S)
 
 show()
 ```
-![image](http://abloz.com/img2017/ipython_gui_01.png)
+![image](http://abloz.com/img/201705/ipython_gui_01.png)
 如果怕麻烦,可以在.zshrc或.bashrc中添加ipython的alias
