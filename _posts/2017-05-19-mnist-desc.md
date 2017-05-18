@@ -268,7 +268,9 @@ if __name__ == '__main__':
   showimg(x[0][13],x[1][13])
 
 ```
-![image](http://abloz.com/img/201705/keras_2.png)
+label为6
+图像也为6
+![image](http://abloz.com/img/201705/mnist_2.png)
 
 ## keras 下载mnist数据
 ```python
