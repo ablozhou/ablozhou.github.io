@@ -279,10 +279,21 @@ from keras.datasets import mnist
 train,test = mnist.load_data()
 
 # 将其写入文件
-pickle.dump((train,test),open('mnist.pk','wb')
+pickle.dump((train,test),open('mnist.pkl','wb'))
+
+
 
 ```
-
+输出:
+```
+Using Theano backend.
+Downloading data from https://s3.amazonaws.com/img-datasets/mnist.npz
+```
+可能会遇到GFW,导致下载失败的情况
+```
+URLError: <urlopen error [Errno 60] Operation timed out>
+Exception: URL fetch failure on https://s3.amazonaws.com/img-datasets/mnist.npz: None -- [Errno 60] Operation timed out
+```
 
 # 参考
 http://yann.lecun.com/exdb/mnist/
