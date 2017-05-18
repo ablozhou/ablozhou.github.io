@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ""
+title:  "机械匹配词表最大化分词"
 date:   2017-05-18 20:18:26 +0800
 categories: tech
 tags:
