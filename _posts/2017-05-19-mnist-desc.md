@@ -281,7 +281,11 @@ train,test = mnist.load_data()
 # 将其写入文件
 pickle.dump((train,test),open('mnist.pkl','wb'))
 
-
+(tr,ts)=pickle.load(open('mnist.pkl','rb'))
+tr[0].shape # (60000, 28, 28)
+ts[0].shape # (10000, 28, 28)
+tr[1][:14] # array([5, 0, 4, 1, 9, 2, 1, 3, 1, 4, 3, 5, 3, 6], dtype=uint8)
+ts[1][:10] # array([7, 2, 1, 0, 4, 1, 4, 9, 5, 9], dtype=uint8)
 
 ```
 输出:
