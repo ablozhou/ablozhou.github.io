@@ -77,6 +77,9 @@ netease: true
 #ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 #ga_domain: abloz.com
 
+# youmeng cnzz
+youmeng_id: 2465593
+youmeng_webid: 2465593
 
 
 # Sidebar settings

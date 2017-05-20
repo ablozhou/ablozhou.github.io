@@ -160,6 +160,13 @@
 </script>
 {% endif %}
 
+<!-- youmeng cnzz tongji 友盟 -->
+
+{% if site.youmeng_id %}
+<script src="https://s9.cnzz.com/z_stat.php?id={{site.youmeng_id}}&web_id={{site.youmeng_webid}}" language="JavaScript">
+</script>
+
+<% endif %}
 
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}
