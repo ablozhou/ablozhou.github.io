@@ -19,7 +19,7 @@ description: "星空浩瀚 人类渺小"
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        {% if site.postauthor %}{{ site.postauthor }}{% else %}{{ site.title }}{% endif %}  {{ post.date | date: "%Y-%m-%d" }}
     </p>
 </div>
 <hr>

@@ -22,7 +22,7 @@ layout: default
                         <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
-                    <h1>{{ page.title }} | 瀚海星空 | 周海汉</h1>
+                    <h1>{{ page.title }}</h1>
                     {% comment %}
                         always create a h2 for keeping the margin , Hux
                     {% endcomment %}
@@ -47,13 +47,16 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-				{% if site.postauthor %}
-				{{ postauthor }} 
+				{% if page.author %}
+				{{ page.author }} 
+				{% endif %}
+				{% if page.date %}
+				{{ page.date}} 
 				{% endif %}
 				{{ content }}
 
 				{% if site.copyright %}
-				{{ copyright }} 
+				{{ site.copyright }} 
 				{% endif %}
                 <hr>
 

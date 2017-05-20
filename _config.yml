@@ -14,15 +14,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: 瀚海星空
-author: 梦想家
-SEOTitle: 瀚海星空 | 周海汉blog 
+SEOTitle: 瀚海星空 - 周海汉 
 email: ablo_zhou@163.com
 description: > # this means to ignore newlines until "baseurl:"
  宇宙浩瀚, 人类渺小
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://abloz.com" # the base hostname & protocol for your site, e.g. http://example.com
 header-img: img/home-bg.jpg
-postauthor: 周海汉 /文
+postauthor: 梦想家 
 copyright: 如非注明转载, 均为原创. 本站遵循[知识共享CC协议](https://creativecommons.org/licenses/by/3.0/cn/legalcode),转载注明来源
 
 # SNS settings
