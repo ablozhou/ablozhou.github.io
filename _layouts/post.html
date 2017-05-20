@@ -48,10 +48,11 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
 				{% if page.author %}
-				{{ page.author }} 
+				{{ page.author }} {% else %}
+				{{ site.postauthor }}
 				{% endif %}
 				{% if page.date %}
-				{{ page.date}} 
+				{{ page.date | date: "%Y-%m-%d" }} 
 				{% endif %}
 				{{ content }}
 

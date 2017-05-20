@@ -22,7 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://abloz.com" # the base hostname & protocol for your site, e.g. http://example.com
 header-img: img/home-bg.jpg
 postauthor: 梦想家 
-copyright: 如非注明转载, 均为原创. 本站遵循[知识共享CC协议](https://creativecommons.org/licenses/by/3.0/cn/legalcode),转载注明来源
+copyright: <hr="1"><p style="font-size:12px;font-style:italic;color:#ddd;">如非注明转载, 均为原创. 本站遵循<a href="https://creativecommons.org/licenses/by/3.0/cn/legalcode">知识共享CC协议</a>,转载请注明来源
 
 # SNS settings
 RSS: false
