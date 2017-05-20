@@ -22,14 +22,14 @@ layout: default
                         <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
-                    <h1>{{ page.title }}</h1>
+                    <h1>{{ page.title }} | 瀚海星空 | 周海汉</h1>
                     {% comment %}
                         always create a h2 for keeping the margin , Hux
                     {% endcomment %}
                     {% comment %} if page.subtitle {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta"> {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}  {{ page.date | date: "%Y-%m-%d" }}</span>
                 </div>
             </div>
         </div>
@@ -42,13 +42,19 @@ layout: default
         <div class="row">
 
     <!-- Post Container -->
+	
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-
+				{% if site.postauthor %}
+				{{ postauthor }} 
+				{% endif %}
 				{{ content }}
 
+				{% if site.copyright %}
+				{{ copyright }} 
+				{% endif %}
                 <hr>
 
                 <!-- 网易云跟帖start -->
