@@ -8,8 +8,8 @@ tags:
     - 机器学习
     - 感知器
     - mini-batch
-	- SGD
-	- BGD
+    - SGD
+    - BGD
 ---
 
 
