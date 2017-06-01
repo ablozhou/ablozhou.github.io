@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "感知器的两种实现"
+author: "周海汉 /文"
 date:   2017-05-31 05:18:26 +0800
 categories: tech
 tags:
