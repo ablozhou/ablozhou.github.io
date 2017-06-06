@@ -234,5 +234,5 @@ test()
 
 # 参考
 
-- [零基础入门深度学习(1) - 感知器](https://zybuluo.com/hanbingtao/note/433855)
+- [零基础入门深度学习(1) - 感知器](https://zybuluo.com/hanbingtao/note/433855){:target="_blank"}
 
