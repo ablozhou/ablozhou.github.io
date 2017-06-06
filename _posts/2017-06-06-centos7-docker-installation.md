@@ -11,6 +11,14 @@ tags:
 # 概述
 本文是centos7上安装docker-ce社区版的最新稳定版的实录.
 
+docker-ce最新稳定版需要linux kernel 大于3.10.
+
+可以用如下的程序来检查兼容性.
+
+```
+curl https://raw.githubusercontent.com/docker/docker/master/contrib/check-config.sh > check-config.sh
+bash ./check-config.sh
+```
 对其他操作系统和版本,可以参考官方文档.
 
 # 安装相关依赖
@@ -204,6 +212,34 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
 ```
+# 非root用户启动docker
+
+```
+[zhouhh@mainServer ~]$ sudo groupadd docker
+[zhouhh@mainServer ~]$ sudo usermod -aG docker $USER
+[zhouhh@mainServer ~]$ exit
+logout
+[zhouhh@mainServer ~]$ docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+```
+
+# 设置自启动
+大部分最新的linux发行版(RHEL, CentOS, Fedora, Ubuntu 16.04 以上), 都用sytemd来管理启动.
+
+```
+[zhouhh@mainServer ~]$ sudo systemctl enable docker
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+
+```
+## 禁止自启动
+
+```
+[zhouhh@mainServer ~]$ sudo systemctl disable docker
+```
+
 
 # 参考
 
