@@ -44,10 +44,12 @@ layout: default
     <!-- Post Container -->
 	
             <div class="col-lg-12 col-md-12 post-container">
+                    {% comment %}
 				{% if page.author %}
 				{{ page.author }} {% else %}
 				{{ site.postauthor }}
 				{% endif %}
+                    {% endcomment %}
 				{% if page.date %}
 				{{ page.date | date: "%Y-%m-%d" }} 
 				{% endif %}
