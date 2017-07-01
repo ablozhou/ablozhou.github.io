@@ -2,7 +2,7 @@
 layout: post
 title:  "spark入门实践之单词统计"
 author: "周海汉"
-date:   2017-07-01 00:11:26 +0800
+date:   2017-07-02 00:11:26 +0800
 categories: tech
 tags:
     - spark
