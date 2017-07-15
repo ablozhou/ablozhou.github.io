@@ -8,3 +8,5 @@ tags:
 
 # 关于star-dict 字典
 请访问[胡正博客](http://huzheng.org), 留言向其获取相关信息.
+
+继续访问[瀚海星空](http://abloz.com)
