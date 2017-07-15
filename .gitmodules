@@ -1,0 +1,3 @@
+[submodule "tfdoc"]
+	path = tfdoc
+	url = https://github.com/ablozhou/tfdoc.git
