@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "start-dict字典"
+title:  "star-dict字典"
 date:   2017-07-15 10:18:26 +0800
 tags:
         - star-dict
