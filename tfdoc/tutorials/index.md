@@ -1,3 +1,12 @@
+---
+layout: post
+title:  "tutorials"
+author: "周海汉"
+date:   2017-07-15 10:18:26 +0800
+categories: tech
+tags:
+    - tensorflow
+---
 # Tutorials
 
 This section contains tutorials demonstrating how to do specific tasks
