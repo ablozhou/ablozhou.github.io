@@ -27,9 +27,6 @@
                     <li>
                         <a href="http://abloz.com/hbase/book.html">HBase中文官方</a>
                     </li>
-                    <li>
-                        <a href="http://abloz.com/tfdoc/">Tensorflow中文文档</a>
-                    </li>
                     {% for page in site.pages %}{% if page.title %}
                     <li>
                         <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
