@@ -48,6 +48,8 @@ Spark 支持从一台节点到数千台节点的设备运算. 对单台的设备
 # Spark 下载安装
 参考[《Spark安装使用实例》](http://abloz.com/tech/2017/06/09/spark-usage/)
 
+[spark 2.2.0 清华镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz)
+
 # spark独立程序
 
 

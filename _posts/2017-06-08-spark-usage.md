@@ -59,6 +59,8 @@ Hello, World!
 
 [spark-2.1.1-bin-hadoop2.7.tgz](https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz)
 
+[spark 2.2.0 清华镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz)
+
 我这里直接通过git下载最新源码.
 ```
 [zhouhh@mainServer java]$ git clone git://github.com/apache/spark.git
