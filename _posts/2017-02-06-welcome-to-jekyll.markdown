@@ -6,12 +6,14 @@ categories: 技术
 ---
 
 # 安装 jekyll
+```
 sudo gem install jekyll
 
 ➜  ~ jekyll --version
 jekyll 3.4.0
-
+```
 安装 bundler. 它是管理其他gem兼容性的.
+```
 ➜  ~ sudo gem install bundler
 ERROR:  While executing gem ... (Errno::EPERM)
     Operation not permitted - /usr/bin/bundle
@@ -23,15 +25,17 @@ vi .zshrc
 
 
 gem install bundler
+bundle install
 jekyll new blog
 ➜  blog ls
 Gemfile      Gemfile.lock _config.yml  _posts       _site        about.md     index.md
 ➜  blog jekyll serve
-
+```
 修改theme
+```
 ➜  blog bundle show minima
 /Users/zhouhh/ruby/gems/minima-2.1.0
-
+```
 静态html页面,直接在跟目录下创建html文件或者创建子目录,下面存放html文件.
 [使用原始html页面](http://jekyllrb.com/docs/pages/)
 
@@ -39,8 +43,9 @@ Gemfile      Gemfile.lock _config.yml  _posts       _site        about.md     in
 
 # wordpress导入
 [导入工具](http://import.jekyllrb.com/docs/usage/)
+```
 gem install jekyll-import
-
+```
 以下这两种, 我没有使用, 而是用了第三方的exitwp
 ```
 ruby -rubygems -e 'require "jekyll-import";

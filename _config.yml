@@ -45,7 +45,7 @@ anchorjs: false # 禁止左侧的‘#’ if you want to customize anchor. check 
 # Build settings
 #markdown: kramdown
 #theme: minima
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
 exclude:

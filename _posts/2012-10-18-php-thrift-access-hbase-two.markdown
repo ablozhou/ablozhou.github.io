@@ -22,7 +22,7 @@ tags:
 本文实现了php通过thrift对HBase查询所有表名，查询表的所有记录，限制记录个数，对记录进行过滤，根据rowkey查询单行和多行的功能。
 在HBase 0.9.4，Hadoop 1.0.3，php 5.0，thrift 0.8 apache2.1环境中测试通过。
 
-
+```
 
 [root@Hadoop48 html]# cat hbase_code.php
 
@@ -209,9 +209,10 @@ tags:
     }
     
     ?>
-
+```
 
 扫描所有表名。然后输入一个表名和返回记录条数来查询。
+```
 [root@Hadoop48 html]# cat list.php
 
     
@@ -320,11 +321,12 @@ tags:
     
     </body>
     </html>
-    
+ ```   
 
 
 
 输入rowkey来获取结果
+```
 [root@Hadoop48 html]# cat get.php
 
     
@@ -393,4 +395,4 @@ tags:
     </html>
 
 
-
+```
