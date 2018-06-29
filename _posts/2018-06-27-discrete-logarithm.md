@@ -29,7 +29,7 @@ tags:
 比如 $ 26\equiv 14{\pmod {12}} $。
 
 ### 同余类(congruence class)
-如同任何同余关系，对于模  n同余是一种等价关系，整数  a的等价类是一个集合 $  \left\{\ldots ,a-2n,a-n,a,a+n,a+2n,\ldots \right\} $，标记为 $ {\overline {a}}_{n} $。由对于模 n同余的所有整数组成的这个集合称为同余类（congruence class或residue class）；假若从上下文知道模 n，则也可标记为   [a]。
+如同任何同余关系，对于模  n同余是一种等价关系，整数  a的等价类是一个集合 $ {\ldots ,a-2n,a-n,a,a+n,a+2n,\ldots } $，标记为 $ {\overline {a}}_n $。由对于模 n同余的所有整数组成的这个集合称为同余类（congruence class或residue class）；假若从上下文知道模 n，则也可标记为   [a]。
 
 同余类中的每个元素都可以拿来代表该同余类，称为该同余类的代表数（英语：representative）
 
@@ -40,12 +40,12 @@ tags:
 
 模  n完整余数系统中，与模n互质的代表数所构成的集合，称为模n的简约余数系统（英语：reduced residue system），其元素个数记为 $\phi(n)$，亦即**欧拉函数**。例如，模 6的简约余数系统为\{1,5\}或 \{7,11\}。如果模 n是质数，那么它的最小简约余数系统是\{1,2,...,n-1\}，只比最小余数系统少一个 0。
 
-### 欧拉函数 $ \phi (n)$
+### 欧拉函数 
 欧拉定理：
 n，a为正整数，且n，a互质，$ n\geq 2 $则
 
 $$
- a^{\phi (n)} \equiv 1\pmod  n
+ a^{\phi n} \equiv 1\pmod  n
 $$
 
 在数论中，对正整数n，欧拉函数 $ \varphi (n)$是小于或等于n的正整数中与n互质的数的数目。此函数以其首名研究者欧拉命名，它又称为φ函数（由高斯所命名）或是欧拉总计函数（totient function，由西尔维斯特所命名）
@@ -68,7 +68,7 @@ $$
 
 $\varphi (1)=1 $（小于等于1的正整数中唯一和1互质的数就是1本身）。
 
-若n是质数p的k次幂， $ \varphi (n)=\varphi (p^{k})=p^{k}-p^{{k-1}}=(p-1)p^{{k-1}}$，因为除了p的倍数外，其他数都跟n互质。
+若n是质数p的k次幂， $ \varphi (n)=\varphi (p^{k})=p^{k}-p^{k-1}=(p-1)p^{k-1} $，因为除了p的倍数外，其他数都跟n互质。
 
 欧拉函数是积性函数，即是说若m,n互质， $ \varphi (mn)=\varphi (m)\varphi (n)$。
 
@@ -132,7 +132,13 @@ Ind_{{a}}xy\equiv Ind_{{a}}x+Ind_{{a}}y{\pmod  {\phi (m)}}
 Ind_{{a}}x^{y}\equiv yInd_{{a}}x{\pmod  {\phi (m)}}
 $$
 
+## 示例
+对模5，$\phi(5)=5-1=4$.有个原根是2. 因为
+$$
+2^0\equiv 1,2^1\equiv 2,2^2\equiv 4,2^3\equiv3 \pmod 5
 
+Ind_2 1=0,Ind_2 2=1,Ind_2 4=2,Ind_2 3=3
+$$
 
 # 参考
 [维基 离散对数](https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0)
