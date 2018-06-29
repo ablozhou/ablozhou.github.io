@@ -92,7 +92,7 @@ $δ_m(a)$，若$δ_m(a) =\varphi (m)$，则称a是模 m的原根。
 
 另一种定义，对(a,m)=1，即a，m互质.
 如果a是m的原根，那么$a^i \pmod m$的结果两两不同,且有 $1 < a < m, 1 < i < m$.
-即，$a^i \pmod m \ne a^j \pmod m$ （p为素数），其中$i\ne j$且i, j介于1至(m-1)之间，则a为m的原根。
+即，$a^i \pmod m \ne a^j \pmod m$ （m为质数），其中$i\ne j$且i, j介于1至(m-1)之间，则a为m的原根。
 
 简单的来说，如a是m的原根，那么a的1…(m-1）次幂mod m的结果一定互不相同。
 
@@ -129,11 +129,13 @@ $ Ind_{{a}}x\equiv k{\pmod  {\phi (m)}}$，此处的 $ Ind_{{a}}x$为  x以整�
 $$
 Ind_{{a}}xy\equiv Ind_{{a}}x+Ind_{{a}}y{\pmod  {\phi (m)}}
 
+
 Ind_{{a}}x^{y}\equiv yInd_{{a}}x{\pmod  {\phi (m)}}
 $$
 
 ## 示例
 对模5，$\phi(5)=5-1=4$.有个原根是2. 因为
+
 $$
 2^0\equiv 1,2^1\equiv 2,2^2\equiv 4,2^3\equiv3 \pmod 5
 
