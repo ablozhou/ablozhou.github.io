@@ -19,11 +19,11 @@ tags:
 模反元素也称为`模倒数`，或者`模逆元`。
 
 一整数a对 同余n之`模反元素`是指满足以下公式的整数 b
-$
+$$
 a^{-1} \equiv b \pmod{n}.
-$
+$$
 也可以写成以下的式子
-$ ab \equiv 1 \pmod{n}.$
+$$ ab \equiv 1 \pmod{n}.$$
 
 整数 a 对模数 n 之模反元素存在的`充分必要条件`是 a 和 n `互质`，若此模反元素存在，在模数 n 下的除法可以用和对应模反元素的乘法来达成，此概念和实数除法的概念相同。
 
@@ -56,21 +56,21 @@ $ ab \equiv 1 \pmod{n}.$
 $ x \equiv 3^{-1} \pmod{11}$
 上述方程可变换为
 $ 3x \equiv 1 \pmod{11}$
-在整数范围$ \mathbb{Z}_{11}$内，可以找到满足该同余等式的''x''值为4，如下式所示
-$ 3 (4) = 12 \equiv 1 \pmod{11}$
-并且，在整数范围$ \mathbb{Z}_{11}$内不存在其他满足此同余等式的值。<br />
+在整数范围 $ \mathbb{Z}_{11}$ 内，可以找到满足该同余等式的x值为4，如下式所示
+$$ 3  (4) = 12 \equiv 1 \pmod{11} $$
+并且，在整数范围 $ \mathbb{Z}_{11}$ 内不存在其他满足此同余等式的值。<br />
 
 故，整数3对同余11的模逆元素为4。<br />
 
-一旦在整数范围$ \mathbb{Z}_{11}$内找到3的模逆元素，其他在整数范围$ \mathbb{Z}_{11}$ 内满足此同余等式的模逆元素值便可很容易地写出——只需加上{{nowrap|1=''m'' # ''11''}} 的倍数便可。<br />
+一旦在整数范围 $ \mathbb{Z}_{11}$ 内找到3的模逆元素，其他在整数范围 $ \mathbb{Z}_{11}$ 内满足此同余等式的模逆元素值便可很容易地写出——只需加上m = 11 的倍数便可。<br />
 
-综上，所有整数3对同余11的模逆元素''x''可表示为
+综上，所有整数3对同余11的模逆元素 x 可表示为
 
 $ 4 + (11 \cdot z ), z \in \mathbb{Z}$
 
 即 {..., −18, −7, `4`, 15, 26, ...}.
 
 # 参考
-[wiki 模逆元](https://zh.wikipedia.org/wiki/%E6%A8%A1%E5%8F%8D%E5%85%83%E7%B4%A0)
-[wiki Modular_multiplicative_inverse](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse)
+- [wiki 模逆元](https://zh.wikipedia.org/wiki/%E6%A8%A1%E5%8F%8D%E5%85%83%E7%B4%A0)
+- [wiki Modular_multiplicative_inverse](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse)
 
