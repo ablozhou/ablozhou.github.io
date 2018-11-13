@@ -59,24 +59,39 @@ $ ax + by = \gcd(a, b)$
 用类似辗转相除法，求二元一次不定方程 $ \textstyle 47x+30y=1$ 的整数解。
 
 $\displaystyle 47=30\times 1+17$
+
 $\displaystyle 30=17\times 1+13$
+
 $\displaystyle 17=13\times 1+4$
+
 $\displaystyle 13=4\times 3+1$$
+
 然后把它们改写成“余数等于”的形式
 
 $\displaystyle 17=47\times 1+30\times (-1)$ //式1
+
 $\displaystyle 13=30\times 1+17\times (-1)$ //式2
+
 $\displaystyle 4=17\times 1+13\times (-1)$ //式3
+
 $\displaystyle 1=13\times 1+4\times (-3)$
+
 然后把它们“倒回去”
 
 $\displaystyle 1=13\times 1+4\times (-3)$
+
 $\displaystyle 1=13\times 1+[17\times 1+13\times (-1)]*(-3)$ //应用式3
+
 $\displaystyle 1=17\times (-3)+13\times 4$
+
 $\displaystyle 1=17\times (-3)+[30\times 1+17\times (-1)]\times 4$//应用式2
+
 $\displaystyle 1=30\times 4+17\times (-7)$
+
 $\displaystyle 1=30\times 4+[47\times 1+30\times (-1)]\times (-7)$ //应用式1
+
 $\displaystyle 1=47\times (-7)+30\times 11$
+
 得解 $\displaystyle x=-7,y=11$。
 
 ### 用欧拉定理 (数论)|欧拉定理 
