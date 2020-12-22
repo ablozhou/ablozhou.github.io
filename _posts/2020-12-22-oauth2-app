@@ -1,0 +1,201 @@
+---
+layout: post
+title:  "理解App下的OAuth2授权"
+author: "周海汉"
+date:   2020-12-22 18:28:36 +0800
+categories: tech
+tags:
+    - oauth2
+    - pkce
+    - https
+    - 安全
+    - 授权登录
+---
+# OAuth2
+在授权登录时，OAuth2 用得比较广泛。本文详细描述了不同客户端用OAuth2标准获取用户授权的方式。
+
+# 名词解释
+## 参与角色
+- 客户端：第三方应用。需要从用账号中获取资源的应用。
+- 资源服务器：资源获取 API 提供者。
+- 授权服务器：提供同意或者拒绝用户授权的服务器。可以和资源服务器是同一或分离的服务器。
+- 用户：资源拥有者。
+## 其他
+- 第三方应用注册：向资源方注册app，一般提供名称，网站，logo和重定向URI。
+- 重定向URI：基于web的，必须用https协议避免授权时被拦截。原生APP一般注册一个自定义scheme，如demoapp://redirect
+- Client ID和Secret：注册完成后返回一个Client ID和Secret。Client ID一般是公开的，可用于组成登录URL，或者放在javascript页面的脚本中。Secret则`必须`保密。对原生App或者单页js应用，不能用Secret。此类应用最好别生成secret。
+
+## 授权类型
+1. 授权码（Authorization Code），支持web 服务器，基于浏览器App及原生APP。
+2. 密码：登录时提供用户名和密码。仅用于同一家公司的不同app
+3. 客户端证书（Client credentials），用于访问时不需要用户参与。静默授权。
+4. 隐式（Implicit）：用于客户端没有密码的情况，已带PKCE的授权码取代。
+
+下面对具有Web Server的web应用，web单页应用或基于浏览器的App，原生应用分别进行详述。
+# Web Server 应用
+因为有服务器，且服务器非公开，所以是大多数的服务场景，且比较安全。
+## 登录
+```
+https://authorization-server.com/auth?response_type=code&
+  client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&scope=photos&state=1234zyx
+ ```
+- **response_type=code** - 表示服务器期望收到授权码。
+- **client_id** - 创建app时收到的client id。
+- **redirect_uri** - 授权完成时重定向到的地址
+- **scope** - 一到多个范围值，指示可以访问到的用户账号的哪些部分。
+- **state** - 第三方应用生成的随机串，可以用于后面验证，这样避免一些攻击。
+
+弹出提示，说明哪个应用希望访问用户的哪些内容。如果用户同意访问，则重定向到第三方服务：
+```
+https://example-app.com/cb?code=AUTH_CODE_HERE&state=1234zyx
+```
+第三方应用应该比较state是否和发出的请求一致。避免被欺骗，换成其他AUTH_CODE_HERE
+
+## 服务端获取access token
+```
+POST https://api.authorization-server.com/token
+  grant_type=authorization_code&
+  code=AUTH_CODE_HERE&
+  redirect_uri=REDIRECT_URI&
+  client_id=CLIENT_ID&
+  client_secret=CLIENT_SECRET
+```
+- **redirect_uri=REDIRECT_URI** 必须和原来注册时提供的一致
+
+服务端返回：
+```
+{
+  "access_token":"RsT5OjbzRn430zqMLgV3Ia",
+  "expires_in":3600
+}
+```
+或者遇到错误时：
+```
+{
+  "error":"invalid_request"
+}
+```
+# 单页浏览器App
+浏览器会加载全部代码，所以不能存储密钥和客户端密码。可以采用授权码类似，但每次请求动态生成密码，即PKCE扩展。
+*老的标准是用“implict”模式，直接给客户端返回token，这有安全问题。现在推荐用PKCE模式。*
+
+1. 创建一个43-128长度字符串，叫code_verifier，验证码，如：
+`5d2309e5bb73b864f989753887fe52f79ce5270395e25862da6940d5`
+2. 将其用SHA256编码，再转为url-safe的base64编码，叫code_challenge，挑战码：
+`MChCW5vD-3h03HMGFZYskOSTir7II_MMTb8a9rJNhnI`
+可以用 example-app.com/pkce 生成密码和hash
+3. 和授权码登录类似，但增加了code_challenge
+```
+https://authorization-server.com/auth?response_type=code&
+  client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&scope=photos&state=1234zyx&code_challenge=CODE_CHALLENGE&code_challenge_method=S256
+```
+- **code_challenge** -  URL-safe base64-encoded SHA256 hash （ secret）
+
+4. 返回
+```
+https://example-app.com/cb?code=AUTH_CODE_HERE&state=1234zyx
+```
+5. 获取授权码
+
+```
+POST https://api.authorization-server.com/token
+  grant_type=authorization_code&
+  code=AUTH_CODE_HERE&
+  redirect_uri=REDIRECT_URI&
+  client_id=CLIENT_ID&
+  code_verifier=CODE_VERIFIER
+```
+- **code_verifier=CODE_VERIFIER* 一开始生成的随机字符串
+这防止了授权码请求被拦截时，还是不能获取访问token，因为没有验证码。
+
+# 原生应用 Apps
+原生应用和基于浏览器应用差不多，都不能保证密钥的安全。所以也采用授权码加PKCE扩展。
+## 授权
+创建一个“登录”按钮，点击后唤起授权App或者Web page。原生app可以创建自定义的模式scheme如："example-app://" 
+### 使用原生服务app
+假设安装了facebook app，采用如下url进入：
+```
+fbauth2://authorize?response_type=code&client_id=CLIENT_ID
+  &redirect_uri=REDIRECT_URI&scope=email&state=1234zyx
+```
+- **redirect_uri=REDIRECT_URI** - 当授权完成，指示用户跳转的URI。如  fb00000000://authorize
+- **scope=email** - 一到多个需要授权的资源
+
+如果服务器支持PKCE，（自己提供的服务，应该支持PKCE）则应该带上相关参数：
+- code_challenge=XXXXXXX -  base64-encoded  sha256 hash（code verifier string）
+- code_challenge_method=S256 - hash方法, sha256.
+
+### 使用独立浏览器
+如果资源方没有独立App，则应该唤起一个独立浏览器来进行登录授权。不能直接用webview，这样无法保证是资源方提供的服务，容易被钓鱼。
+iOS 9以后，可以用"SafariViewController"来打开嵌入式浏览器。它与独立浏览器共享cookie，也可以看到地址栏。还能阻止app偷窥以及修改浏览器内容，所以可以认为安全。
+```
+https://facebook.com/dialog/oauth?response_type=code&client_id=CLIENT_ID
+  &redirect_uri=REDIRECT_URI&scope=email&state=1234zyx
+```
+如果服务支持PKCE，则应该带上相关参数。
+
+### 获取授权码
+用户点击“同意授权（Approve）”后，将被重定向到应用服务：
+```
+fb00000000://authorize?code=AUTHORIZATION_CODE&state=1234zyx
+```
+应用服务首先应该校验state，再用code去获取访问token。
+
+与web server获取访问token基本相同，但不再带密钥secret，如果服务支持PKCE 则带上相关参数如code_verifie，如下：
+
+```
+POST https://api.authorization-server.com/token
+  grant_type=authorization_code&
+  code=AUTH_CODE_HERE&
+  redirect_uri=REDIRECT_URI&
+  client_id=CLIENT_ID&
+  code_verifier=VERIFIER_STRING
+```
+授权服务校验并返回访问token。如果支持PKCE，则服务应该知道code是挑战生成，需要比较code_verifier运算后与挑战所带的hash是否一致。这样可以支持一些不支持秘钥secret的客户端。
+
+# 密码方式
+密码方式应该是同一家单位的不同服务。如微信桌面版和移动版。
+```
+POST https://api.authorization-server.com/token
+  grant_type=password&
+  username=USERNAME&
+  password=PASSWORD&
+  client_id=CLIENT_ID
+```
+没有secret字段，因为假设大多数这种场景是移动或桌面应用。
+
+# 应用访问授权
+某些情况下，应用需要授权访问服务提供者的服务，但不是代表用户，而是应用自身。如获取客户端访问统计数据。可以在后端用POST方法如下：
+```
+POST https://api.authorization-server.com/token
+    grant_type=client_credentials&
+    client_id=CLIENT_ID&
+    client_secret=CLIENT_SECRET
+```
+服务提供方校验后，可以像其他方式一样返回token。
+
+# 获取资源
+拿到访问token后，就可以访问资源了，如下：
+```
+curl -H "Authorization: Bearer RsT5OjbzRn430zqMLgV3Ia" \
+https://api.authorization-server.com/1/me
+```
+一定要用https协议，并且不要忽略无效证书。Https是唯一能够保护请求被拦截和修改的方式。
+
+# https安全
+原生app或者浏览器app为何不能直接放密钥？因为app是完全控制在用户手中的。可以用各种手段进行脱壳，反编译，调试，监听。
+密钥可以直接在客户端采用strings等命令列出来。
+就算进行混淆，和服务端通信时也可以通过 https proxy如charles proxy监听到。
+
+# 参考
+- [OAuth2 相关标准](https://oauth.net/2/)
+- OAuth2 标准：[RFC 6749](http://tools.ietf.org/html/rfc6749)，2012,IETF OAuth Working Group
+- OAuth 2.0 for Native Apps：[RFC 8252](http://tools.ietf.org/html/rfc8252)
+- JWT标准：[RFC 7519](http://tools.ietf.org/html/rfc7519)
+- PKCE(Proof Key for Code Exchange): [RFC 7636](https://tools.ietf.org/html/rfc7636)
+- [OAuth 2.1 草案](https://tools.ietf.org/html/draft-ietf-oauth-v2-1)
+- [OAuth for Browser-Based Apps](https://oauth.net/2/browser-based-apps/)
+- [OAuth 2.0 Security Best Current Practice](https://oauth.net/2/oauth-best-practice/)
+- https://aaronparecki.com/oauth-2-simplified 作者Aaron Parecki 是W3C多个规范编辑， oauth.net网站主。
+- [ Charles Proxy ](https://www.charlesproxy.com/) Https代理
+- [mitmproxy](https://mitmproxy.org/) 免费MIT Https 代理
