@@ -1,0 +1,147 @@
+---
+layout: post
+title:  "tmux support mouse"
+author: "Andy"
+date:   2025-07-23 21:28:36 +0800
+categories: tech
+tags:
+    - tmux
+    - mouse
+    - linux
+---
+
+# tmux 支持鼠标滚屏复制粘贴
+在linux下如果要支持很多程序运行并查看, 除了screen, tmux是一个不错选择. 但tmux 的一些行为和直接用bash或zsh不一样. 如鼠标支持鼠标滚轮, 可能导致右键变成了弹出菜单.
+
+tmux 可以配置成同时支持鼠标右键粘贴和左键拖动滚屏/选择复制。
+
+这主要通过在你的 `~/.tmux.conf` 配置文件中添加相应的设置来实现。
+
+-----
+
+## 鼠标功能配置概览
+
+要实现你想要的功能，你需要启用 tmux 的鼠标模式，并可能需要一些额外的绑定来确保右键粘贴和左键选择/滚动行为符合你的预期。
+
+### 1\. 启用鼠标模式
+
+这是最基本也是最重要的一步，它让 tmux 能够识别和处理鼠标事件。
+在你的 `~/.tmux.conf` 中添加：
+
+```tmux
+set -g mouse on
+```
+
+**解释：**
+
+  * `set -g mouse on`：这会开启 tmux 的全局鼠标支持。
+    启用后，你将获得以下默认或近似的鼠标行为：
+      * **鼠标滚轮滚屏：** 在 pane 内使用鼠标滚轮可以滚动查看历史输出。
+      * **鼠标选择 pane：** 点击 pane 可以切换到该 pane。
+      * **鼠标拖动 pane 边界：** 可以拖动 pane 的边界来调整大小。
+      * **左键拖动选择文本：** 默认情况下，左键拖动会进入复制模式并选择文本。
+
+-----
+
+### 2\. 鼠标左键拖动滚屏和选择复制
+
+当你启用了 `set -g mouse on` 后，鼠标左键拖动通常会自动进入 tmux 的复制模式 (copy mode) 并允许你选择文本。选择完成后，文本通常会复制到 tmux 内部的粘贴缓冲区。
+
+要将选中的文本复制到系统剪贴板（以便在 tmux 外部的其他应用程序中粘贴），你需要与系统剪贴板工具（如 Linux 上的 `xclip` 或 macOS 上的 `pbcopy`）集成。
+
+以下是一个常见的配置，它允许左键拖动选择后自动复制到系统剪贴板：
+
+```tmux
+# 允许鼠标选择后自动复制到系统剪贴板
+# 注意：这需要你的系统安装了 xclip (Linux) 或 pbcopy (macOS)
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-and-cancel \; run "xclip -i -selection clipboard"
+# 如果你使用emacs-style key bindings, 则使用copy-mode而非copy-mode-vi
+# bind -T copy-mode MouseDragEnd1Pane send-keys -X copy-selection-and-cancel \; run "xclip -i -selection clipboard"
+```
+
+**说明：**
+
+  * `MouseDragEnd1Pane`：当你在一个 pane 内完成鼠标左键拖动操作时触发。
+  * `send-keys -X copy-selection-and-cancel`：复制当前选择的文本到 tmux 内部缓冲区，并退出复制模式。
+  * `run "xclip -i -selection clipboard"`：将 tmux 缓冲区的内容通过管道传输到 `xclip`，从而复制到系统剪贴板。
+
+-----
+
+### 3\. 鼠标右键粘贴
+
+默认情况下，启用鼠标模式后，右键点击可能会显示 tmux 自己的上下文菜单，或者在某些终端中，右键仍然会触发终端的默认粘贴行为（这在 tmux 内部可能无效）。
+
+为了让右键点击在 tmux 中执行粘贴操作，你需要明确绑定 `MouseDown3Pane` (鼠标右键) 到粘贴命令。
+
+```tmux
+# 鼠标右键粘贴 (需要 xclip/pbcopy)
+# 注意：MouseDown3Pane 是指鼠标右键
+unbind-key MouseDown3Pane # 解除默认绑定，防止冲突
+bind-key -n MouseDown3Pane run "tmux set-buffer -- \"$(xclip -o -selection clipboard)\"; tmux paste-buffer"
+# 或者对于macOS:
+# bind-key -n MouseDown3Pane run "tmux set-buffer -- \"$(pbpaste)\"; tmux paste-buffer"
+```
+
+**说明：**
+
+  * `unbind-key MouseDown3Pane`：解除 `MouseDown3Pane` 可能已有的默认绑定，以避免冲突。
+  * `bind-key -n MouseDown3Pane`：绑定鼠标右键（`MouseDown3Pane`）在非前缀模式下执行以下命令。
+  * `run "tmux set-buffer -- \"$(xclip -o -selection clipboard)\"; tmux paste-buffer"`：
+      * `xclip -o -selection clipboard`：从系统剪贴板中获取内容。
+      * `tmux set-buffer -- "..."`：将获取到的内容设置到 tmux 的粘贴缓冲区。
+      * `tmux paste-buffer`：将 tmux 缓冲区的内容粘贴到当前 pane。
+
+-----
+
+## 完整示例配置
+
+将上述片段整合到你的 `~/.tmux.conf` 文件中：
+
+```tmux
+# 启用鼠标模式 (必需)
+set -g mouse on
+
+# 允许鼠标滚轮滚动
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+# 鼠标左键拖动选择文本并复制到系统剪贴板
+# 确保安装了 xclip (Linux) 或 pbcopy (macOS)
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-and-cancel \; run "xclip -i -selection clipboard"
+# 如果你使用emacs-style key bindings，请使用以下行而不是上面那行
+# bind -T copy-mode MouseDragEnd1Pane send-keys -X copy-selection-and-cancel \; run "xclip -i -selection clipboard"
+
+# 鼠标右键粘贴系统剪贴板内容到当前 pane
+# 确保安装了 xclip (Linux) 或 pbcopy (macOS)
+unbind-key MouseDown3Pane # 解除默认绑定
+bind-key -n MouseDown3Pane run "tmux set-buffer -- \"$(xclip -o -selection clipboard)\"; tmux paste-buffer"
+# 对于macOS用户，请使用以下行代替
+# bind-key -n MouseDown3Pane run "tmux set-buffer -- \"$(pbpaste)\"; tmux paste-buffer"
+
+# 可选：设置复制模式为 vi 键绑定
+setw -g mode-keys vi
+```
+
+-----
+
+## 如何应用配置
+
+1.  **编辑配置文件：** 使用你喜欢的文本编辑器打开 `~/.tmux.conf` 文件。如果文件不存在，就创建一个。
+2.  **粘贴配置：** 将上述配置内容粘贴到文件中并保存。
+3.  **重新加载 tmux 配置：**
+      * 如果你在 tmux 会话中，按下 `Ctrl+b` (你的 tmux 前缀键，默认是 `Ctrl+b`)，然后输入 `:source-file ~/.tmux.conf` 并按回车。
+      * 或者，你可以完全退出所有 tmux 会话, 执行`tmux source-file ~/.tmux.conf`, 并重新启动 tmux。
+
+-----
+
+## 注意事项
+
+  * **系统剪贴板工具：** 上述配置依赖于 `xclip` (Linux) 或 `pbcopy` (macOS) 来与系统剪贴板交互。请确保你的系统上安装了相应的工具。
+      * **Linux (Debian/Ubuntu):** `sudo apt-get install xclip`
+      * **Linux (Fedora):** `sudo dnf install xclip`
+      * **macOS:** `pbcopy` 和 `pbpaste` 是系统自带的，无需额外安装。
+  * **终端模拟器：** 某些终端模拟器（如 `MobaXterm` 或旧版本的 `iTerm2`）可能有自己的鼠标处理方式，这可能会与 tmux 的鼠标模式发生冲突。在这种情况下，你可能需要调整终端模拟器本身的设置，或者在 tmux 中按住 `Shift` 键再使用鼠标，这样可以绕过 tmux 的鼠标处理，将鼠标事件直接发送给底层终端。
+  * **tmux 版本：** 上述配置适用于较新版本的 tmux (2.1及以上)。如果你的 tmux 版本较旧，某些选项名（如 `mode-mouse` 而不是 `mouse`）可能有所不同。
+
+通过这些配置，你应该能够在 tmux 中实现鼠标右键粘贴和左键拖动滚屏、选择复制的功能。
+
